@@ -17,7 +17,12 @@
             --code-text: #00ff41; /* Matrix Green */
             --success: #22c55e;
             --link-color: #f472b6;
+            --border: #334155;
         }
+
+        * { box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Cairo', sans-serif;
@@ -29,16 +34,16 @@
         }
 
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 2rem;
         }
 
         header {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
             padding: 2rem 0;
-            border-bottom: 1px solid #334155;
+            border-bottom: 1px solid var(--border);
         }
 
         h1 {
@@ -57,9 +62,9 @@
             border-radius: 16px;
             padding: 2rem;
             margin-bottom: 2rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            border: 1px solid #334155;
-            transition: transform 0.2s;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--border);
+            transition: transform 0.2s, border-color 0.2s;
         }
 
         .card:hover {
@@ -67,13 +72,135 @@
             border-color: var(--accent);
         }
 
+        .card.compact {
+            padding: 1.25rem 1.5rem;
+        }
+
         h2 {
             border-bottom: 2px solid var(--accent);
             padding-bottom: 0.5rem;
-            margin-top: 0;
+            margin: 0 0 1rem;
             display: inline-block;
         }
 
+        .muted {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .hidden { display: none !important; }
+
+        /* Search */
+        .search-wrap {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-top: 1rem;
+        }
+
+        .search-input {
+            flex: 1;
+            min-width: 240px;
+            background: rgba(255,255,255,0.04);
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 12px 14px;
+            font-family: 'Cairo', sans-serif;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .search-input:focus {
+            border-color: var(--code-text);
+            box-shadow: 0 0 0 4px rgba(0, 255, 65, 0.12);
+        }
+
+        .btn {
+            border: 1px solid var(--border);
+            background: rgba(255,255,255,0.04);
+            color: var(--text-primary);
+            padding: 10px 12px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-family: 'Cairo', sans-serif;
+            transition: border-color 0.2s, transform 0.05s;
+        }
+
+        .btn:hover { border-color: var(--accent); }
+        .btn:active { transform: translateY(1px); }
+
+        /* Table */
+        .table-wrap {
+            margin-top: 1.2rem;
+            overflow: auto;
+            border-radius: 14px;
+            border: 1px solid var(--border);
+            background: rgba(0,0,0,0.18);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 720px;
+        }
+
+        thead th {
+            text-align: right;
+            padding: 14px 14px;
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            background: rgba(56, 189, 248, 0.08);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
+
+        tbody td {
+            padding: 14px;
+            border-bottom: 1px solid rgba(51, 65, 85, 0.5);
+            vertical-align: top;
+            color: var(--text-primary);
+        }
+
+        tbody tr:hover {
+            background: rgba(0, 255, 65, 0.05);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(0, 255, 65, 0.35);
+            color: var(--code-text);
+            background: rgba(0, 255, 65, 0.08);
+            margin: 2px 0 0 6px;
+            white-space: nowrap;
+        }
+
+        .actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+            border-bottom: 1px dashed var(--link-color);
+            transition: all 0.2s;
+        }
+
+        a:hover {
+            border-bottom-style: solid;
+            filter: brightness(1.2);
+        }
+
+        /* Code */
         .code-container {
             position: relative;
             direction: ltr; /* Force code LTR */
@@ -85,7 +212,7 @@
             padding: 1.5rem;
             border-radius: 12px;
             overflow-x: auto;
-            border: 1px solid #334155;
+            border: 1px solid var(--border);
             cursor: pointer;
             transition: border-color 0.2s, box-shadow 0.2s;
             position: relative;
@@ -113,9 +240,7 @@
             text-shadow: none;
         }
 
-        pre:hover::after {
-            opacity: 1;
-        }
+        pre:hover::after { opacity: 1; }
 
         code {
             font-family: 'Fira Code', monospace;
@@ -125,30 +250,18 @@
             font-weight: 500;
         }
 
-        a {
-            color: var(--link-color);
-            text-decoration: none;
-            border-bottom: 1px dashed var(--link-color);
-            transition: all 0.2s;
-        }
-
-        a:hover {
-            border-bottom-style: solid;
-            filter: brightness(1.2);
-        }
-
-        /* Toast Notification */
+        /* Toast */
         .toast {
             visibility: hidden;
             min-width: 250px;
-            background-color: var(--code-text); /* Matrix Green background */
-            color: #000; /* Black text for contrast */
+            background-color: var(--code-text);
+            color: #000;
             font-weight: bold;
             text-align: center;
             border-radius: 8px;
             padding: 16px;
             position: fixed;
-            z-index: 1;
+            z-index: 999;
             left: 50%;
             bottom: 30px;
             transform: translateX(-50%);
@@ -166,25 +279,10 @@
             animation: fadein 0.5s, fadeout 0.5s 2.5s;
         }
 
-        @-webkit-keyframes fadein {
-            from {bottom: 0; opacity: 0;} 
-            to {bottom: 30px; opacity: 1;}
-        }
-
-        @keyframes fadein {
-            from {bottom: 0; opacity: 0;}
-            to {bottom: 30px; opacity: 1;}
-        }
-
-        @-webkit-keyframes fadeout {
-            from {bottom: 30px; opacity: 1;} 
-            to {bottom: 0; opacity: 0;}
-        }
-
-        @keyframes fadeout {
-            from {bottom: 30px; opacity: 1;}
-            to {bottom: 0; opacity: 0;}
-        }
+        @-webkit-keyframes fadein { from {bottom: 0; opacity: 0;} to {bottom: 30px; opacity: 1;} }
+        @keyframes fadein { from {bottom: 0; opacity: 0;} to {bottom: 30px; opacity: 1;} }
+        @-webkit-keyframes fadeout { from {bottom: 30px; opacity: 1;} to {bottom: 0; opacity: 0;} }
+        @keyframes fadeout { from {bottom: 30px; opacity: 1;} to {bottom: 0; opacity: 0;} }
     </style>
 </head>
 <body>
@@ -195,11 +293,74 @@
             <div class="subtitle">مرجعك الشامل لتظبيط وإصلاح الويندوز</div>
         </header>
 
+        <!-- Topics Table + Search -->
+        <div class="card compact" id="topics">
+            <h2>التوبيكات</h2>
+            <div class="muted">ابحث عن أي خدمة/أمر بسرعة، واضغط “فتح” للانتقال للتفاصيل أو اضغط على أي كود لنسخه مباشرة.</div>
+
+            <div class="search-wrap">
+                <input id="search" class="search-input" type="search" placeholder="ابحث: Office / Word / Excel / إزالة / ODT ..." />
+                <button class="btn" type="button" onclick="clearSearch()">مسح البحث</button>
+            </div>
+
+            <div class="table-wrap">
+                <table id="topicsTable">
+                    <thead>
+                        <tr>
+                            <th style="min-width: 170px;">التصنيف</th>
+                            <th style="min-width: 260px;">العنوان</th>
+                            <th style="min-width: 320px;">وصف سريع</th>
+                            <th style="min-width: 220px;">Tags</th>
+                            <th style="min-width: 180px;">إجراءات</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="topic-row" data-target="office-bloat" data-search="office إزالة bloat bloatware appx remove-appxpackage ltsc windows 11">
+                            <td>تنضيف النظام</td>
+                            <td>إزالة مكونات أوفيس الزيادة</td>
+                            <td class="muted">إزالة تطبيقات Microsoft المدمجة (Bloatware) من Windows 11 LTSC.</td>
+                            <td>
+                                <span class="badge">Windows 11</span>
+                                <span class="badge">LTSC</span>
+                                <span class="badge">PowerShell</span>
+                                <span class="badge">Appx</span>
+                            </td>
+                            <td>
+                                <div class="actions">
+                                    <button class="btn" type="button" onclick="jumpTo('office-bloat')">فتح</button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr class="topic-row" data-target="office-custom-install" data-search="office word excel odt deployment tool xml configuration proplus ltsc install excludeapp">
+                            <td>أوفيس</td>
+                            <td>تثبيت أوفيس مخصص (Word/Excel)</td>
+                            <td class="muted">استخدام ODT + ملف XML لاختيار البرامج التي تريدها فقط.</td>
+                            <td>
+                                <span class="badge">ODT</span>
+                                <span class="badge">XML</span>
+                                <span class="badge">Word</span>
+                                <span class="badge">Excel</span>
+                            </td>
+                            <td>
+                                <div class="actions">
+                                    <button class="btn" type="button" onclick="jumpTo('office-custom-install')">فتح</button>
+                                    <a href="https://www.microsoft.com/en-us/download/details.aspx?id=49117" target="_blank">تحميل ODT</a>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="resultsHint" class="muted" style="margin-top: 10px;"></div>
+        </div>
+
         <!-- Command Card 1 -->
-        <div class="card" id="office-bloat">
+        <div class="card topic-card" id="office-bloat" data-search="office إزالة bloat bloatware appx remove-appxpackage ltsc windows 11 powershell">
             <h2>إزالة مكونات أوفيس الزيادة</h2>
             <p>خاص بنسخة <strong>Windows 11 IoT Enterprise LTSC</strong>. هذا السكريبت يقوم بإزالة تطبيقات Microsoft المثبتة مسبقاً وغير الضرورية (Bloatware) دفعة واحدة.</p>
-            
+
             <div class="code-container">
 <pre onclick="copyToClipboard(this)"><code># إزالة كل مكونات أوفيس اللي مش أساسية
 $apps = @(
@@ -235,11 +396,11 @@ foreach ($app in $apps) {
 }
 Write-Host "تم إزالة مكونات أوفيس الزيادة." -ForegroundColor Green</code></pre>
             </div>
-            <p style="font-size: 0.9rem; color: var(--text-secondary);">* اضغط على الكود لنسخه مباشرة</p>
+            <p class="muted">* اضغط على الكود لنسخه مباشرة</p>
         </div>
 
         <!-- Command Card 2 -->
-        <div class="card" id="office-custom-install">
+        <div class="card topic-card" id="office-custom-install" data-search="office word excel odt deployment tool xml configuration proplus ltsc install excludeapp">
             <h2>تثبيت أوفيس مخصص (Word/Excel فقط)</h2>
             <p>لتثبيت برامج محددة فقط من حزمة الأوفيس، نستخدم أداة <strong>Office Deployment Tool (ODT)</strong>.</p>
             <p>1. قم بتحميل الأداة من <a href="https://www.microsoft.com/en-us/download/details.aspx?id=49117" target="_blank">الموقع الرسمي لمايكروسوفت</a>.</p>
@@ -263,7 +424,7 @@ Write-Host "تم إزالة مكونات أوفيس الزيادة." -Foreground
   <Display Level="Full" AcceptEULA="TRUE" />
 </Configuration></code></pre>
             </div>
-            <p style="font-size: 0.9rem; color: var(--text-secondary);">3. افتح CMD في نفس المجلد واكتب: <code>setup.exe /configure configuration.xml</code></p>
+            <p class="muted">3. افتح CMD في نفس المجلد واكتب: <code>setup.exe /configure configuration.xml</code></p>
         </div>
 
     </div>
@@ -277,6 +438,7 @@ Write-Host "تم إزالة مكونات أوفيس الزيادة." -Foreground
     </div>
 
     <script>
+        // Copy on click for any code block
         function copyToClipboard(element) {
             const code = element.querySelector('code').innerText;
             navigator.clipboard.writeText(code).then(function() {
@@ -291,6 +453,59 @@ Write-Host "تم إزالة مكونات أوفيس الزيادة." -Foreground
             x.className = "toast show";
             setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
         }
+
+        // Jump to section
+        function jumpTo(id) {
+            const el = document.getElementById(id);
+            if (!el) return;
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // Search
+        const searchInput = document.getElementById('search');
+        const rows = Array.from(document.querySelectorAll('.topic-row'));
+        const cards = Array.from(document.querySelectorAll('.topic-card'));
+        const hint = document.getElementById('resultsHint');
+
+        function normalize(s) {
+            return (s || '').toString().toLowerCase().trim();
+        }
+
+        function applySearch(qRaw) {
+            const q = normalize(qRaw);
+
+            let visible = 0;
+
+            rows.forEach(r => {
+                const hay = normalize(r.getAttribute('data-search') + ' ' + r.innerText);
+                const show = !q || hay.includes(q);
+                r.classList.toggle('hidden', !show);
+                if (show) visible++;
+
+                const target = r.getAttribute('data-target');
+                const card = document.getElementById(target);
+                if (card) card.classList.toggle('hidden', !show);
+            });
+
+            // If user searches for something that doesn't match any row, hide all cards
+            if (q && visible === 0) {
+                cards.forEach(c => c.classList.add('hidden'));
+                hint.textContent = 'لا توجد نتائج مطابقة. جرّب كلمات مثل: office, word, excel, إزالة, ODT';
+            } else {
+                hint.textContent = q ? `نتائج البحث: ${visible}` : '';
+            }
+        }
+
+        function clearSearch() {
+            searchInput.value = '';
+            applySearch('');
+            searchInput.focus();
+        }
+
+        searchInput.addEventListener('input', (e) => applySearch(e.target.value));
+
+        // Initial state
+        applySearch('');
     </script>
 </body>
 </html>
