@@ -1,4 +1,4 @@
-<div dir="rtl" markdown="1">
+<div dir="rtl">
 
 # إزالة مكونات أوفيس الزيادة (Windows 11 IoT Enterprise LTSC)
 
@@ -9,8 +9,6 @@
 افتح PowerShell كمسؤول وانسخ الكود ده كله:
 
 </div>
-
-<div dir="ltr" markdown="1">
 
 ```powershell
 # إزالة كل مكونات أوفيس اللي مش أساسية
@@ -48,10 +46,8 @@ foreach ($app in $apps) {
 Write-Host "تم إزالة مكونات أوفيس الزيادة." -ForegroundColor Green
 ```
 
-</div>
+<div dir="rtl">
 
-<div dir="rtl" markdown="1">
-
-تمت إضافة الكود أعلاه، يمكنك نسخه مباشرة باستخدام زر النسخ الموجود في الركن.
+تمت إضافة الكود أعلاه، زر النسخ سيظهر تلقائياً عند تمرير الماوس على الكود.
 
 </div>
