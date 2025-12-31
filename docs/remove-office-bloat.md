@@ -1,3 +1,5 @@
+<div dir="rtl" markdown="1">
+
 # إزالة مكونات أوفيس الزيادة (Windows 11 IoT Enterprise LTSC)
 
 بما إنك على **Windows 11 IoT Enterprise LTSC** (اللي مفهاش متجر Microsoft Store افتراضياً)، فيه طريقتين لإزالة مكونات أوفيس الزيادة:
@@ -5,6 +7,10 @@
 ## 1. الطريقة الأسرع (PowerShell - Remove All Bloat)
 
 افتح PowerShell كمسؤول وانسخ الكود ده كله:
+
+</div>
+
+<div dir="ltr" markdown="1">
 
 ```powershell
 # إزالة كل مكونات أوفيس اللي مش أساسية
@@ -41,3 +47,11 @@ foreach ($app in $apps) {
 }
 Write-Host "تم إزالة مكونات أوفيس الزيادة." -ForegroundColor Green
 ```
+
+</div>
+
+<div dir="rtl" markdown="1">
+
+تمت إضافة الكود أعلاه، يمكنك نسخه مباشرة باستخدام زر النسخ الموجود في الركن.
+
+</div>
