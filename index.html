@@ -16,6 +16,7 @@
             --code-bg: #050505; /* Ultra dark for matrix contrast */
             --code-text: #00ff41; /* Matrix Green */
             --success: #22c55e;
+            --link-color: #f472b6;
         }
 
         body {
@@ -124,6 +125,18 @@
             font-weight: 500;
         }
 
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+            border-bottom: 1px dashed var(--link-color);
+            transition: all 0.2s;
+        }
+
+        a:hover {
+            border-bottom-style: solid;
+            filter: brightness(1.2);
+        }
+
         /* Toast Notification */
         .toast {
             visibility: hidden;
@@ -225,10 +238,32 @@ Write-Host "تم إزالة مكونات أوفيس الزيادة." -Foreground
             <p style="font-size: 0.9rem; color: var(--text-secondary);">* اضغط على الكود لنسخه مباشرة</p>
         </div>
 
-        <!-- Placeholder for more commands -->
-        <div class="card">
-            <h2>قريباً...</h2>
-            <p>سيتم إضافة المزيد من الأوامر هنا.</p>
+        <!-- Command Card 2 -->
+        <div class="card" id="office-custom-install">
+            <h2>تثبيت أوفيس مخصص (Word/Excel فقط)</h2>
+            <p>لتثبيت برامج محددة فقط من حزمة الأوفيس، نستخدم أداة <strong>Office Deployment Tool (ODT)</strong>.</p>
+            <p>1. قم بتحميل الأداة من <a href="https://www.microsoft.com/en-us/download/details.aspx?id=49117" target="_blank">الموقع الرسمي لمايكروسوفت</a>.</p>
+            <p>2. أنشئ ملف باسم <code>configuration.xml</code> بجانب ملف <code>setup.exe</code> وضع فيه الكود التالي (هذا الكود يثبت Word و Excel و PowerPoint فقط ويزيل الباقي):</p>
+
+            <div class="code-container">
+<pre onclick="copyToClipboard(this)"><code><Configuration>
+  <Add OfficeClientEdition="64" Channel="LTSC2021">
+    <Product ID="ProPlus2021Volume">
+      <Language ID="en-us" />
+      <!-- البرامج التي لا نريد تثبيتها -->
+      <ExcludeApp ID="Access" />
+      <ExcludeApp ID="Lync" />
+      <ExcludeApp ID="OneDrive" />
+      <ExcludeApp ID="OneNote" />
+      <ExcludeApp ID="Outlook" />
+      <ExcludeApp ID="Publisher" />
+      <ExcludeApp ID="Teams" />
+    </Product>
+  </Add>
+  <Display Level="Full" AcceptEULA="TRUE" />
+</Configuration></code></pre>
+            </div>
+            <p style="font-size: 0.9rem; color: var(--text-secondary);">3. افتح CMD في نفس المجلد واكتب: <code>setup.exe /configure configuration.xml</code></p>
         </div>
 
     </div>
