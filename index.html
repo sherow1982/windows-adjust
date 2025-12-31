@@ -13,7 +13,7 @@
             --text-secondary: #94a3b8;
             --accent: #38bdf8;
             --accent-hover: #0ea5e9;
-            --code-bg: #050505; /* Ultra dark for matrix contrast */
+            --code-bg: #000000; /* Pure black */
             --code-text: #00ff41; /* Matrix Green */
             --success: #22c55e;
             --link-color: #f472b6;
@@ -207,15 +207,39 @@
             margin: 1.5rem 0;
         }
 
+        .code-header {
+            background: rgba(0, 255, 65, 0.12);
+            border: 1px solid rgba(0, 255, 65, 0.3);
+            color: var(--code-text);
+            padding: 8px 12px;
+            border-radius: 8px 8px 0 0;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .code-tool {
+            background: rgba(0, 255, 65, 0.2);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            border: 1px solid rgba(0, 255, 65, 0.4);
+        }
+
         pre {
             background: var(--code-bg);
             padding: 1.5rem;
-            border-radius: 12px;
-            overflow-x: auto;
             border: 1px solid var(--border);
+            border-top: none;
+            border-radius: 0 0 12px 12px;
             cursor: pointer;
             transition: border-color 0.2s, box-shadow 0.2s;
             position: relative;
+            margin: 0;
+            overflow-x: auto;
         }
 
         pre:hover {
@@ -228,7 +252,7 @@
             position: absolute;
             top: 10px;
             right: 10px;
-            background: rgba(0, 255, 65, 0.1);
+            background: rgba(0, 255, 65, 0.2);
             color: var(--code-text);
             padding: 4px 8px;
             border-radius: 4px;
@@ -238,6 +262,7 @@
             transition: opacity 0.2s;
             border: 1px solid var(--code-text);
             text-shadow: none;
+            font-weight: 600;
         }
 
         pre:hover::after { opacity: 1; }
@@ -245,9 +270,11 @@
         code {
             font-family: 'Fira Code', monospace;
             color: var(--code-text);
-            font-size: 0.95rem;
-            text-shadow: 0 0 4px rgba(0, 255, 65, 0.5); /* Matrix Glow */
+            font-size: 0.9rem;
+            text-shadow: 0 0 6px rgba(0, 255, 65, 0.6); /* Matrix Glow */
             font-weight: 500;
+            line-height: 1.5;
+            letter-spacing: 0.5px;
         }
 
         /* Toast */
@@ -362,6 +389,10 @@
             <p>خاص بنسخة <strong>Windows 11 IoT Enterprise LTSC</strong>. هذا السكريبت يقوم بإزالة تطبيقات Microsoft المثبتة مسبقاً وغير الضرورية (Bloatware) دفعة واحدة.</p>
 
             <div class="code-container">
+                <div class="code-header">
+                    <span>Remove Office Bloatware</span>
+                    <span class="code-tool">PowerShell</span>
+                </div>
 <pre onclick="copyToClipboard(this)"><code># إزالة كل مكونات أوفيس اللي مش أساسية
 $apps = @(
     "Microsoft.3DBuilder",
@@ -404,9 +435,13 @@ Write-Host "تم إزالة مكونات أوفيس الزيادة." -Foreground
             <h2>تثبيت أوفيس مخصص (Word/Excel فقط)</h2>
             <p>لتثبيت برامج محددة فقط من حزمة الأوفيس، نستخدم أداة <strong>Office Deployment Tool (ODT)</strong>.</p>
             <p>1. قم بتحميل الأداة من <a href="https://www.microsoft.com/en-us/download/details.aspx?id=49117" target="_blank">الموقع الرسمي لمايكروسوفت</a>.</p>
-            <p>2. أنشئ ملف باسم <code>configuration.xml</code> بجانب ملف <code>setup.exe</code> وضع فيه الكود التالي (هذا الكود يثبت Word و Excel و PowerPoint فقط ويزيل الباقي):</p>
+            <p>2. أنشئ ملف باسم <code>configuration.xml</code> بجانب ملف <code>setup.exe</code> وضع فيه الكود التالي:</p>
 
             <div class="code-container">
+                <div class="code-header">
+                    <span>configuration.xml</span>
+                    <span class="code-tool">XML</span>
+                </div>
 <pre onclick="copyToClipboard(this)"><code><Configuration>
   <Add OfficeClientEdition="64" Channel="LTSC2021">
     <Product ID="ProPlus2021Volume">
@@ -424,7 +459,15 @@ Write-Host "تم إزالة مكونات أوفيس الزيادة." -Foreground
   <Display Level="Full" AcceptEULA="TRUE" />
 </Configuration></code></pre>
             </div>
-            <p class="muted">3. افتح CMD في نفس المجلد واكتب: <code>setup.exe /configure configuration.xml</code></p>
+            <p class="muted">3. افتح <strong>CMD</strong> في نفس المجلد واكتب الأمر التالي:</p>
+
+            <div class="code-container">
+                <div class="code-header">
+                    <span>Run ODT Setup</span>
+                    <span class="code-tool">CMD</span>
+                </div>
+<pre onclick="copyToClipboard(this)"><code>setup.exe /configure configuration.xml</code></pre>
+            </div>
         </div>
 
     </div>
