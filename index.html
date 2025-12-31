@@ -13,7 +13,8 @@
             --text-secondary: #94a3b8;
             --accent: #38bdf8;
             --accent-hover: #0ea5e9;
-            --code-bg: #000000;
+            --code-bg: #050505; /* Ultra dark for matrix contrast */
+            --code-text: #00ff41; /* Matrix Green */
             --success: #22c55e;
         }
 
@@ -85,12 +86,13 @@
             overflow-x: auto;
             border: 1px solid #334155;
             cursor: pointer;
-            transition: border-color 0.2s;
+            transition: border-color 0.2s, box-shadow 0.2s;
             position: relative;
         }
 
         pre:hover {
-            border-color: var(--accent);
+            border-color: var(--code-text);
+            box-shadow: 0 0 15px rgba(0, 255, 65, 0.2);
         }
 
         pre::after {
@@ -98,13 +100,16 @@
             position: absolute;
             top: 10px;
             right: 10px;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(0, 255, 65, 0.1);
+            color: var(--code-text);
             padding: 4px 8px;
             border-radius: 4px;
             font-family: 'Cairo', sans-serif;
             font-size: 0.8rem;
             opacity: 0;
             transition: opacity 0.2s;
+            border: 1px solid var(--code-text);
+            text-shadow: none;
         }
 
         pre:hover::after {
@@ -113,16 +118,19 @@
 
         code {
             font-family: 'Fira Code', monospace;
-            color: #e2e8f0;
-            font-size: 0.9rem;
+            color: var(--code-text);
+            font-size: 0.95rem;
+            text-shadow: 0 0 4px rgba(0, 255, 65, 0.5); /* Matrix Glow */
+            font-weight: 500;
         }
 
         /* Toast Notification */
         .toast {
             visibility: hidden;
             min-width: 250px;
-            background-color: var(--success);
-            color: #fff;
+            background-color: var(--code-text); /* Matrix Green background */
+            color: #000; /* Black text for contrast */
+            font-weight: bold;
             text-align: center;
             border-radius: 8px;
             padding: 16px;
@@ -132,7 +140,7 @@
             bottom: 30px;
             transform: translateX(-50%);
             font-size: 17px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.6);
             display: flex;
             align-items: center;
             justify-content: center;
