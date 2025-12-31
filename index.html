@@ -442,22 +442,22 @@ Write-Host "تم إزالة مكونات أوفيس الزيادة." -Foreground
                     <span>configuration.xml</span>
                     <span class="code-tool">XML</span>
                 </div>
-<pre onclick="copyToClipboard(this)"><code><Configuration>
-  <Add OfficeClientEdition="64" Channel="LTSC2021">
-    <Product ID="ProPlus2021Volume">
-      <Language ID="en-us" />
-      <!-- البرامج التي لا نريد تثبيتها -->
-      <ExcludeApp ID="Access" />
-      <ExcludeApp ID="Lync" />
-      <ExcludeApp ID="OneDrive" />
-      <ExcludeApp ID="OneNote" />
-      <ExcludeApp ID="Outlook" />
-      <ExcludeApp ID="Publisher" />
-      <ExcludeApp ID="Teams" />
-    </Product>
-  </Add>
-  <Display Level="Full" AcceptEULA="TRUE" />
-</Configuration></code></pre>
+<pre onclick="copyToClipboard(this)"><code>&lt;Configuration&gt;
+  &lt;Add OfficeClientEdition="64" Channel="LTSC2021"&gt;
+    &lt;Product ID="ProPlus2021Volume"&gt;
+      &lt;Language ID="en-us" /&gt;
+      &lt;!-- البرامج التي لا نريد تثبيتها --&gt;
+      &lt;ExcludeApp ID="Access" /&gt;
+      &lt;ExcludeApp ID="Lync" /&gt;
+      &lt;ExcludeApp ID="OneDrive" /&gt;
+      &lt;ExcludeApp ID="OneNote" /&gt;
+      &lt;ExcludeApp ID="Outlook" /&gt;
+      &lt;ExcludeApp ID="Publisher" /&gt;
+      &lt;ExcludeApp ID="Teams" /&gt;
+    &lt;/Product&gt;
+  &lt;/Add&gt;
+  &lt;Display Level="Full" AcceptEULA="TRUE" /&gt;
+&lt;/Configuration&gt;</code></pre>
             </div>
             <p class="muted">3. افتح <strong>CMD</strong> في نفس المجلد واكتب الأمر التالي:</p>
 
