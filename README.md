@@ -1,4 +1,6 @@
-# Windows Adjust Reference
+<div dir="rtl" markdown="1">
+
+# مرجع تظبيط الويندوز (Windows Adjust Reference)
 مرجع شامل لأوامر تظبيط وإصلاح الويندوز.
 
 ## الفهرس (Index)
@@ -8,3 +10,5 @@
 
 ---
 *تم التحديث بتاريخ: 2025-12-31*
+
+</div>
