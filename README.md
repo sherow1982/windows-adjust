@@ -6,7 +6,8 @@
 ## الفهرس (Index)
 
 ### تظبيط النظام (System Optimization)
-- [إزالة مكونات أوفيس الزيادة (Windows 11 IoT Enterprise LTSC)](./docs/remove-office-bloat.md)
+-  [docs/لاضافة فتح باورشل كمسؤول ف قايمة الماوس اليمين.md](./docs/docs/لاضافة فتح باورشل كمسؤول ف قايمة الماوس اليمين.md)
+-    [إزالة مكونات أوفيس الزيادة (Windows 11 IoT Enterprise LTSC)](./docs/remove-office-bloat.md)
 
 ---
 *تم التحديث بتاريخ: 2025-12-31*
