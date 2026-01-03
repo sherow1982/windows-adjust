@@ -323,10 +323,10 @@
         <!-- Topics Table + Search -->
         <div class="card compact" id="topics">
             <h2>التوبيكات</h2>
-            <div class="muted">ابحث عن أي خدمة/أمر بسرعة، واضغط “فتح” للانتقال للتفاصيل أو اضغط على أي كود لنسخه مباشرة.</div>
+            <div class="muted">ابحث عن أي خدمة/أمر بسرعة، واضغط "فتح" للانتقال للتفاصيل أو اضغط على أي كود لنسخه مباشرة.</div>
 
             <div class="search-wrap">
-                <input id="search" class="search-input" type="search" placeholder="ابحث: Office / Word / Excel / إزالة / ODT ..." />
+                <input id="search" class="search-input" type="search" placeholder="ابحث: PowerShell / Office / Registry / Context Menu ..." />
                 <button class="btn" type="button" onclick="clearSearch()">مسح البحث</button>
             </div>
 
@@ -342,6 +342,23 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <tr class="topic-row" data-target="powershell-context-menu" data-search="powershell admin context menu registry قائمة الماوس اليمين مسؤول administrator shell">
+                            <td>تظبيط النظام</td>
+                            <td>إضافة PowerShell كمسؤول في قائمة الماوس</td>
+                            <td class="muted">إضافة خيار "PowerShell Admin Here" في قائمة الماوس اليمين على المجلدات والدرايفات.</td>
+                            <td>
+                                <span class="badge">PowerShell</span>
+                                <span class="badge">Registry</span>
+                                <span class="badge">Context Menu</span>
+                                <span class="badge">Admin</span>
+                            </td>
+                            <td>
+                                <div class="actions">
+                                    <button class="btn" type="button" onclick="jumpTo('powershell-context-menu')">فتح</button>
+                                </div>
+                            </td>
+                        </tr>
+
                         <tr class="topic-row" data-target="office-bloat" data-search="office إزالة bloat bloatware appx remove-appxpackage ltsc windows 11">
                             <td>تنضيف النظام</td>
                             <td>إزالة مكونات أوفيس الزيادة</td>
@@ -383,7 +400,52 @@
             <div id="resultsHint" class="muted" style="margin-top: 10px;"></div>
         </div>
 
-        <!-- Command Card 1 -->
+        <!-- Command Card 1: PowerShell Context Menu -->
+        <div class="card topic-card" id="powershell-context-menu" data-search="powershell admin context menu registry قائمة الماوس اليمين مسؤول administrator shell">
+            <h2>إضافة PowerShell كمسؤول في قائمة الماوس اليمين</h2>
+            <p>هذا السكريبت يضيف خيار <strong>"PowerShell Admin Here"</strong> في قائمة الماوس اليمين على المجلدات والدرايفات والخلفية.</p>
+            <p>يعمل على: <strong>المجلدات</strong> | <strong>الخلفية داخل المجلدات</strong> | <strong>الدرايفات (C:, D:)</strong></p>
+
+            <div class="code-container">
+                <div class="code-header">
+                    <span>Add PowerShell Admin to Context Menu</span>
+                    <span class="code-tool">PowerShell</span>
+                </div>
+<pre onclick="copyToClipboard(this)"><code>$MenuKeyName = "PSAdminHere"
+$MenuText    = "PowerShell Admin Here"
+$Icon        = "$env:WINDIR\System32\WindowsPowerShell\v1.0\powershell.exe"
+
+# للمجلدات (كليك يمين على فولدر)
+$dir1 = "HKCU:\Software\Classes\Directory\shell\$MenuKeyName"
+New-Item -Path $dir1 -Force | Out-Null
+New-Item -Path "$dir1\command" -Force | Out-Null
+Set-ItemProperty -Path $dir1 -Name '(Default)' -Value $MenuText -Force
+Set-ItemProperty -Path $dir1 -Name 'Icon' -Value $Icon -Force
+Set-ItemProperty -Path "$dir1\command" -Name '(Default)' -Value 'powershell.exe -NoProfile -Command "Start-Process powershell.exe -Verb RunAs -WorkingDirectory ''''%V'''' -ArgumentList ''''-NoExit'''',''''-NoProfile'''',''''-Command'''',''''Set-Location -LiteralPath ""%V""''''"' -Force
+
+# للخلفية (كليك يمين في مساحة فارغة داخل فولدر)
+$dir2 = "HKCU:\Software\Classes\Directory\Background\shell\$MenuKeyName"
+New-Item -Path $dir2 -Force | Out-Null
+New-Item -Path "$dir2\command" -Force | Out-Null
+Set-ItemProperty -Path $dir2 -Name '(Default)' -Value $MenuText -Force
+Set-ItemProperty -Path $dir2 -Name 'Icon' -Value $Icon -Force
+Set-ItemProperty -Path "$dir2\command" -Name '(Default)' -Value 'powershell.exe -NoProfile -Command "Start-Process powershell.exe -Verb RunAs -WorkingDirectory ''''%V'''' -ArgumentList ''''-NoExit'''',''''-NoProfile'''',''''-Command'''',''''Set-Location -LiteralPath ""%V""''''"' -Force
+
+# للدرايفات (كليك يمين على C:, D:, إلخ)
+$dir3 = "HKCU:\Software\Classes\Drive\shell\$MenuKeyName"
+New-Item -Path $dir3 -Force | Out-Null
+New-Item -Path "$dir3\command" -Force | Out-Null
+Set-ItemProperty -Path $dir3 -Name '(Default)' -Value $MenuText -Force
+Set-ItemProperty -Path $dir3 -Name 'Icon' -Value $Icon -Force
+Set-ItemProperty -Path "$dir3\command" -Name '(Default)' -Value 'powershell.exe -NoProfile -Command "Start-Process powershell.exe -Verb RunAs -WorkingDirectory ''''%V'''' -ArgumentList ''''-NoExit'''',''''-NoProfile'''',''''-Command'''',''''Set-Location -LiteralPath ""%V""''''"' -Force
+
+Write-Host "✅ تم! افتح Explorer واضغط F5" -ForegroundColor Green</code></pre>
+            </div>
+            <p class="muted">* افتح PowerShell عادي (مش كـ Administrator) وانسخ السكريبت كامل</p>
+            <p class="muted">* بعد التشغيل، افتح Windows Explorer واضغط F5 لتحديث القوائم</p>
+        </div>
+
+        <!-- Command Card 2 -->
         <div class="card topic-card" id="office-bloat" data-search="office إزالة bloat bloatware appx remove-appxpackage ltsc windows 11 powershell">
             <h2>إزالة مكونات أوفيس الزيادة</h2>
             <p>خاص بنسخة <strong>Windows 11 IoT Enterprise LTSC</strong>. هذا السكريبت يقوم بإزالة تطبيقات Microsoft المثبتة مسبقاً وغير الضرورية (Bloatware) دفعة واحدة.</p>
@@ -430,7 +492,7 @@ Write-Host "تم إزالة مكونات أوفيس الزيادة." -Foreground
             <p class="muted">* اضغط على الكود لنسخه مباشرة</p>
         </div>
 
-        <!-- Command Card 2 -->
+        <!-- Command Card 3 -->
         <div class="card topic-card" id="office-custom-install" data-search="office word excel odt deployment tool xml configuration proplus ltsc install excludeapp">
             <h2>تثبيت أوفيس مخصص (Word/Excel فقط)</h2>
             <p>لتثبيت برامج محددة فقط من حزمة الأوفيس، نستخدم أداة <strong>Office Deployment Tool (ODT)</strong>.</p>
@@ -533,7 +595,7 @@ Write-Host "تم إزالة مكونات أوفيس الزيادة." -Foreground
             // If user searches for something that doesn't match any row, hide all cards
             if (q && visible === 0) {
                 cards.forEach(c => c.classList.add('hidden'));
-                hint.textContent = 'لا توجد نتائج مطابقة. جرّب كلمات مثل: office, word, excel, إزالة, ODT';
+                hint.textContent = 'لا توجد نتائج مطابقة. جرّب كلمات مثل: PowerShell, Registry, Office, Context Menu';
             } else {
                 hint.textContent = q ? `نتائج البحث: ${visible}` : '';
             }
