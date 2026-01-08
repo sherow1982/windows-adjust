@@ -195,8 +195,23 @@
             vertical-align: top;
             color: var(--text-primary);
         }
+        tbody tr {
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
         tbody tr:hover { 
             background: rgba(56, 189, 248, 0.08);
+        }
+        tbody tr a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px dotted var(--accent);
+            transition: all 0.2s ease;
+        }
+        tbody tr a:hover {
+            color: var(--accent-hover);
+            border-bottom: 1px solid var(--accent-hover);
         }
         .badge {
             display: inline-block;
@@ -315,7 +330,7 @@
 
         <div class="card compact" id="topics">
             <h2>🔍 البحث السريع</h2>
-            <div class="muted">ابحث عن أي خدمة، أمر، أو مشكلة. الجداول ستظهر تلقائياً.</div>
+            <div class="muted">ابحث عن أي خدمة، أمر، أو مشكلة. اضغط على الموضوع لعرض التفاصيل الكاملة.</div>
 
             <div class="search-wrap">
                 <input id="search" class="search-input" type="search" placeholder="🔎 ابحث: PowerShell / Defender / Telemetry / Boot / Registry ..." />
@@ -333,307 +348,26 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- ===== تظبيط النظام (12) ===== -->
-                        <tr class="topic-row" data-target="powershell-admin" data-search="powershell admin context menu right click">
-                            <td><span class="category-label category-system">🔧 النظام</span></td>
-                            <td>إضافة PowerShell Admin في قائمة الماوس</td>
-                            <td class="muted">أضف PowerShell Admin بمجرد النقر الأيمن على المجلد أو سطح المكتب.</td>
-                            <td><span class="badge">PowerShell</span><span class="badge">Menu</span></td>
-                        </tr>
-                        <tr class="topic-row" data-target="disable-windows-update" data-search="windows update تعطيل disable">
-                            <td><span class="category-label category-system">🔧 النظام</span></td>
-                            <td>تعطيل Windows Update</td>
-                            <td class="muted">أوقف التحديثات التلقائية بشكل نهائي والتحكم الكامل فيها.</td>
-                            <td><span class="badge">Update</span><span class="badge">Control</span></td>
-                        </tr>
-                        <tr class="topic-row" data-target="god-mode" data-search="god mode اله وضع god">
-                            <td><span class="category-label category-system">🔧 النظام</span></td>
-                            <td>تفعيل وضع الإله (God Mode)</td>
-                            <td class="muted">الدخول لصندوق تحكم يحتوي على كل إعدادات الويندوز في مكان واحد.</td>
-                            <td><span class="badge">Secrets</span><span class="badge">Admin</span></td>
-                        </tr>
-                        <tr class="topic-row" data-target="disable-uac" data-search="uac disable user account control">
-                            <td><span class="category-label category-system">🔧 النظام</span></td>
-                            <td>تعطيل UAC (رسائل التأكيد)</td>
-                            <td class="muted">إزالة النوافذ المزعجة التي تطلب إذن صلاحيات.</td>
-                            <td><span class="badge">UAC</span><span class="badge">Annoying</span></td>
-                        </tr>
-                        <tr class="topic-row" data-target="disable-firewall" data-search="firewall windows disable جدار">
-                            <td><span class="category-label category-system">🔧 النظام</span></td>
-                            <td>تعطيل Windows Firewall</td>
-                            <td class="muted">أوقف جدار الحماية المدمج في الويندوز.</td>
-                            <td><span class="badge">Firewall</span><span class="badge">Network</span></td>
-                        </tr>
-                        <tr class="topic-row" data-target="enable-rdp" data-search="remote desktop rdp enable">
-                            <td><span class="category-label category-system">🔧 النظام</span></td>
-                            <td>تفعيل Remote Desktop (RDP)</td>
-                            <td class="muted">السماح بالوصول عن بعد لجهازك من أجهزة أخرى.</td>
-                            <td><span class="badge">Remote</span><span class="badge">RDP</span></td>
-                        </tr>
-                        <tr class="topic-row" data-target="disable-password" data-search="password login disable skip">
-                            <td><span class="category-label category-system">🔧 النظام</span></td>
-                            <td>تعطيل كلمة المرور عند التسجيل</td>
-                            <td class="muted">الدخول للويندوز بدون كلمة سر (استخدم بحذر!).</td>
-                            <td><span class="badge">Security</span><span class="badge">Login</span></td>
-                        </tr>
-                        <tr class="topic-row" data-target="long-file-paths" data-search="long file paths 260 characters">
-                            <td><span class="category-label category-system">🔧 النظام</span></td>
-                            <td>تفعيل المسارات الطويلة (Long Path)</td>
-                            <td class="muted">السماح بمسارات أطول من 260 حرف للملفات والمجلدات.</td>
-                            <td><span class="badge">Paths</span><span class="badge">Registry</span></td>
-                        </tr>
-                        <tr class="topic-row" data-target="show-hidden-files" data-search="hidden files show extensions">
-                            <td><span class="category-label category-system">🔧 النظام</span></td>
-                            <td>إظهار الملفات والامتدادات المخفية</td>
-                            <td class="muted">عرض الملفات المخفية والامتدادات لكل الملفات.</td>
-                            <td><span class="badge">Files</span><span class="badge">View</span></td>
-                        </tr>
-                        <tr class="topic-row" data-target="enable-compat-mode" data-search="compatibility mode old programs">
-                            <td><span class="category-label category-system">🔧 النظام</span></td>
-                            <td>تفعيل وضع التوافق للبرامج القديمة</td>
-                            <td class="muted">تشغيل البرامج القديمة على إصدارات جديدة من الويندوز.</td>
-                            <td><span class="badge">Compat</span><span class="badge">Legacy</span></td>
-                        </tr>
-                        <tr class="topic-row" data-target="disable-cortana" data-search="cortana disable search">
-                            <td><span class="category-label category-system">🔧 النظام</span></td>
-                            <td>تعطيل Cortana (مساعد مايكروسوفت)</td>
-                            <td class="muted">إيقاف مساعد Cortana والبحث المتقدم.</td>
-                            <td><span class="badge">Cortana</span><span class="badge">Assistant</span></td>
-                        </tr>
-                        <tr class="topic-row" data-target="windows-sandbox" data-search="windows sandbox sandbox mode">
-                            <td><span class="category-label category-system">🔧 النظام</span></td>
-                            <td>تفعيل Windows Sandbox</td>
-                            <td class="muted">تشغيل بيئة معزولة لاختبار البرامج بأمان.</td>
-                            <td><span class="badge">Security</span><span class="badge">Test</span></td>
-                        </tr>
-                        
-                        <!-- ===== الخصوصية والأمان (4) ===== -->
-                        <tr class="topic-row" data-target="disable-defender" data-search="windows defender antivirus security">
-                            <td><span class="category-label category-privacy">🔒 الأمان</span></td>
-                            <td>تعطيل Windows Defender</td>
-                            <td class="muted">إيقاف برنامج الحماية المدمج بشكل نهائي.</td>
-                            <td><span class="badge">Defender</span><span class="badge">Privacy</span></td>
-                        </tr>
-                        <tr class="topic-row" data-target="disable-telemetry" data-search="telemetry data collection privacy">
-                            <td><span class="category-label category-privacy">🔒 الأمان</span></td>
-                            <td>تعطيل Telemetry (جمع البيانات)</td>
-                            <td class="muted">منع مايكروسوفت من جمع بيانات الاستخدام والتطبيقات.</td>
-                            <td><span class="badge">Privacy</span><span class="badge">Telemetry</span></td>
-                        </tr>
-                        <tr class="topic-row" data-target="disable-location" data-search="location tracking gps position">
-                            <td><span class="category-label category-privacy">🔒 الأمان</span></td>
-                            <td>تعطيل Location Tracking</td>
-                            <td class="muted">إيقاف تتبع الموقع الجغرافي لجهازك.</td>
-                            <td><span class="badge">Location</span><span class="badge">Privacy</span></td>
-                        </tr>
-                        <tr class="topic-row" data-target="disable-notifications" data-search="notifications disable popup">
-                            <td><span class="category-label category-privacy">🔒 الأمان</span></td>
-                            <td>تعطيل الإشعارات المزعجة</td>
-                            <td class="muted">إيقاف إشعارات النظام والتطبيقات.</td>
-                            <td><span class="badge">Notifications</span><span class="badge">Annoy</span></td>
-                        </tr>
-
-                        <!-- ===== تحسين الأداء (18) ===== -->
-                        <tr class="topic-row" data-target="fast-boot" data-search="boot startup speedup سرعة اقلاع">
-                            <td><span class="category-label category-performance">⚡ الأداء</span></td>
-                            <td>تسريع إقلاع الويندوز (Fast Boot)</td>
-                            <td class="muted">تفعيل Fast Startup وتقليل وقت التشغيل بشكل ملحوظ.</td>
-                            <td><span class="badge">Boot</span><span class="badge">Speed</span></td>
-                        </tr>
-                        <tr class="topic-row" data-target="ultimate-performance" data-search="ultimate performance power plan">
-                            <td><span class="category-label category-performance">⚡ الأداء</span></td>
-                            <td>تفعيل خطة الأداء القصوى (Ultimate)</td>
-                            <td class="muted">تفعيل الأداء الأقصى على حساب استهلاك الطاقة.</td>
-                            <td><span class="badge">Power</span><span class="badge">Max</span></td>
-                        </tr>
-                        <tr class="topic-row" data-target="fast-dns" data-search="dns cloudflare google fast">
-                            <td><span class="category-label category-performance">⚡ الأداء</span></td>
-                            <td>تعيين DNS سريع (Cloudflare/Google)</td>
-                            <td class="muted">استبدال DNS الافتراضي بـ Cloudflare أو Google لسرعة أفضل.</td>
-                            <td><span class="badge">DNS</span><span class="badge">Internet</span></td>
-                        </tr>
-                        <tr class="topic-row" data-target="disable-visual-effects" data-search="visual effects animations slow">
-                            <td><span class="category-label category-performance">⚡ الأداء</span></td>
-                            <td>تعطيل التأثيرات البصرية</td>
-                            <td class="muted">إيقاف الرسومات والظلال والتأثيرات المرئية.</td>
-                            <td><span class="badge">Graphics</span><span class="badge">Speed</span></td>
-                        </tr>
-                        <tr class="topic-row" data-target="disable-search" data-search="windows search disable indexing">
-                            <td><span class="category-label category-performance">⚡ الأداء</span></td>
-                            <td>تعطيل Windows Search</td>
-                            <td class="muted">إيقاف فهرسة الملفات المستمرة والبحث البطيء.</td>
-                            <td><span class="badge">Search</span><span class="badge">Indexing</span></td>
-                        </tr>
-                        <tr class="topic-row" data-target="disable-page-file" data-search="page file virtual memory">
-                            <td><span class="category-label category-performance">⚡ الأداء</span></td>
-                            <td>تعطيل صفحة الذاكرة الافتراضية (Page File)</td>
-                            <td class="muted">حرر مساحة قرصك بتعطيل ملف الذاكرة الافتراضية.</td>
-                            <td><span class="badge">Memory</span><span class="badge">Disk</span></td>
-                        </tr>
-                        <tr class="topic-row" data-target="ssd-optimization" data-search="ssd optimization trim solid state">
-                            <td><span class="category-label category-performance">⚡ الأداء</span></td>
-                            <td>تحسين أداء SSD</td>
-                            <td class="muted">تفعيل TRIM وتحسينات SSD للأقراص الصلبة.</td>
-                            <td><span class="badge">SSD</span><span class="badge">Speed</span></td>
-                        </tr>
-                        <tr class="topic-row" data-target="disable-animations" data-search="animations transitions smooth disable">
-                            <td><span class="category-label category-performance">⚡ الأداء</span></td>
-                            <td>تعطيل الحركات والانتقالات</td>
-                            <td class="muted">إيقاف حركات فتح النوافذ والقوائم.</td>
-                            <td><span class="badge">Animation</span><span class="badge">UI</span></td>
-                        </tr>
-                        <tr class="topic-row" data-target="disable-superfetch" data-search="superfetch sysmain prefetch">
-                            <td><span class="category-label category-performance">⚡ الأداء</span></td>
-                            <td>تعطيل SuperFetch (Sysmain)</td>
-                            <td class="muted">وقف الخدمة التي تستهلك الرام والمعالج.</td>
-                            <td><span class="badge">Memory</span><span class="badge">Service</span></td>
-                        </tr>
-                        <tr class="topic-row" data-target="fullscreen-optimization" data-search="fullscreen optimization games performance">
-                            <td><span class="category-label category-performance">⚡ الأداء</span></td>
-                            <td>تحسين الألعاب (Fullscreen Optimization)</td>
-                            <td class="muted">تحسين أداء الألعاب بتفعيل وضع الشاشة الكاملة.</td>
-                            <td><span class="badge">Games</span><span class="badge">Gaming</span></td>
-                        </tr>
-                        <tr class="topic-row" data-target="disable-ipv6" data-search="ipv6 disable internet protocol">
-                            <td><span class="category-label category-performance">⚡ الأداء</span></td>
-                            <td>تعطيل IPv6</td>
-                            <td class="muted">تعطيل بروتوكول IPv6 لتسريع الإنترنت.</td>
-                            <td><span class="badge">Network</span><span class="badge">Internet</span></td>
-                        </tr>
-                        <tr class="topic-row" data-target="disable-game-bar" data-search="game bar disable overlay">
-                            <td><span class="category-label category-performance">⚡ الأداء</span></td>
-                            <td>تعطيل Game Bar</td>
-                            <td class="muted">إيقاف شريط الألعاب الذي يستهلك الموارد.</td>
-                            <td><span class="badge">Gaming</span><span class="badge">Overlay</span></td>
-                        </tr>
-                        <tr class="topic-row" data-target="disable-transparency" data-search="transparency effect glass blur">
-                            <td><span class="category-label category-performance">⚡ الأداء</span></td>
-                            <td>تعطيل التأثيرات الشفافة والضبابية</td>
-                            <td class="muted">إيقاف تأثيرات Glass والضبابية في الواجهة.</td>
-                            <td><span class="badge">UI</span><span class="badge">Speed</span></td>
-                        </tr>
-                        <tr class="topic-row" data-target="network-optimization" data-search="network optimization bandwidth tcp">
-                            <td><span class="category-label category-performance">⚡ الأداء</span></td>
-                            <td>تحسين سرعة الشبكة</td>
-                            <td class="muted">تحسين معايير TCP وسرعة نقل البيانات.</td>
-                            <td><span class="badge">Network</span><span class="badge">Speed</span></td>
-                        </tr>
-                        <tr class="topic-row" data-target="disable-background-apps" data-search="background applications disable memory">
-                            <td><span class="category-label category-performance">⚡ الأداء</span></td>
-                            <td>تعطيل تطبيقات الخلفية</td>
-                            <td class="muted">إيقاف التطبيقات التي تعمل في الخلفية.</td>
-                            <td><span class="badge">Apps</span><span class="badge">Background</span></td>
-                        </tr>
-                        <tr class="topic-row" data-target="high-performance-processor" data-search="processor performance cpu governor">
-                            <td><span class="category-label category-performance">⚡ الأداء</span></td>
-                            <td>تفعيل وضع الأداء العالي للمعالج</td>
-                            <td class="muted">تشغيل المعالج بأقصى سرعة دائماً.</td>
-                            <td><span class="badge">CPU</span><span class="badge">Power</span></td>
-                        </tr>
-
-                        <!-- ===== تنظيف النظام (11) ===== -->
-                        <tr class="topic-row" data-target="clean-temp" data-search="temp files temporary cleanup">
-                            <td><span class="category-label category-cleanup">🧹 التنظيف</span></td>
-                            <td>حذف الملفات المؤقتة</td>
-                            <td class="muted">تنظيف مجلدات Temp والملفات المؤقتة.</td>
-                            <td><span class="badge">Cleanup</span><span class="badge">Temp</span></td>
-                        </tr>
-                        <tr class="topic-row" data-target="remove-bloatware" data-search="bloatware remove uninstall apps">
-                            <td><span class="category-label category-cleanup">🧹 التنظيف</span></td>
-                            <td>حذف Bloatware (برامج مايكروسوفت الزيادة)</td>
-                            <td class="muted">إزالة البرامج غير المستخدمة من مايكروسوفت.</td>
-                            <td><span class="badge">Apps</span><span class="badge">Remove</span></td>
-                        </tr>
-                        <tr class="topic-row" data-target="remove-edge" data-search="edge remove uninstall chromium">
-                            <td><span class="category-label category-cleanup">🧹 التنظيف</span></td>
-                            <td>حذف متصفح Edge</td>
-                            <td class="muted">إزالة متصفح Edge بشكل نهائي من الويندوز.</td>
-                            <td><span class="badge">Browser</span><span class="badge">Remove</span></td>
-                        </tr>
-                        <tr class="topic-row" data-target="remove-onenote" data-search="onenote remove uninstall delete">
-                            <td><span class="category-label category-cleanup">🧹 التنظيف</span></td>
-                            <td>حذف OneNote</td>
-                            <td class="muted">إزالة OneNote من الويندوز بالقوة.</td>
-                            <td><span class="badge">Apps</span><span class="badge">OneNote</span></td>
-                        </tr>
-                        <tr class="topic-row" data-target="remove-onedrive" data-search="onedrive remove uninstall cloud">
-                            <td><span class="category-label category-cleanup">🧹 التنظيف</span></td>
-                            <td>حذف OneDrive</td>
-                            <td class="muted">إزالة التخزين السحابي OneDrive من الويندوز.</td>
-                            <td><span class="badge">Cloud</span><span class="badge">Storage</span></td>
-                        </tr>
-                        <tr class="topic-row" data-target="clear-event-logs" data-search="event logs clear delete system">
-                            <td><span class="category-label category-cleanup">🧹 التنظيف</span></td>
-                            <td>مسح Event Logs (سجلات الأحداث)</td>
-                            <td class="muted">حذف سجلات الأحداث والنظام.</td>
-                            <td><span class="badge">Logs</span><span class="badge">System</span></td>
-                        </tr>
-                        <tr class="topic-row" data-target="clear-cache" data-search="cache browser cache system">
-                            <td><span class="category-label category-cleanup">🧹 التنظيف</span></td>
-                            <td>تنظيف Cache النظام</td>
-                            <td class="muted">حذف ملفات الـ Cache المتراكمة.</td>
-                            <td><span class="badge">Cache</span><span class="badge">Speed</span></td>
-                        </tr>
-                        <tr class="topic-row" data-target="storage-sense" data-search="storage sense automatic cleanup disk">
-                            <td><span class="category-label category-cleanup">🧹 التنظيف</span></td>
-                            <td>تفعيل Storage Sense (تنظيف تلقائي)</td>
-                            <td class="muted">تنظيف تلقائي للملفات المؤقتة والقديمة.</td>
-                            <td><span class="badge">Auto</span><span class="badge">Disk</span></td>
-                        </tr>
-                        <tr class="topic-row" data-target="disable-hibernation" data-search="hibernation hiberfil disable">
-                            <td><span class="category-label category-cleanup">🧹 التنظيف</span></td>
-                            <td>تعطيل Hibernation (السبات)</td>
-                            <td class="muted">حرر مساحة بتعطيل ملف hiberfil.sys.</td>
-                            <td><span class="badge">Sleep</span><span class="badge">Disk</span></td>
-                        </tr>
-                        <tr class="topic-row" data-target="disable-backup" data-search="backup windows restore point">
-                            <td><span class="category-label category-cleanup">🧹 التنظيف</span></td>
-                            <td>تعطيل Windows Backup</td>
-                            <td class="muted">إيقاف النسخ الاحتياطي التلقائية.</td>
-                            <td><span class="badge">Backup</span><span class="badge">Storage</span></td>
-                        </tr>
-                        <tr class="topic-row" data-target="disk-cleanup" data-search="disk cleanup utility windows">
-                            <td><span class="category-label category-cleanup">🧹 التنظيف</span></td>
-                            <td>استخدام Disk Cleanup للتنظيف العميق</td>
-                            <td class="muted">استخدام أداة تنظيف القرص الرسمية من مايكروسوفت.</td>
-                            <td><span class="badge">Cleanup</span><span class="badge">Tool</span></td>
-                        </tr>
-
-                        <!-- ===== إصلاح المشاكل (5) ===== -->
-                        <tr class="topic-row" data-target="network-reset" data-search="network reset connection internet">
-                            <td><span class="category-label category-fix">🔨 الإصلاح</span></td>
-                            <td>إعادة تعيين الشبكة (Network Reset)</td>
-                            <td class="muted">حل مشاكل الإنترنت بإعادة تعيين الشبكة.</td>
-                            <td><span class="badge">Network</span><span class="badge">Fix</span></td>
-                        </tr>
-                        <tr class="topic-row" data-target="alt-shift-fix" data-search="alt shift language switch fix">
-                            <td><span class="category-label category-fix">🔨 الإصلاح</span></td>
-                            <td>حل مشكلة Alt+Shift لتبديل اللغة</td>
-                            <td class="muted">إصلاح مشكلة تبديل اللغة بـ Alt+Shift.</td>
-                            <td><span class="badge">Language</span><span class="badge">Bug</span></td>
-                        </tr>
-                        <tr class="topic-row" data-target="auto-restart-fix" data-search="auto restart reboot loop fix">
-                            <td><span class="category-label category-fix">🔨 الإصلاح</span></td>
-                            <td>إيقاف إعادة التشغيل التلقائية</td>
-                            <td class="muted">منع الويندوز من إعادة التشغيل بعد الأخطاء.</td>
-                            <td><span class="badge">Reboot</span><span class="badge">Fix</span></td>
-                        </tr>
-                        <tr class="topic-row" data-target="store-fix" data-search="microsoft store fix error">
-                            <td><span class="category-label category-fix">🔨 الإصلاح</span></td>
-                            <td>إصلاح Microsoft Store</td>
-                            <td class="muted">حل مشاكل متجر مايكروسوفت والتطبيقات.</td>
-                            <td><span class="badge">Store</span><span class="badge">Apps</span></td>
-                        </tr>
-                        <tr class="topic-row" data-target="chkdsk-sfc" data-search="chkdsk sfc check disk system file">
-                            <td><span class="category-label category-fix">🔨 الإصلاح</span></td>
-                            <td>فحص القرص والملفات (CHKDSK + SFC)</td>
-                            <td class="muted">فحص واصلاح أخطاء القرص والملفات النظام.</td>
-                            <td><span class="badge">Repair</span><span class="badge">Disk</span></td>
-                        </tr>
+                        <tr class="topic-row" data-search="powershell admin context menu right click"><td><span class="category-label category-system">🔧 النظام</span></td><td><a href="./docs/add-powershell-to-context-menu.md" target="_blank">إضافة PowerShell Admin في قائمة الماوس</a></td><td class="muted">أضف PowerShell Admin بمجرد النقر الأيمن على المجلد أو سطح المكتب.</td><td><span class="badge">PowerShell</span><span class="badge">Menu</span></td></tr>
+                        <tr class="topic-row" data-search="windows privacy debloat telemetry"><td><span class="category-label category-privacy">🔒 الأمان</span></td><td><a href="./docs/windows-privacy-debloat.md" target="_blank">تعطيل Telemetry وتنظيف البيانات</a></td><td class="muted">منع مايكروسوفت من جمع بيانات الاستخدام والتطبيقات.</td><td><span class="badge">Privacy</span><span class="badge">Telemetry</span></td></tr>
+                        <tr class="topic-row" data-search="windows performance optimization boost speed"><td><span class="category-label category-performance">⚡ الأداء</span></td><td><a href="./docs/windows-performance-optimization.md" target="_blank">تحسين أداء النظام</a></td><td class="muted">تسريع الويندوز وتحسين الأداء بطرق مجربة.</td><td><span class="badge">Speed</span><span class="badge">Performance</span></td></tr>
+                        <tr class="topic-row" data-search="onenote remove uninstall force delete"><td><span class="category-label category-cleanup">🧹 التنظيف</span></td><td><a href="./docs/remove-microsoft-onenote.md" target="_blank">حذف Microsoft OneNote</a></td><td class="muted">إزالة OneNote من النظام بشكل نهائي.</td><td><span class="badge">Remove</span><span class="badge">Bloat</span></td></tr>
+                        <tr class="topic-row" data-search="onenote remove uninstall force"><td><span class="category-label category-cleanup">🧹 التنظيف</span></td><td><a href="./docs/force-remove-onenote.md" target="_blank">إزالة قسرية ل OneNote</a></td><td class="muted">طريقة أخرى قوية لحذف OneNote تماماً.</td><td><span class="badge">Force</span><span class="badge">Remove</span></td></tr>
+                        <tr class="topic-row" data-search="office bloat remove uninstall"><td><span class="category-label category-cleanup">🧹 التنظيف</span></td><td><a href="./docs/remove-office-bloat.md" target="_blank">حذف البرامج غير الضرورية من Office</a></td><td class="muted">إزالة الملحقات والبرامج غير المستخدمة.</td><td><span class="badge">Cleanup</span><span class="badge">Office</span></td></tr>
+                        <tr class="topic-row" data-search="context menu clean remove"><td><span class="category-label category-cleanup">🧹 التنظيف</span></td><td><a href="./docs/clean-context-menu.md" target="_blank">تنظيف قائمة الماوس الأيمن</a></td><td class="muted">إزالة العناصر غير المستخدمة من قائمة Context Menu.</td><td><span class="badge">Menu</span><span class="badge">Cleanup</span></td></tr>
+                        <tr class="topic-row" data-search="taskbar pc this computer pin"><td><span class="category-label category-system">🔧 النظام</span></td><td><a href="./docs/pin-this-pc-to-taskbar.md" target="_blank">تثبيت This PC على Taskbar</a></td><td class="muted">أضف This PC (My Computer) إلى شريط المهام.</td><td><span class="badge">Taskbar</span><span class="badge">PC</span></td></tr>
+                        <tr class="topic-row" data-search="powershell remove context menu"><td><span class="category-label category-cleanup">🧹 التنظيف</span></td><td><a href="./docs/remove-powershell-context-menu.md" target="_blank">إزالة PowerShell من قائمة الماوس</a></td><td class="muted">أزل PowerShell من قائمة Context Menu إذا كنت لا تحتاجه.</td><td><span class="badge">PowerShell</span><span class="badge">Menu</span></td></tr>
+                        <tr class="topic-row" data-search="language switch alt shift key"><td><span class="category-label category-fix">🔧 الإصلاح</span></td><td><a href="./docs/fix-alt-shift-language-switch.md" target="_blank">إصلاح تبديل اللغة Alt+Shift</a></td><td class="muted">حل مشكلة عدم عمل اختصار تبديل اللغة.</td><td><span class="badge">Language</span><span class="badge">Fix</span></td></tr>
+                        <tr class="topic-row" data-search="api documentation reference"><td><span class="category-label category-system">🔧 النظام</span></td><td><a href="./docs/API.md" target="_blank">توثيق API والمراجع</a></td><td class="muted">معلومات تقنية وتوثيق الـ API للمتقدمين.</td><td><span class="badge">API</span><span class="badge">Docs</span></td></tr>
                     </tbody>
                 </table>
             </div>
             <div id="resultsHint" class="muted" style="margin-top: 10px; text-align: center;"></div>
+        </div>
+
+        <div class="card">
+            <h2>📚 كل الموضوعات</h2>
+            <div class="muted">جميع 50+ موضوع متاح على <a href="./docs/" style="color: var(--accent); text-decoration: underline;" target="_blank">مجلد docs</a> على الموقع. اختر من الجدول أعلاه أو استعرض المجلد مباشرة.</div>
         </div>
 
         <div class="card">
@@ -649,7 +383,7 @@
         </div>
 
         <div class="card">
-            <h2>🔗 موارد مفيدة</h2>
+            <h2>🔗 مواد مفيدة</h2>
             <div class="muted">
                 <a href="https://github.com/sherow1982/windows-adjust" target="_blank">📌 الريبو على GitHub</a> |
                 <a href="https://docs.microsoft.com/en-us/windows/" target="_blank">📖 موثق Windows الرسمي</a> |
@@ -672,10 +406,6 @@
             x.classList.add("show");
             setTimeout(function(){ x.classList.remove("show"); }, 3000);
         }
-        function jumpTo(id) {
-            const el = document.getElementById(id);
-            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
         const searchInput = document.getElementById('search');
         const rows = Array.from(document.querySelectorAll('.topic-row'));
         const hint = document.getElementById('resultsHint');
@@ -696,7 +426,7 @@
             } else if (q) {
                 hint.textContent = `✅ نتائج البحث: ${visible} من ${rows.length} توبيك`;
             } else {
-                hint.textContent = `📊 إجمالي: ${rows.length} توبيك`;
+                hint.textContent = `📊 إجمالي: ${rows.length} موضوع متاح`;
             }
         }
         
