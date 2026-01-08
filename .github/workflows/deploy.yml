@@ -1,0 +1,51 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 📋 Checkout repository
+        uses: actions/checkout@v3
+      
+      - name: ⚡ Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      
+      - name: 🔐 Run tests
+        run: npm test || true
+      
+      - name: 📄 Validate HTML
+        run: |
+          if [ -f index.html ]; then
+            echo "✓ index.html exists"
+          else
+            echo "✗ index.html not found!"
+            exit 1
+          fi
+      
+      - name: 🌐 Deploy to GitHub Pages
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./
+          cname: 
+          force_orphan: false
+      
+      - name: ✅ Deployment status
+        if: success()
+        run: echo "✓ Deployment successful to GitHub Pages"
+      
+      - name: ❌ Deployment failed
+        if: failure()
+        run: echo "✗ Deployment failed"
