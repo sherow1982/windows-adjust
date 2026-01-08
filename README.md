@@ -1,14 +1,25 @@
 # ⚡ Windows Adjust Reference
 
-> **مرجعك الشامل لتظبيط وإصلاح وتسريع الويندوز - 50 توبيك كامل 100% مفتوح المصدر**
+> **مرجعك الشامل لتظبيط وإصلاح وتسريع الويندوز - 50+ توبيك احترافي 100% مفتوح المصدر**
 
-![Status](https://img.shields.io/badge/Status-Active-brightgreen) ![License](https://img.shields.io/badge/License-MIT-blue) ![Topics](https://img.shields.io/badge/Topics-50+-orange) ![Last Update](https://img.shields.io/badge/Last%20Update-2025-green)
+<div align="center">
+
+[![Status](https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge)](https://github.com/sherow1982/windows-adjust)
+[![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
+[![Topics](https://img.shields.io/badge/Topics-50%2B-orange?style=for-the-badge)]()
+[![Last Update](https://img.shields.io/badge/Last%20Update-Jan%202025-green?style=for-the-badge)]()
+
+[🌐 الموقع المباشر](#-الموقع-المباشر) • [📚 الفئات](#-الفئات-الرئيسية) • [🚀 الاستخدام](#-طريقة-الاستخدام) • [⚠️ التحذيرات](#-تحذيرات-مهمة) • [🤝 المساهمة](#-المساهمة)
+
+</div>
 
 ---
 
 ## 🌐 الموقع المباشر
 
-### 📱 اضغط هنا للدخول: **[Windows Adjust Reference](https://sherow1982.github.io/windows-adjust/)**
+### 🔗 اضغط هنا للدخول:
+
+# ⭐ **[Windows Adjust Reference](https://sherow1982.github.io/windows-adjust/)**
 
 ---
 
@@ -21,15 +32,17 @@
 | **نوع الترخيص** | MIT (مجاني 100%) |
 | **اللغة** | العربية 🇸🇦 |
 | **الحالة** | نشط وقيد التطوير ✅ |
+| **Version** | 2.0.0 |
 
 ---
 
-## 📋 التصنيفات الرئيسية
+## 📋 الفئات الرئيسية
 
 ### 🔧 تظبيط النظام (12 توبيك)
-تعديلات أساسية لإعدادات الويندوز والنظام.
 
-- **PowerShell Context Menu** - إضافة PowerShell Admin في قائمة الماوس اليمين
+تعديلات أساسية وحساسة لإعدادات الويندوز والنظام:
+
+- **PowerShell Context Menu** - إضافة PowerShell Admin في قائمة الماوس
 - **تعطيل Windows Update** - التحكم الكامل بالتحديثات
 - **God Mode** - وضع الإله للوصول لكل الإعدادات
 - **تعطيل UAC** - إلغاء رسائل التأكيد المزعجة
@@ -37,37 +50,45 @@
 - **Remote Desktop (RDP)** - الوصول عن بُعد للجهاز
 - **تعطيل Password Login** - الدخول بدون كلمة سر
 - **Long File Paths** - السماح بمسارات أطول من 260 حرف
-- وأكثر...
+- **إظهار الملفات المخفية** - عرض جميع الملفات والامتدادات
+- **وضع التوافق للبرامج القديمة** - تشغيل البرامج القديمة
+- **تعطيل Cortana** - إيقاف مساعد مايكروسوفت
+- **Windows Sandbox** - بيئة اختبار معزولة
 
 ### 🔒 الخصوصية والأمان (4 توبيك)
-حماية بيانات المستخدم والخصوصية.
 
-- **تعطيل Windows Defender** - إيقاف برنامج الحماية
-- **تعطيل Telemetry** - إيقاف جمع البيانات
-- **تعطيل Location Tracking** - إيقاف تتبع الموقع
+حماية بيانات المستخدم والخصوصية من المراقبة:
+
+- **تعطيل Windows Defender** - إيقاف برنامج الحماية المدمج
+- **تعطيل Telemetry** - إيقاف جمع البيانات من مايكروسوفت
+- **تعطيل Location Tracking** - إيقاف تتبع الموقع الجغرافي
 - **تعطيل الإشعارات** - إيقاف الإشعارات المزعجة
 
 ### ⚡ تحسين الأداء (18 توبيك)
-تسريع الويندوز والنظام بشكل ملحوظ.
 
-- **تسريع Boot** - إقلاع أسرع
+تسريع الويندوز والنظام بشكل ملحوظ وفعال:
+
+- **تسريع Boot** - إقلاع أسرع من العادي
 - **Ultimate Performance** - خطة الطاقة القصوى
 - **DNS سريع** - تحويل لـ Cloudflare/Google DNS
 - **تعطيل Visual Effects** - إيقاف التأثيرات البصرية
-- **تعطيل Windows Search** - إيقاف الفهرسة
-- **تعطيل Page File** - توفير المساحة
+- **تعطيل Windows Search** - إيقاف فهرسة الملفات
+- **تعطيل Page File** - توفير المساحة على القرص
 - **SSD Optimization** - تحسين أداء SSD
 - **تعطيل Animations** - إيقاف حركات النوافذ
 - **تعطيل SuperFetch** - توفير الـ RAM
 - **Fullscreen Optimization** - تحسين أداء الألعاب
 - **تعطيل IPv6** - تسريع الإنترنت
-- **تعطيل Game Bar** - توفير الموارد
+- **تعطيل Game Bar** - توفير موارد النظام
 - **تعطيل Transparency** - تسريع الواجهة
 - **Network Optimization** - تحسين سرعة الشبكة
-- وأكثر...
+- **تعطيل تطبيقات الخلفية** - إيقاف التطبيقات العاملة
+- **وضع الأداء العالي للمعالج** - تشغيل المعالج بسرعة قصوى
+- **وأكثر...**
 
 ### 🧹 تنظيف النظام (11 توبيك)
-حذف الملفات الزيادة وتوفير المساحة.
+
+حذف الملفات الزيادة وتوفير المساحة وتسريع النظام:
 
 - **تنظيف Temp Files** - حذف الملفات المؤقتة
 - **إزالة Bloatware** - حذف برامج مايكروسوفت الزيادة
@@ -79,28 +100,37 @@
 - **Storage Sense** - تنظيف تلقائي
 - **تعطيل Hibernation** - توفير مساحة hiberfil.sys
 - **تعطيل Windows Backup** - إيقاف النسخ الاحتياطي
-- وأكثر...
+- **Disk Cleanup** - الأداة الرسمية للتنظيف العميق
 
 ### 🔨 إصلاح المشاكل (5 توبيك)
-حل المشاكل الشائعة والأخطاء.
+
+حل المشاكل الشائعة والأخطاء في الويندوز:
 
 - **Network Reset** - إعادة تعيين الشبكة
 - **Alt+Shift Fix** - حل مشكلة تبديل اللغة
 - **Auto Restart Fix** - إيقاف إعادة التشغيل التلقائية
 - **Microsoft Store Fix** - إصلاح متجر مايكروسوفت
-- وأكثر...
+- **CHKDSK + SFC** - فحص واصلاح الملفات والقرص
 
 ---
 
 ## 🎨 المميزات
 
-✨ **تصميم عصري** - Gradient Cards بتصميم احترافي
-🔍 **بحث حي** - البحث الفوري في كل التوبيكات
-📋 **نسخ بكلك واحد** - انسخ الأوامر مباشرة من الموقع
-🎯 **تصنيفات ملونة** - تمييز واضح لكل تصنيف
-💫 **Animations سلسة** - حركات احترافية
-🌙 **Dark Theme** - واجهة داكنة جميلة
-📱 **Responsive** - يعمل على الهاتف والكمبيوتر
+✨ **تصميم عصري احترافي** - Gradient Cards بتصميم جميل وحديث
+
+🔍 **بحث حي فوري** - البحث الفوري والسريع في جميع التوبيكات
+
+📋 **نسخ بكلك واحد** - انسخ الأوامر مباشرة من الموقع (قريباً)
+
+🎯 **تصنيفات ملونة** - تمييز واضح وجميل لكل تصنيف
+
+💫 **Animations احترافية** - حركات سلسة وناعمة
+
+🌙 **Dark Theme** - واجهة داكنة مريحة للعين
+
+📱 **Responsive Design** - يعمل بشكل مثالي على كل الأجهزة
+
+⚡ **أداء عالي** - تحميل سريع وانتقالات سلسة
 
 ---
 
@@ -112,13 +142,13 @@ https://sherow1982.github.io/windows-adjust/
 ```
 
 ### 2️⃣ ابحث عن الخدمة
-استخدم البحث السريع للبحث عن أي توبيك
+استخدم البحث السريع للبحث عن أي توبيك بكلمات مفتاحية
 
 ### 3️⃣ اضغط "فتح"
-اضغط على زر "فتح" لعرض الأوامر
+اضغط على زر "فتح" لعرض الأوامر الكاملة
 
 ### 4️⃣ انسخ الكود
-اضغط على كود لنسخه تلقائياً
+اضغط على كود لنسخه تلقائياً للحافظة (قريباً)
 
 ### 5️⃣ نفذ الأمر
 افتح CMD/PowerShell كـ Admin والصق الأمر
@@ -130,37 +160,42 @@ https://sherow1982.github.io/windows-adjust/
 
 ## ⚠️ تحذيرات مهمة
 
-> **اقرأ التحذيرات قبل تنفيذ أي أمر**
-
 ### ✅ افعل:
 - ✔️ اعمل **نقطة استعادة (System Restore)** قبل أي تعديل كبير
 - ✔️ استخدم **Admin Account** أو **Run as Administrator**
 - ✔️ اقرأ **وصف كل أمر** بعناية قبل التنفيذ
 - ✔️ جرب على **جهاز اختبار** أولاً (اختياري)
+- ✔️ اعمل **نسخة احتياطية من Registry**
+- ✔️ اختبر كل تغيير بعد التنفيذ
 
 ### ❌ لا تفعل:
 - ❌ لا تنسخ أوامر **بدون فهمها**
 - ❌ لا تعدّل **Registry** بدون احتياط
 - ❌ لا تطبق **جميع** الأوامر في وقت واحد
 - ❌ لا تحذف **ملفات النظام** الحساسة
+- ❌ لا تستخدم على **نسخة اختبار من Windows** غير مهمة
+- ❌ لا تتجاهل **رسائل تحذير النظام**
 
-### 📝 ملاحظات:
+### 📝 ملاحظات مهمة:
 - معظم الأوامر تحتاج **صلاحيات Administrator**
 - بعض التغييرات تحتاج **إعادة تشغيل**
 - اختبر بعد كل تغيير قبل الانتقال للتالي
-- الأوامر مخصصة لـ **Windows 10/11**
+- الأوامر مخصصة لـ **Windows 10/11 الحديثة**
+- بعض الأوامر قد لا تعمل على إصدارات أقدم
 
 ---
 
 ## 💡 الأوامر الموصى بها للمبتدئين
 
-إذا كنت جديداً، ابدأ بهذه الأوامر الآمنة:
+إذا كنت جديداً في هذا، ابدأ بهذه الأوامر الآمنة جداً:
 
 1. ✅ **PowerShell Admin Context Menu** - آمن جداً
 2. ✅ **God Mode** - يفتح الإعدادات فقط
 3. ✅ **DNS السريع** - تحسين الإنترنت
 4. ✅ **Storage Sense** - تنظيف تلقائي
 5. ✅ **Show Hidden Files** - إظهار الملفات المخفية
+6. ✅ **Fast Boot** - تسريع الإقلاع
+7. ✅ **Network Reset** - حل مشاكل الإنترنت
 
 ---
 
@@ -168,80 +203,82 @@ https://sherow1982.github.io/windows-adjust/
 
 ### Windows Defender
 - الأوامر تحتوي على خيارات لتعطيل/تفعيل Defender
-- استخدم Defender **أو** برنامج حماية خارجي **دائماً**
+- استخدم Defender **أو** برنامج حماية خارجي موثوق **دائماً**
+- لا تترك جهازك بدون حماية
 
 ### Windows Firewall
 - لا تعطل الـ Firewall بدون استخدام firewall خارجي
-- استخدم برنامج حماية موثوق
+- استخدم برنامج حماية موثوق من جهات معروفة
+- تأكد من وجود حماية دائمة
 
 ### Registry Backup
-- **أنشئ نسخة احتياطية من Registry قبل التعديل**
+- **أنشئ نسخة احتياطية من Registry قبل التعديل:**
 ```powershell
 # في PowerShell Admin:
 reg export HKEY_LOCAL_MACHINE C:\RegBackup.reg
+reg export HKEY_CURRENT_USER C:\UserRegBackup.reg
+```
+
+### نقطة الاستعادة
+```powershell
+# إنشاء نقطة استعادة (نقر يمين > System Protection > Create)
+# أو باستخدام PowerShell:
+Checkpoint-Computer -Description "قبل تعديلات Windows Adjust" -RestorePointType "MODIFY_SETTINGS"
 ```
 
 ---
 
 ## 📚 المراجع والموارد
 
-- 📖 [Windows 10/11 Official Docs](https://docs.microsoft.com/en-us/windows/)
-- 🛠️ [Windows Registry Tips](https://www.tenforums.com/)
-- 💻 [PowerShell Documentation](https://docs.microsoft.com/en-us/powershell/)
+- 📖 [Windows 10/11 Official Documentation](https://docs.microsoft.com/en-us/windows/)
+- 🛠️ [Windows Registry Tips - Windows Secrets](https://www.tenforums.com/)
+- 💻 [PowerShell Official Docs](https://docs.microsoft.com/en-us/powershell/)
+- 🔧 [Windows Command Line Help](https://ss64.com/nt/)
 
 ---
 
 ## 🤝 المساهمة
 
 ### أريد أن أساهم؟
-الـ Pull Requests مرحب بها! 
+
+الـ Pull Requests مرحب بها جداً! 🎉
 
 **خطوات المساهمة:**
+
 1. Fork الريبو
 2. أضف توبيك جديد أو حسّن قائم
-3. افتح Pull Request
+3. افتح Pull Request مع وصف واضح
 4. سيتم مراجعته والموافقة عليه
 
 **مثال على إضافة توبيك:**
+
 ```html
-<tr class="topic-row" data-target="my-topic" data-search="keyword1 keyword2">
-    <td>التصنيف</td>
-    <td>اسم الخدمة</td>
-    <td class="muted">وصف سريع</td>
-    <td><span class="badge">TAG</span></td>
-    <td><button class="btn" onclick="jumpTo('my-topic')">فتح</button></td>
+<tr class="topic-row" data-target="my-topic" data-search="keyword1 keyword2 arabic">
+    <td><span class="category-label category-system">🔧 النظام</span></td>
+    <td>اسم الموضوع</td>
+    <td class="muted">وصف سريع وواضح</td>
+    <td><span class="badge">TAG1</span><span class="badge">TAG2</span></td>
 </tr>
-```
-
----
-
-## 📊 الإحصائيات والنمو
-
-```
-الفترة الزمنية    | النمو
-================|========
-Q1 2025         | +15 توبيك
-Q2 2025         | مخطط
-Q3 2025         | مخطط
 ```
 
 ---
 
 ## ❤️ شكر وتقدير
 
-شكراً لك على استخدام **Windows Adjust Reference**!
+شكراً لك على استخدام **Windows Adjust Reference**! 🙏
 
 ### ⭐ ادعمنا:
 - ⭐ **Star** الريبو إذا أعجبك 🌟
-- 🔗 **شارك** مع أصدقاؤك
+- 🔗 **شارك** مع أصدقاؤك وزملاؤك
 - 💬 **أخبرنا** بملاحظاتك والمشاكل
-- 🆙 **ساهم** بتوبيكات جديدة
+- 🆙 **ساهم** بتوبيكات جديدة ومحسنة
+- 🐛 **أبلغ** عن الأخطاء والمشاكل
 
 ---
 
 ## 📄 الترخيص والشروط
 
-**MIT License** - أنت حر في الاستخدام والتعديل والتوزيع
+**MIT License** - أنت حر في الاستخدام والتعديل والتوزيع ✅
 
 ### الشروط:
 - ✔️ استخدام حر 100%
@@ -253,45 +290,53 @@ Q3 2025         | مخطط
 
 ## 📞 التواصل والدعم
 
-- 🐛 **وجدت خطأ؟** افتح Issue
-- 💡 **فكرة جديدة؟** اقترح Feature
-- 🤔 **عندك سؤال؟** ناقش في Discussions
+- 🐛 **وجدت خطأ؟** [افتح Issue](https://github.com/sherow1982/windows-adjust/issues)
+- 💡 **فكرة جديدة؟** [اقترح Feature](https://github.com/sherow1982/windows-adjust/issues)
+- 🤔 **عندك سؤال؟** [ناقش في Discussions](https://github.com/sherow1982/windows-adjust/discussions)
 
 ---
 
 ## 🎯 خريطة الطريق (Roadmap)
 
-- [ ] إضافة 20 توبيك جديد
+- [x] إنشاء الموقع الأساسي
+- [x] إضافة 50+ توبيك
+- [ ] إضافة أوامر PowerShell فعلية
 - [ ] نسخة بالإنجليزية
-- [ ] تطبيق موبايل
+- [ ] تطبيق Windows
 - [ ] فيديوهات تعليمية
 - [ ] منتدى المجتمع
+- [ ] موارد إضافية
 
 ---
 
-## 📈 الإحصائيات الحالية
+## 📈 الإحصائيات والمقاييس
 
 ```
-⭐ Stars:     X
-🍴 Forks:     X
-👀 Watchers:  X
-📊 Views:     X/month
-🎯 Topics:    50+
+📊 GitHub Stats:
+⭐ Stars:     شارك النجمة 🌟
+🍴 Forks:     انسخ المشروع 📋
+👀 Watchers:  تابع التحديثات 👀
+🎯 Topics:    50+ موضوع
 🌍 Languages: العربية + قريباً الإنجليزية
+📅 Updated:   2025-01-08
 ```
 
 ---
 
 <div align="center">
 
-### 🚀 اجعل جهازك أسرع الآن!
+## 🚀 اجعل جهازك أسرع وأأماناً الآن!
 
-#### [افتح الموقع الآن →](https://sherow1982.github.io/windows-adjust/)
-
-**Made with ❤️ for Windows Lovers**
+### [🔗 افتح الموقع الآن →](https://sherow1982.github.io/windows-adjust/)
 
 ---
 
+**تم إنشاؤه بـ ❤️ لعشاق الويندوز والتخصيص**
+
 **آخر تحديث:** 2025-01-08 | **الإصدار:** v2.0.0
+
+---
+
+[⬆ العودة للأعلى](#-windows-adjust-reference)
 
 </div>
