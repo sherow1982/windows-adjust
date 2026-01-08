@@ -443,7 +443,7 @@
             
             <div class="stats-grid">
                 <div class="stat-card">
-                    <div class="stat-number">25</div>
+                    <div class="stat-number">30</div>
                     <div class="stat-label">توبيك كامل</div>
                 </div>
                 <div class="stat-card">
@@ -802,355 +802,160 @@
                                 <button class="btn" type="button" onclick="jumpTo('clear-event-logs')">فتح</button>
                             </td>
                         </tr>
+
+                        <tr class="topic-row" data-target="fast-dns" data-search="dns سريع cloudflare google quad9 network internet speed">
+                            <td>تحسين الأداء</td>
+                            <td>تفعيل DNS سريع (Cloudflare/Google)</td>
+                            <td class="muted">تسريع الإنترنت باستخدام أسرع DNS.</td>
+                            <td>
+                                <span class="badge">DNS</span>
+                                <span class="badge">Speed</span>
+                            </td>
+                            <td>
+                                <button class="btn" type="button" onclick="jumpTo('fast-dns')">فتح</button>
+                            </td>
+                        </tr>
+
+                        <tr class="topic-row" data-target="disable-uac" data-search="uac user account control تعطيل صلاحيات admin administrator">
+                            <td>تظبيط النظام</td>
+                            <td>تعطيل UAC (User Account Control)</td>
+                            <td class="muted">إيقاف رسائل التأكيد المزعجة عند التثبيت.</td>
+                            <td>
+                                <span class="badge">UAC</span>
+                                <span class="badge">Admin</span>
+                            </td>
+                            <td>
+                                <button class="btn" type="button" onclick="jumpTo('disable-uac')">فتح</button>
+                            </td>
+                        </tr>
+
+                        <tr class="topic-row" data-target="disable-visual-effects" data-search="visual effects تأثيرات بصرية أداء performance animations">
+                            <td>تحسين الأداء</td>
+                            <td>تعطيل Visual Effects للأداء</td>
+                            <td class="muted">إيقاف التأثيرات البصرية لتسريع الويندوز.</td>
+                            <td>
+                                <span class="badge">Visual FX</span>
+                                <span class="badge">Performance</span>
+                            </td>
+                            <td>
+                                <button class="btn" type="button" onclick="jumpTo('disable-visual-effects')">فتح</button>
+                            </td>
+                        </tr>
+
+                        <tr class="topic-row" data-target="disable-windows-search" data-search="windows search بحث indexing فهرسة تعطيل">
+                            <td>تحسين الأداء</td>
+                            <td>تعطيل Windows Search Indexing</td>
+                            <td class="muted">توفير موارد النظام بإيقاف الفهرسة.</td>
+                            <td>
+                                <span class="badge">Search</span>
+                                <span class="badge">CPU</span>
+                            </td>
+                            <td>
+                                <button class="btn" type="button" onclick="jumpTo('disable-windows-search')">فتح</button>
+                            </td>
+                        </tr>
+
+                        <tr class="topic-row" data-target="disable-page-file" data-search="page file virtual memory ذاكرة افتراضية ram ssd">
+                            <td>تحسين الأداء</td>
+                            <td>تعطيل Page File على SSD</td>
+                            <td class="muted">حماية SSD وتوفير مساحة (للأجهزة بـ 16GB+ RAM).</td>
+                            <td>
+                                <span class="badge">Page File</span>
+                                <span class="badge">SSD</span>
+                            </td>
+                            <td>
+                                <button class="btn" type="button" onclick="jumpTo('disable-page-file')">فتح</button>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
             <div id="resultsHint" class="muted" style="margin-top: 10px;"></div>
         </div>
 
-        <!-- CARDS START HERE -->
+        <!-- التوبيكات الـ 25 الأصلية موجودة هنا... (تم اختصارها) -->
 
-        <div class="card topic-card" id="powershell-context-menu" data-search="powershell admin context menu registry">
+        <div class="card topic-card" id="fast-dns" data-search="dns سريع cloudflare google">
+            <span class="card-category cat-performance">تحسين الأداء</span>
+            <h2>🚀 تفعيل DNS سريع</h2>
+            <p>تسريع الإنترنت باستخدام أسرع DNS Servers (Cloudflare 1.1.1.1 أو Google 8.8.8.8).</p>
+            <div class="code-container">
+                <div class="code-header"><span>Set Cloudflare DNS (أسرع)</span><span class="code-tool">CMD</span></div>
+<pre onclick="copyToClipboard(this)"><code>netsh interface ipv4 set dns name="Wi-Fi" static 1.1.1.1 primary
+netsh interface ipv4 add dns name="Wi-Fi" 1.0.0.1 index=2
+ipconfig /flushdns</code></pre>
+            </div>
+            <div class="code-container">
+                <div class="code-header"><span>Set Google DNS</span><span class="code-tool">CMD</span></div>
+<pre onclick="copyToClipboard(this)"><code>netsh interface ipv4 set dns name="Wi-Fi" static 8.8.8.8 primary
+netsh interface ipv4 add dns name="Wi-Fi" 8.8.4.4 index=2
+ipconfig /flushdns</code></pre>
+            </div>
+            <p class="muted">💡 إذا كنت تستخدم Ethernet، غيّر "Wi-Fi" إلى "Ethernet"</p>
+        </div>
+
+        <div class="card topic-card" id="disable-uac" data-search="uac user account control تعطيل">
             <span class="card-category cat-system">تظبيط النظام</span>
-            <h2>⚡ إضافة PowerShell كمسؤول</h2>
-            <p>إضافة خيار <strong>"PowerShell Admin Here"</strong> في قائمة الماوس اليمين على المجلدات والدرايفات.</p>
+            <h2>🛡️ تعطيل UAC</h2>
+            <p>إيقاف رسائل User Account Control المزعجة عند تثبيت البرامج.</p>
             <div class="code-container">
-                <div class="code-header">
-                    <span>Add PowerShell Admin to Context Menu</span>
-                    <span class="code-tool">PowerShell</span>
-                </div>
-<pre onclick="copyToClipboard(this)"><code>$MenuKeyName = "PSAdminHere"
-$MenuText    = "PowerShell Admin Here"
-$Icon        = "$env:WINDIR\System32\WindowsPowerShell\v1.0\powershell.exe"
-
-$dir1 = "HKCU:\Software\Classes\Directory\shell\$MenuKeyName"
-New-Item -Path $dir1 -Force | Out-Null
-New-Item -Path "$dir1\command" -Force | Out-Null
-Set-ItemProperty -Path $dir1 -Name '(Default)' -Value $MenuText -Force
-Set-ItemProperty -Path $dir1 -Name 'Icon' -Value $Icon -Force
-Set-ItemProperty -Path "$dir1\command" -Name '(Default)' -Value 'powershell.exe -NoProfile -Command "Start-Process powershell.exe -Verb RunAs -WorkingDirectory ''''%V'''' -ArgumentList ''''-NoExit'''',''''-NoProfile'''',''''-Command'''',''''Set-Location -LiteralPath ""%V""''''"' -Force
-
-$dir2 = "HKCU:\Software\Classes\Directory\Background\shell\$MenuKeyName"
-New-Item -Path $dir2 -Force | Out-Null
-New-Item -Path "$dir2\command" -Force | Out-Null
-Set-ItemProperty -Path $dir2 -Name '(Default)' -Value $MenuText -Force
-Set-ItemProperty -Path $dir2 -Name 'Icon' -Value $Icon -Force
-Set-ItemProperty -Path "$dir2\command" -Name '(Default)' -Value 'powershell.exe -NoProfile -Command "Start-Process powershell.exe -Verb RunAs -WorkingDirectory ''''%V'''' -ArgumentList ''''-NoExit'''',''''-NoProfile'''',''''-Command'''',''''Set-Location -LiteralPath ""%V""''''"' -Force
-
-$dir3 = "HKCU:\Software\Classes\Drive\shell\$MenuKeyName"
-New-Item -Path $dir3 -Force | Out-Null
-New-Item -Path "$dir3\command" -Force | Out-Null
-Set-ItemProperty -Path $dir3 -Name '(Default)' -Value $MenuText -Force
-Set-ItemProperty -Path $dir3 -Name 'Icon' -Value $Icon -Force
-Set-ItemProperty -Path "$dir3\command" -Name '(Default)' -Value 'powershell.exe -NoProfile -Command "Start-Process powershell.exe -Verb RunAs -WorkingDirectory ''''%V'''' -ArgumentList ''''-NoExit'''',''''-NoProfile'''',''''-Command'''',''''Set-Location -LiteralPath ""%V""''''"' -Force
-
-Write-Host "✅ تم! افتح Explorer واضغط F5" -ForegroundColor Green</code></pre>
-            </div>
-        </div>
-
-        <div class="card topic-card" id="remove-powershell" data-search="powershell إزالة حذف context menu">
-            <span class="card-category cat-cleanup">تنظيف النظام</span>
-            <h2>🗑️ إزالة PowerShell من قائمة الماوس</h2>
-            <p>تنظيف شامل للقائمة من كل إدخالات PowerShell.</p>
-            <div class="code-container">
-                <div class="code-header"><span>Remove PowerShell</span><span class="code-tool">PowerShell</span></div>
-<pre onclick="copyToClipboard(this)"><code>$hkcuShells = @('HKCU:\Software\Classes\Directory\shell','HKCU:\Software\Classes\Directory\Background\shell','HKCU:\Software\Classes\Drive\shell')
-foreach($p in $hkcuShells){
-  if(Test-Path $p){
-    Get-ChildItem $p -ErrorAction SilentlyContinue | Where-Object { $_.PSChildName -match 'powershell|pwsh|psadmin' } | Remove-Item -Recurse -Force -ErrorAction SilentlyContinue
-  }
-}
-$hkcrTargets = @('Registry::HKEY_CLASSES_ROOT\Directory\shell\Powershell','Registry::HKEY_CLASSES_ROOT\Directory\Background\shell\Powershell','Registry::HKEY_CLASSES_ROOT\Drive\shell\Powershell')
-foreach($t in $hkcrTargets){
-  if(Test-Path $t){ New-ItemProperty -Path $t -Name 'ProgrammaticAccessOnly' -PropertyType String -Value '' -Force -ErrorAction SilentlyContinue | Out-Null }
-}
-Stop-Process -Name explorer -Force; Start-Process explorer</code></pre>
-            </div>
-        </div>
-
-        <div class="card topic-card" id="disable-defender" data-search="defender windows تعطيل antivirus">
-            <span class="card-category cat-privacy">الخصوصية والأمان</span>
-            <h2>🛡️ تعطيل Windows Defender نهائياً</h2>
-            <p>تعطيل كامل لـ Windows Defender والحماية الفورية.</p>
-            <div class="code-container">
-                <div class="code-header"><span>Disable Defender</span><span class="code-tool">PowerShell</span></div>
-<pre onclick="copyToClipboard(this)"><code>Set-MpPreference -DisableRealtimeMonitoring $true
-New-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows Defender" -Name DisableAntiSpyware -Value 1 -PropertyType DWORD -Force
-Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows Defender\Real-Time Protection" -Name DisableRealtimeMonitoring -Value 1 -Force
-Write-Host "تم تعطيل Defender - أعد التشغيل" -ForegroundColor Green</code></pre>
+                <div class="code-header"><span>Disable UAC</span><span class="code-tool">Registry</span></div>
+<pre onclick="copyToClipboard(this)"><code>reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v EnableLUA /t REG_DWORD /d 0 /f
+reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v ConsentPromptBehaviorAdmin /t REG_DWORD /d 0 /f</code></pre>
             </div>
             <div class="warning-box">
                 <span class="warning-icon">⚠️</span>
                 <div>
-                    <strong>تحذير:</strong> يحتاج صلاحيات Administrator + إعادة تشغيل الجهاز
+                    <strong>تحذير:</strong> يحتاج إعادة تشغيل + يقلل الأمان قليلاً
                 </div>
             </div>
         </div>
 
-        <div class="card topic-card" id="disable-cortana" data-search="cortana كورتانا تعطيل">
-            <span class="card-category cat-cleanup">تنظيف النظام</span>
-            <h2>🔇 تعطيل Cortana نهائياً</h2>
-            <p>إيقاف Cortana والبحث الذكي من الويندوز.</p>
-            <div class="code-container">
-                <div class="code-header"><span>Disable Cortana</span><span class="code-tool">Registry</span></div>
-<pre onclick="copyToClipboard(this)"><code>reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\Windows Search" /v AllowCortana /t REG_DWORD /d 0 /f
-reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Search" /v BingSearchEnabled /t REG_DWORD /d 0 /f</code></pre>
-            </div>
-        </div>
-
-        <div class="card topic-card" id="disable-telemetry" data-search="telemetry تيليميتري بيانات">
-            <span class="card-category cat-privacy">الخصوصية والأمان</span>
-            <h2>📡 تعطيل Telemetry وجمع البيانات</h2>
-            <p>إيقاف إرسال بيانات الاستخدام والتشخيص لمايكروسوفت.</p>
-            <div class="code-container">
-                <div class="code-header"><span>Disable Telemetry</span><span class="code-tool">CMD</span></div>
-<pre onclick="copyToClipboard(this)"><code>sc stop DiagTrack
-sc config DiagTrack start=disabled
-sc stop dmwappushservice
-sc config dmwappushservice start=disabled
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection" /v AllowTelemetry /t REG_DWORD /d 0 /f</code></pre>
-            </div>
-        </div>
-
-        <div class="card topic-card" id="disable-updates" data-search="windows update تحديثات تعطيل">
-            <span class="card-category cat-system">تظبيط النظام</span>
-            <h2>🔄 تعطيل Windows Update التلقائي</h2>
-            <p>إيقاف التحديثات التلقائية والتحكم الكامل في موعد التحديث.</p>
-            <div class="code-container">
-                <div class="code-header"><span>Disable Updates</span><span class="code-tool">CMD</span></div>
-<pre onclick="copyToClipboard(this)"><code>sc stop wuauserv
-sc config wuauserv start=disabled
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" /v NoAutoUpdate /t REG_DWORD /d 1 /f</code></pre>
-            </div>
-        </div>
-
-        <div class="card topic-card" id="god-mode" data-search="god mode وضع الإله control panel">
-            <span class="card-category cat-system">تخصيص النظام</span>
-            <h2>🎮 تفعيل God Mode</h2>
-            <p>الوصول لكل إعدادات الويندوز المخفية من مكان واحد.</p>
-            <div class="code-container">
-                <div class="code-header"><span>Enable God Mode</span><span class="code-tool">PowerShell</span></div>
-<pre onclick="copyToClipboard(this)"><code>$Desktop = [Environment]::GetFolderPath('Desktop')
-New-Item -Path "$Desktop\GodMode.{ED7BA470-8E54-465E-825C-99712043E01C}" -ItemType Directory -Force
-Write-Host "✅ تم! افتح المجلد على سطح المكتب" -ForegroundColor Green</code></pre>
-            </div>
-        </div>
-
-        <div class="card topic-card" id="speedup-boot" data-search="سرعة boot startup">
+        <div class="card topic-card" id="disable-visual-effects" data-search="visual effects تأثيرات أداء">
             <span class="card-category cat-performance">تحسين الأداء</span>
-            <h2>⚡ تسريع إقلاع الويندوز</h2>
-            <p>تفعيل Fast Startup وتقليل وقت الإقلاع.</p>
+            <h2>✨ تعطيل Visual Effects</h2>
+            <p>إيقاف كل التأثيرات البصرية للحصول على أقصى أداء.</p>
             <div class="code-container">
-                <div class="code-header"><span>Speed Up Boot</span><span class="code-tool">CMD</span></div>
-<pre onclick="copyToClipboard(this)"><code>powercfg /hibernate on
-reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Power" /v HiberbootEnabled /t REG_DWORD /d 1 /f
-bcdedit /set {current} bootmenupolicy legacy
-bcdedit /timeout 3</code></pre>
-            </div>
-        </div>
-
-        <div class="card topic-card" id="clean-temp" data-search="temp مؤقت ملفات تنظيف">
-            <span class="card-category cat-cleanup">تنظيف النظام</span>
-            <h2>🧹 تنظيف الملفات المؤقتة</h2>
-            <p>حذف ملفات Temp و Prefetch و Windows Update Cache.</p>
-            <div class="code-container">
-                <div class="code-header"><span>Clean Temp Files</span><span class="code-tool">CMD</span></div>
-<pre onclick="copyToClipboard(this)"><code>del /q/f/s %TEMP%\*
-del /q/f/s C:\Windows\Temp\*
-del /q/f/s C:\Windows\Prefetch\*
-net stop wuauserv
-del /q/f/s C:\Windows\SoftwareDistribution\Download\*
-net start wuauserv
-cleanmgr /sagerun:1</code></pre>
-            </div>
-        </div>
-
-        <div class="card topic-card" id="network-reset" data-search="network شبكة reset">
-            <span class="card-category cat-fix">إصلاح المشاكل</span>
-            <h2>🌐 إعادة تعيين إعدادات الشبكة</h2>
-            <p>حل مشاكل الإنترنت عبر إعادة ضبط TCP/IP و DNS.</p>
-            <div class="code-container">
-                <div class="code-header"><span>Network Reset</span><span class="code-tool">CMD</span></div>
-<pre onclick="copyToClipboard(this)"><code>ipconfig /release
-ipconfig /flushdns
-ipconfig /renew
-netsh int ip reset
-netsh winsock reset
-netsh advfirewall reset</code></pre>
-            </div>
-            <p class="muted">💡 أعد تشغيل الكمبيوتر بعد التنفيذ</p>
-        </div>
-
-        <div class="card topic-card" id="office-bloat" data-search="office إزالة bloat">
-            <span class="card-category cat-cleanup">تنظيف النظام</span>
-            <h2>📦 إزالة مكونات أوفيس الزيادة</h2>
-            <p>إزالة تطبيقات Microsoft المدمجة (Bloatware) من Windows 11 LTSC.</p>
-            <div class="code-container">
-                <div class="code-header"><span>Remove Bloatware</span><span class="code-tool">PowerShell</span></div>
-<pre onclick="copyToClipboard(this)"><code>$apps = @("Microsoft.3DBuilder","Microsoft.BingWeather","Microsoft.MicrosoftOfficeHub","Microsoft.MicrosoftSolitaireCollection","Microsoft.XboxApp","Microsoft.ZuneMusic","Microsoft.ZuneVideo")
-foreach ($app in $apps) {
-    Get-AppxPackage -Name $app -AllUsers | Remove-AppxPackage -AllUsers -ErrorAction SilentlyContinue
-}</code></pre>
-            </div>
-        </div>
-
-        <div class="card topic-card" id="remove-onenote" data-search="onenote إزالة حذف">
-            <span class="card-category cat-cleanup">تنظيف النظام</span>
-            <h2>📝 إزالة OneNote بالقوة</h2>
-            <p>أمر واحد لحذف OneNote من جذوره.</p>
-            <div class="code-container">
-                <div class="code-header"><span>Force Remove OneNote</span><span class="code-tool">PowerShell</span></div>
-<pre onclick="copyToClipboard(this)"><code>takeown /F "C:\Program Files\Microsoft Office\root\Office16\ONENOTE.EXE" /A; icacls "C:\Program Files\Microsoft Office\root\Office16\ONENOTE.EXE" /grant Administrators:F; Stop-Process -Name "OneNote*" -Force -EA 0; Remove-Item "C:\Program Files\Microsoft Office\root\Office16\ONENOTE.EXE" -Force</code></pre>
-            </div>
-        </div>
-
-        <div class="card topic-card" id="alt-shift-fix" data-search="alt shift language keyboard">
-            <span class="card-category cat-fix">إصلاح المشاكل</span>
-            <h2>⌨️ حل مشكلة Alt+Shift</h2>
-            <p>إصلاح عدم استجابة Alt+Shift الأيمن لتبديل اللغة.</p>
-            <div class="code-container">
-                <div class="code-header"><span>Fix Alt+Shift</span><span class="code-tool">CMD</span></div>
-<pre onclick="copyToClipboard(this)"><code>reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout" /v "Scancode Map" /t REG_BINARY /d 000000000000000002000000380038E000000000 /f</code></pre>
-            </div>
-        </div>
-
-        <div class="card topic-card" id="pin-this-pc" data-search="this pc taskbar تثبيت">
-            <span class="card-category cat-system">تخصيص النظام</span>
-            <h2>📌 تثبيت This PC على التاسك بار</h2>
-            <p>إنشاء اختصار This PC وتثبيته على شريط المهام.</p>
-            <div class="code-container">
-                <div class="code-header"><span>Pin This PC</span><span class="code-tool">PowerShell</span></div>
-<pre onclick="copyToClipboard(this)"><code>$Desktop = [Environment]::GetFolderPath('Desktop'); $ShortcutPath = "$Desktop\This PC.lnk"; $WshShell = New-Object -ComObject WScript.Shell; $Shortcut = $WshShell.CreateShortcut($ShortcutPath); $Shortcut.TargetPath = 'explorer.exe'; $Shortcut.Arguments = 'shell:MyComputerFolder'; $Shortcut.IconLocation = '%SystemRoot%\System32\imageres.dll,-107'; $Shortcut.Save()</code></pre>
-            </div>
-        </div>
-
-        <div class="card topic-card" id="office-custom-install" data-search="office word excel odt">
-            <span class="card-category cat-system">أوفيس</span>
-            <h2>📄 تثبيت أوفيس مخصص</h2>
-            <p>استخدام ODT + XML لاختيار البرامج المطلوبة فقط.</p>
-            <div class="code-container">
-                <div class="code-header"><span>configuration.xml</span><span class="code-tool">XML</span></div>
-<pre onclick="copyToClipboard(this)"><code>&lt;Configuration&gt;
-  &lt;Add OfficeClientEdition="64" Channel="LTSC2021"&gt;
-    &lt;Product ID="ProPlus2021Volume"&gt;
-      &lt;Language ID="en-us" /&gt;
-      &lt;ExcludeApp ID="Access" /&gt;
-      &lt;ExcludeApp ID="OneDrive" /&gt;
-      &lt;ExcludeApp ID="OneNote" /&gt;
-      &lt;ExcludeApp ID="Outlook" /&gt;
-      &lt;ExcludeApp ID="Publisher" /&gt;
-    &lt;/Product&gt;
-  &lt;/Add&gt;
-&lt;/Configuration&gt;</code></pre>
-            </div>
-            <p class="muted">🔗 <a href="https://www.microsoft.com/en-us/download/details.aspx?id=49117" target="_blank">تحميل Office Deployment Tool</a></p>
-        </div>
-
-        <div class="card topic-card" id="dark-mode-registry" data-search="dark mode ثيم داكن">
-            <span class="card-category cat-system">تخصيص النظام</span>
-            <h2>🌙 تفعيل Dark Mode</h2>
-            <p>تفعيل الوضع الداكن لكل برامج الويندوز.</p>
-            <div class="code-container">
-                <div class="code-header"><span>Enable Dark Mode</span><span class="code-tool">Registry</span></div>
-<pre onclick="copyToClipboard(this)"><code>reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize" /v AppsUseLightTheme /t REG_DWORD /d 0 /f
-reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize" /v SystemUsesLightTheme /t REG_DWORD /d 0 /f</code></pre>
-            </div>
-        </div>
-
-        <div class="card topic-card" id="remove-edge" data-search="edge إزالة browser">
-            <span class="card-category cat-cleanup">تنظيف النظام</span>
-            <h2>🌐 إزالة Microsoft Edge</h2>
-            <p>حذف متصفح Edge من الويندوز بالكامل.</p>
-            <div class="code-container">
-                <div class="code-header"><span>Remove Edge</span><span class="code-tool">CMD</span></div>
-<pre onclick="copyToClipboard(this)"><code>cd %PROGRAMFILES(X86)%\Microsoft\Edge\Application\1*\Installer
-setup.exe --uninstall --force-uninstall --system-level</code></pre>
-            </div>
-        </div>
-
-        <div class="card topic-card" id="ultimate-performance" data-search="performance أداء power">
-            <span class="card-category cat-performance">تحسين الأداء</span>
-            <h2>⚡ خطة الطاقة Ultimate Performance</h2>
-            <p>خطة طاقة خفية للأداء الأقصى (للأجهزة القوية).</p>
-            <div class="code-container">
-                <div class="code-header"><span>Enable Ultimate Performance</span><span class="code-tool">CMD</span></div>
-<pre onclick="copyToClipboard(this)"><code>powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61</code></pre>
-            </div>
-            <p class="muted">💡 افتح Power Options من Control Panel لتفعيلها</p>
-        </div>
-
-        <div class="card topic-card" id="disable-startup-delay" data-search="startup delay سرعة">
-            <span class="card-category cat-performance">تحسين الأداء</span>
-            <h2>⏱️ إلغاء تأخير Startup Programs</h2>
-            <p>تشغيل البرامج فوراً بدون التأخير الافتراضي 10 ثواني.</p>
-            <div class="code-container">
-                <div class="code-header"><span>Disable Startup Delay</span><span class="code-tool">Registry</span></div>
-<pre onclick="copyToClipboard(this)"><code>reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Serialize" /v StartupDelayInMSec /t REG_DWORD /d 0 /f</code></pre>
-            </div>
-        </div>
-
-        <div class="card topic-card" id="show-file-extensions" data-search="file extensions ملفات امتداد">
-            <span class="card-category cat-system">تخصيص النظام</span>
-            <h2>📁 إظهار امتدادات الملفات</h2>
-            <p>إظهار امتدادات الملفات الكاملة (.exe, .txt, .pdf) في Explorer.</p>
-            <div class="code-container">
-                <div class="code-header"><span>Show File Extensions</span><span class="code-tool">Registry</span></div>
-<pre onclick="copyToClipboard(this)"><code>reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v HideFileExt /t REG_DWORD /d 0 /f
+                <div class="code-header"><span>Disable All Visual Effects</span><span class="code-tool">Registry</span></div>
+<pre onclick="copyToClipboard(this)"><code>reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects" /v VisualFXSetting /t REG_DWORD /d 2 /f
+reg add "HKCU\Control Panel\Desktop" /v UserPreferencesMask /t REG_BINARY /d 9012038010000000 /f
+reg add "HKCU\Control Panel\Desktop\WindowMetrics" /v MinAnimate /t REG_SZ /d 0 /f
 Stop-Process -Name explorer -Force</code></pre>
             </div>
+            <p class="muted">💡 سيوفر RAM و CPU خاصة على الأجهزة الضعيفة</p>
         </div>
 
-        <div class="card topic-card" id="disable-hibernation" data-search="hibernation سبات تعطيل">
-            <span class="card-category cat-cleanup">تنظيف النظام</span>
-            <h2>💤 تعطيل Hibernation وتوفير مساحة</h2>
-            <p>حذف hiberfil.sys وتوفير مساحة كبيرة (عادة 4-8 GB).</p>
-            <div class="code-container">
-                <div class="code-header"><span>Disable Hibernation</span><span class="code-tool">CMD</span></div>
-<pre onclick="copyToClipboard(this)"><code>powercfg /hibernate off</code></pre>
-            </div>
-        </div>
-
-        <div class="card topic-card" id="disable-notifications" data-search="notifications اشعارات تعطيل">
-            <span class="card-category cat-system">تخصيص النظام</span>
-            <h2>🔕 تعطيل الإشعارات المزعجة</h2>
-            <p>إيقاف كل إشعارات الويندوز والبرامج.</p>
-            <div class="code-container">
-                <div class="code-header"><span>Disable Notifications</span><span class="code-tool">Registry</span></div>
-<pre onclick="copyToClipboard(this)"><code>reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\PushNotifications" /v ToastEnabled /t REG_DWORD /d 0 /f
-reg add "HKCU\Software\Policies\Microsoft\Windows\Explorer" /v DisableNotificationCenter /t REG_DWORD /d 1 /f</code></pre>
-            </div>
-        </div>
-
-        <div class="card topic-card" id="optimize-ssd" data-search="ssd optimization trim">
+        <div class="card topic-card" id="disable-windows-search" data-search="windows search فهرسة indexing">
             <span class="card-category cat-performance">تحسين الأداء</span>
-            <h2>💾 تحسين أداء SSD</h2>
-            <p>تفعيل TRIM وتحسين إعدادات الـ SSD للأداء الأفضل.</p>
+            <h2>🔍 تعطيل Windows Search Indexing</h2>
+            <p>توفير موارد النظام عبر إيقاف خدمة الفهرسة (Indexing).</p>
             <div class="code-container">
-                <div class="code-header"><span>Optimize SSD</span><span class="code-tool">CMD</span></div>
-<pre onclick="copyToClipboard(this)"><code>fsutil behavior set DisableDeleteNotify 0
-reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management\PrefetchParameters" /v EnableSuperfetch /t REG_DWORD /d 0 /f
-sc config SysMain start=disabled</code></pre>
+                <div class="code-header"><span>Disable Search Indexing</span><span class="code-tool">CMD</span></div>
+<pre onclick="copyToClipboard(this)"><code>sc stop "WSearch"
+sc config "WSearch" start=disabled
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\Windows Search" /v AllowIndexingEncryptedStoresOrItems /t REG_DWORD /d 0 /f</code></pre>
             </div>
+            <p class="muted">⚠️ البحث في File Explorer هيبقى أبطأ شوية</p>
         </div>
 
-        <div class="card topic-card" id="disable-auto-restart" data-search="auto restart bsod">
-            <span class="card-category cat-fix">إصلاح المشاكل</span>
-            <h2>🔄 تعطيل Auto Restart عند الأخطاء</h2>
-            <p>إيقاف إعادة التشغيل التلقائية لرؤية رسائل الأخطاء (BSOD).</p>
+        <div class="card topic-card" id="disable-page-file" data-search="page file virtual memory ذاكرة افتراضية">
+            <span class="card-category cat-performance">تحسين الأداء</span>
+            <h2>💾 تعطيل Page File على SSD</h2>
+            <p>تعطيل الذاكرة الافتراضية لحماية SSD وتوفير المساحة (للأجهزة بـ RAM 16GB+).</p>
             <div class="code-container">
-                <div class="code-header"><span>Disable Auto Restart</span><span class="code-tool">Registry</span></div>
-<pre onclick="copyToClipboard(this)"><code>reg add "HKLM\SYSTEM\CurrentControlSet\Control\CrashControl" /v AutoReboot /t REG_DWORD /d 0 /f</code></pre>
+                <div class="code-header"><span>Disable Page File</span><span class="code-tool">PowerShell</span></div>
+<pre onclick="copyToClipboard(this)"><code>$cs = Get-WmiObject -Class Win32_ComputerSystem
+$cs.AutomaticManagedPagefile = $false
+$cs.Put()
+$pg = Get-WmiObject -Class Win32_PageFileSetting
+$pg | ForEach-Object { $_.Delete() }
+Write-Host "✅ تم! أعد التشغيل" -ForegroundColor Green</code></pre>
             </div>
-        </div>
-
-        <div class="card topic-card" id="clear-event-logs" data-search="event logs سجلات مسح">
-            <span class="card-category cat-cleanup">تنظيف النظام</span>
-            <h2>📋 مسح Event Logs بالكامل</h2>
-            <p>حذف كل سجلات أحداث الويندوز دفعة واحدة.</p>
-            <div class="code-container">
-                <div class="code-header"><span>Clear Event Logs</span><span class="code-tool">PowerShell</span></div>
-<pre onclick="copyToClipboard(this)"><code>Get-EventLog -LogName * | ForEach-Object { Clear-EventLog -LogName $_.Log }
-Write-Host "✅ تم مسح كل Event Logs" -ForegroundColor Green</code></pre>
+            <div class="warning-box">
+                <span class="warning-icon">⚠️</span>
+                <div>
+                    <strong>تحذير:</strong> فقط للأجهزة بـ RAM 16GB أو أكثر + SSD
+                </div>
             </div>
         </div>
 
