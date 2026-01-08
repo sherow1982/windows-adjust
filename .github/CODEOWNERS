@@ -1,0 +1,22 @@
+# 📄 Code Owners - Windows Adjust
+
+# Default owners for everything
+* @sherow1982
+
+# Workflow owners
+.github/workflows/ @sherow1982
+
+# Documentation
+*.md @sherow1982
+README.md @sherow1982
+TOPICS.md @sherow1982
+CONTRIBUTING.md @sherow1982
+
+# HTML/CSS/JS
+index.html @sherow1982
+*.css @sherow1982
+*.js @sherow1982
+
+# Configuration
+package.json @sherow1982
+.gitignore @sherow1982
