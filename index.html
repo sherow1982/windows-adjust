@@ -3,68 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="مرجع شامل لتظبيط وتسريع وتحسين Windows 10/11 - 50+ موضوع احترافي مفتوح المصدر">
-    <meta name="keywords" content="Windows Adjust, تظبيط, تسريع, Windows 10, Windows 11, تحسين الأداء, Registry, PowerShell, Optimization">
-    <meta name="author" content="Sherif Salama (sherow1982)">
-    <meta name="theme-color" content="#0a0e27">
-    <meta property="og:title" content="Windows Adjust Reference - مرجع تظبيط الويندوز">
-    <meta property="og:description" content="50+ توبيك احترافي لتظبيط Windows بدون برامج وبدون مشاكل">
-    <meta property="og:image" content="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630'><rect fill='%230a0e27'/><text x='600' y='315' font-size='140' fill='%2338bdf8' text-anchor='middle' font-family='Arial'>⚡ Windows Adjust</text></svg>">
-    <title>Windows Adjust Reference | مرجع تظبيط الويندوز الشامل</title>
-    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a0e27'/><text x='50' y='65' font-size='70' fill='%2338bdf8' text-anchor='middle'>⚡</text></svg>">
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <title>⚡ Windows Adjust - مرجع تظبيط الويندوز</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --bg-color: #0a0e27;
-            --card-bg: linear-gradient(135deg, #1a1f3a 0%, #0f1729 100%);
-            --card-border: rgba(56, 189, 248, 0.2);
-            --text-primary: #f8fafc;
-            --text-secondary: #94a3b8;
-            --accent: #38bdf8;
-            --accent-glow: rgba(56, 189, 248, 0.4);
-            --accent-hover: #0ea5e9;
-            --code-bg: #000000;
-            --code-text: #00ff41;
-            --success: #22c55e;
-            --link-color: #f472b6;
-            --border: #334155;
-            --warning: #fbbf24;
-            --danger: #ef4444;
-        }
         * { box-sizing: border-box; }
         html { scroll-behavior: smooth; }
         body {
             font-family: 'Cairo', sans-serif;
             background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
-            color: var(--text-primary);
+            color: #f8fafc;
             margin: 0;
-            padding: 0;
+            padding: 20px;
             line-height: 1.6;
             min-height: 100vh;
         }
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
+        .container { max-width: 1400px; margin: 0 auto; }
         header {
             text-align: center;
             margin-bottom: 3rem;
             padding: 3rem 0;
-            border-bottom: 2px solid var(--card-border);
-            position: relative;
-        }
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
-            opacity: 0.3;
-            pointer-events: none;
+            border-bottom: 2px solid rgba(56, 189, 248, 0.2);
         }
         h1 {
             font-size: 3rem;
@@ -72,105 +30,52 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            margin-bottom: 0.5rem;
-            font-weight: 700;
-            text-shadow: 0 0 30px var(--accent-glow);
+            margin: 0 0 10px 0;
         }
-        .subtitle {
-            color: var(--text-secondary);
-            font-size: 1.2rem;
-            font-weight: 400;
-            margin-bottom: 2rem;
-        }
+        .subtitle { color: #94a3b8; font-size: 1.2rem; margin-bottom: 2rem; }
         .card {
-            background: var(--card-bg);
-            border-radius: 20px;
-            padding: 2.5rem;
-            margin-bottom: 2.5rem;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), 0 0 0 1px var(--card-border), inset 0 1px 0 rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--card-border);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
+            background: linear-gradient(135deg, #1a1f3a 0%, #0f1729 100%);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
         }
-        .card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4), 0 0 0 1px var(--accent), 0 0 30px var(--accent-glow), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-        }
-        .card.compact { 
-            padding: 1.5rem 2rem;
-            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-        }
-        h2 {
-            border-bottom: 3px solid;
-            border-image: linear-gradient(90deg, var(--accent) 0%, transparent 100%) 1;
-            padding-bottom: 0.75rem;
-            margin: 0 0 1.5rem;
-            display: inline-block;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--accent);
-            text-shadow: 0 0 20px var(--accent-glow);
-        }
-        .search-wrap {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-            align-items: center;
-            margin-top: 1.5rem;
-        }
+        h2 { color: #38bdf8; margin-top: 0; border-bottom: 2px solid #38bdf8; padding-bottom: 10px; }
+        .search-wrap { display: flex; gap: 12px; margin: 1.5rem 0; flex-wrap: wrap; }
         .search-input {
             flex: 1;
             min-width: 280px;
             background: rgba(255,255,255,0.05);
-            color: var(--text-primary);
-            border: 2px solid var(--border);
-            border-radius: 14px;
-            padding: 14px 18px;
+            color: #f8fafc;
+            border: 2px solid #334155;
+            border-radius: 8px;
+            padding: 12px 16px;
             font-family: 'Cairo', sans-serif;
             font-size: 1rem;
             outline: none;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
         }
-        .search-input:focus {
-            border-color: var(--accent);
-            box-shadow: 0 0 0 4px var(--accent-glow), 0 0 20px var(--accent-glow);
-            background: rgba(255,255,255,0.08);
-        }
+        .search-input:focus { border-color: #38bdf8; box-shadow: 0 0 20px rgba(56, 189, 248, 0.4); }
         .btn {
-            border: 2px solid var(--border);
+            border: 2px solid #334155;
             background: rgba(255,255,255,0.05);
-            color: var(--text-primary);
-            padding: 12px 20px;
-            border-radius: 14px;
+            color: #f8fafc;
+            padding: 10px 16px;
+            border-radius: 8px;
             cursor: pointer;
             font-family: 'Cairo', sans-serif;
             font-weight: 600;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
+            transition: all 0.3s;
         }
-        .btn:hover { 
-            border-color: var(--accent);
-            background: rgba(56, 189, 248, 0.1);
-            box-shadow: 0 0 20px var(--accent-glow);
-            transform: translateY(-2px);
-        }
-        .btn.success {
-            border-color: var(--success);
-            background: rgba(34, 197, 94, 0.1);
-        }
-        .btn.success:hover {
-            box-shadow: 0 0 20px rgba(34, 197, 94, 0.6);
-        }
+        .btn:hover { border-color: #38bdf8; background: rgba(56, 189, 248, 0.1); box-shadow: 0 0 15px rgba(56, 189, 248, 0.3); }
         .table-wrap {
-            margin-top: 1.5rem;
-            overflow: auto;
-            border-radius: 16px;
-            border: 2px solid var(--card-border);
+            margin-top: 1rem;
+            overflow-x: auto;
+            border-radius: 8px;
+            border: 1px solid rgba(56, 189, 248, 0.2);
             background: rgba(0,0,0,0.3);
-            backdrop-filter: blur(10px);
-            max-height: 600px;
+            max-height: 700px;
+            overflow-y: auto;
         }
         table {
             width: 100%;
@@ -179,301 +84,198 @@
         }
         thead th {
             text-align: right;
-            padding: 16px;
-            font-size: 0.95rem;
+            padding: 14px 12px;
+            font-size: 0.9rem;
             font-weight: 700;
-            color: var(--text-primary);
-            background: rgba(56, 189, 248, 0.1);
-            border-bottom: 2px solid var(--accent);
+            color: #f8fafc;
+            background: rgba(56, 189, 248, 0.15);
+            border-bottom: 2px solid #38bdf8;
             position: sticky;
             top: 0;
             z-index: 10;
-            backdrop-filter: blur(10px);
         }
         tbody td {
-            padding: 16px;
+            padding: 12px;
             border-bottom: 1px solid rgba(51, 65, 85, 0.5);
-            vertical-align: top;
-            color: var(--text-primary);
-            font-size: 0.95rem;
+            color: #f8fafc;
+            font-size: 0.9rem;
         }
-        tbody tr {
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-        tbody tr:hover { 
-            background: rgba(56, 189, 248, 0.08);
-        }
+        tbody tr { transition: all 0.2s; }
+        tbody tr:hover { background: rgba(56, 189, 248, 0.08); }
         tbody tr a {
-            color: var(--accent);
+            color: #38bdf8;
             text-decoration: none;
             font-weight: 600;
-            border-bottom: 1px dotted var(--accent);
-            transition: all 0.2s ease;
+            border-bottom: 1px dotted #38bdf8;
         }
-        tbody tr a:hover {
-            color: var(--accent-hover);
-            border-bottom: 1px solid var(--accent-hover);
-        }
+        tbody tr a:hover { color: #0ea5e9; border-bottom-color: #0ea5e9; }
         .badge {
-            display: inline-block;
-            padding: 5px 12px;
-            border-radius: 8px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            border: 1px solid rgba(0, 255, 65, 0.35);
-            color: var(--code-text);
-            background: rgba(0, 255, 65, 0.1);
-            margin: 2px 4px 2px 0;
-            white-space: nowrap;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .hidden { display: none !important; }
-        .toast {
-            visibility: hidden;
-            min-width: 300px;
-            background: linear-gradient(135deg, var(--code-text) 0%, #00cc33 100%);
-            color: #000;
-            font-weight: bold;
-            text-align: center;
-            border-radius: 12px;
-            padding: 18px 24px;
-            position: fixed;
-            z-index: 999;
-            left: 50%;
-            bottom: 40px;
-            transform: translateX(-50%);
-            font-size: 1.1rem;
-            box-shadow: 0 8px 32px rgba(0, 255, 65, 0.6);
-        }
-        .toast.show {
-            visibility: visible;
-            animation: fadein 0.5s, fadeout 0.5s 2.5s;
-        }
-        @keyframes fadein { from {bottom: 0; opacity: 0;} to {bottom: 40px; opacity: 1;} }
-        @keyframes fadeout { from {bottom: 40px; opacity: 1;} to {bottom: 0; opacity: 0;} }
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin: 2rem 0;
-        }
-        .stat-card {
-            background: rgba(255,255,255,0.03);
-            border: 2px solid var(--card-border);
-            border-radius: 12px;
-            padding: 1.5rem;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-        .stat-card:hover {
-            transform: translateY(-4px);
-            border-color: var(--accent);
-            box-shadow: 0 0 20px var(--accent-glow);
-        }
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, var(--accent) 0%, #818cf8 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        .stat-label {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            margin-top: 0.5rem;
-        }
-        .muted {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-        .category-label {
             display: inline-block;
             padding: 4px 10px;
             border-radius: 6px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            white-space: nowrap;
+            font-size: 0.75rem;
+            font-weight: 700;
+            background: rgba(0, 255, 65, 0.1);
+            color: #00ff41;
+            border: 1px solid rgba(0, 255, 65, 0.35);
         }
-        .category-system { background: rgba(59, 130, 246, 0.15); color: #3b82f6; }
-        .category-privacy { background: rgba(239, 68, 68, 0.15); color: #ef4444; }
-        .category-performance { background: rgba(34, 197, 94, 0.15); color: #22c55e; }
-        .category-cleanup { background: rgba(251, 191, 36, 0.15); color: #fbbf24; }
-        .category-fix { background: rgba(168, 85, 247, 0.15); color: #a855f7; }
+        .hidden { display: none !important; }
+        .hint { color: #94a3b8; font-size: 0.95rem; margin-top: 10px; text-align: center; }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 12px;
+            margin: 2rem 0;
+        }
+        .stat-box {
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            border-radius: 8px;
+            padding: 16px;
+            text-align: center;
+        }
+        .stat-num { font-size: 2rem; font-weight: bold; color: #38bdf8; }
+        .stat-txt { color: #94a3b8; font-size: 0.85rem; margin-top: 4px; }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
             <h1>⚡ Windows Adjust Reference</h1>
-            <div class="subtitle">مرجعك الشامل لتظبيط وإصلاح وتسريع الويندوز - 33+ موضوع احترافي</div>
+            <div class="subtitle">مرجعك الشامل لتظبيط وإصلاح الويندوز - 28+ موضوع احترافي</div>
             
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-number">33+</div>
-                    <div class="stat-label">توبيك كامل</div>
+            <div class="stats">
+                <div class="stat-box">
+                    <div class="stat-num">28+</div>
+                    <div class="stat-txt">موضوع</div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-number">100%</div>
-                    <div class="stat-label">مفتوح المصدر</div>
+                <div class="stat-box">
+                    <div class="stat-num">100%</div>
+                    <div class="stat-txt">مفتوح المصدر</div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-number">5</div>
-                    <div class="stat-label">تصنيفات</div>
+                <div class="stat-box">
+                    <div class="stat-num">5</div>
+                    <div class="stat-txt">تصنيفات</div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-number">MIT</div>
-                    <div class="stat-label">ترخيص</div>
+                <div class="stat-box">
+                    <div class="stat-num">MIT</div>
+                    <div class="stat-txt">ترخيص</div>
                 </div>
             </div>
         </header>
 
-        <div class="card compact" id="topics">
+        <div class="card">
             <h2>🔍 البحث السريع</h2>
-            <div class="muted">ابحث عن أي خدمة، أمر، أو مشكلة. اضغط على الموضوع لعرض التفاصيل الكاملة. يتم البحث تلقائياً في جميع المواضيع.</div>
-
+            <p>ابحث عن أي موضوع. اضغط على الرابط للفتت.</p>
+            
             <div class="search-wrap">
-                <input id="search" class="search-input" type="search" placeholder="🔎 ابحث: PowerShell / Defender / Telemetry / Boot / Registry ..." />
-                <button class="btn" type="button" onclick="clearSearch()">مسح البحث</button>
+                <input id="search" class="search-input" type="search" placeholder="🔎 ابحث: PowerShell, Defender, Boot, Registry, Privacy..." />
+                <button class="btn" onclick="clearSearch()">مسح</button>
             </div>
-
+            
             <div class="table-wrap">
-                <table id="topicsTable">
+                <table>
                     <thead>
                         <tr>
-                            <th style="min-width: 120px;">التصنيف</th>
-                            <th style="min-width: 240px;">الموضوع</th>
-                            <th style="min-width: 300px;">الوصف</th>
-                            <th style="min-width: 150px;">الكلمات</th>
+                            <th style="min-width: 100px;">التصنيف</th>
+                            <th style="min-width: 200px;">الموضوع</th>
+                            <th style="min-width: 250px;">الوصف</th>
+                            <th style="min-width: 120px;">الرابط</th>
                         </tr>
                     </thead>
-                    <tbody id="tableBody">
-                    </tbody>
+                    <tbody id="tbody"></tbody>
                 </table>
             </div>
-            <div id="resultsHint" class="muted" style="margin-top: 10px; text-align: center;"></div>
+            <div class="hint" id="hint"></div>
         </div>
 
         <div class="card">
-            <h2>📚 المحتوى الشامل</h2>
-            <div class="muted">تم تضمين 33+ موضوع متنوع يغطي جميع جوانب تظبيط Windows. كل موضوع يحتوي على شرح مفصل وخطوات عملية سهلة الفهم، مع أوامر PowerShell وطرق GUI بديلة حيث يكون ذلك ممكناً.</div>
-        </div>
-
-        <div class="card">
-            <h2>📝 ملاحظات مهمة</h2>
-            <div class="muted">
-                <strong>⚠️ تحذيرات:</strong><br>
-                • اعمل نقطة استعادة قبل أي تعديل كبير<br>
-                • استخدم حساب Admin أو "Run as Administrator"<br>
-                • لا تنسخ أوامر بدون فهمها<br>
-                • اختبر كل أمر بعد تنفيذه<br>
-                • معظم الأوامر تحتاج إعادة تشغيل<br>
-            </div>
-        </div>
-
-        <div class="card">
-            <h2>🔗 مواد مفيدة</h2>
-            <div class="muted">
-                <a href="https://github.com/sherow1982/windows-adjust" target="_blank">📌 الريبو على GitHub</a> |
-                <a href="https://docs.microsoft.com/en-us/windows/" target="_blank">📖 موثق Windows الرسمي</a> |
-                <a href="https://github.com/sherow1982/windows-adjust/issues" target="_blank">🐛 الإبلاغ عن أخطاء</a>
-            </div>
+            <h2>📄 عن هذا المرجع</h2>
+            <p>مجموعة شاملة من الفلوتات والأوامر الإحترافية لتظبيط Windows 10/11 بشكل أمثل وأسرع.</p>
+            <p><strong>⚠️ تحذيرات:</strong></p>
+            <ul>
+                <li>اعمل System Restore Point قبل أي تعديل</li>
+                <li>استخدم حساب Admin</li>
+                <li>فهم الآمر قبل نسخه</li>
+                <li>قد تحتاج لإعادة تشغيل</li>
+            </ul>
         </div>
     </div>
 
-    <div id="toast" class="toast">✅ تم نسخ الكود بنجاح!</div>
-
     <script>
-        const topicsData = [
-            { title: 'إضافة PowerShell Admin في قائمة الماوس', category: 'system', desc: 'أضف PowerShell Admin بمجرد النقر الأيمن', keywords: 'powershell admin menu', file: 'add-powershell-to-context-menu.md' },
-            { title: 'تعطيل Telemetry وتنظيف البيانات', category: 'privacy', desc: 'منع مايكروسوفت من جمع بيانات الاستخدام', keywords: 'privacy telemetry', file: 'windows-privacy-debloat.md' },
-            { title: 'تحسين أداء النظام', category: 'performance', desc: 'تسريع الويندوز وتحسين الأداء', keywords: 'performance speed boost', file: 'windows-performance-optimization.md' },
-            { title: 'حذف Microsoft OneNote', category: 'cleanup', desc: 'إزالة OneNote من النظام بشكل نهائي', keywords: 'remove onenote', file: 'remove-microsoft-onenote.md' },
-            { title: 'إزالة قسرية ل OneNote', category: 'cleanup', desc: 'طريقة أخرى قوية لحذف OneNote', keywords: 'force remove onenote', file: 'force-remove-onenote.md' },
-            { title: 'حذف البرامج غير الضرورية', category: 'cleanup', desc: 'إزالة ملحقات Office غير المستخدمة', keywords: 'office bloat cleanup', file: 'remove-office-bloat.md' },
-            { title: 'تنظيف قائمة الماوس الأيمن', category: 'cleanup', desc: 'إزالة عناصر غير المستخدمة', keywords: 'context menu clean', file: 'clean-context-menu.md' },
-            { title: 'تثبيت This PC على Taskbar', category: 'system', desc: 'أضف This PC إلى شريط المهام', keywords: 'taskbar pc pin', file: 'pin-this-pc-to-taskbar.md' },
-            { title: 'إزالة PowerShell من قائمة الماوس', category: 'cleanup', desc: 'أزل PowerShell من Context Menu', keywords: 'powershell remove menu', file: 'remove-powershell-context-menu.md' },
-            { title: 'إصلاح تبديل اللغة Alt+Shift', category: 'fix', desc: 'حل مشكلة عدم عمل اختصار تبديل اللغة', keywords: 'language switch fix', file: 'fix-alt-shift-language-switch.md' },
-            { title: 'توثيق API والمراجع', category: 'system', desc: 'معلومات تقنية وتوثيق الـ API', keywords: 'api documentation', file: 'API.md' },
-            { title: 'تعطيل Windows Update', category: 'system', desc: 'أوقف التحديثات التلقائية', keywords: 'windows update disable', file: 'disable-windows-update.md' },
-            { title: 'تفعيل God Mode', category: 'system', desc: 'صندوق تحكم يحتوي على كل الإعدادات', keywords: 'god mode secrets', file: 'god-mode.md' },
-            { title: 'تعطيل UAC (رسائل التأكيد)', category: 'system', desc: 'إزالة النوافذ المزعجة', keywords: 'uac disable', file: 'disable-uac.md' },
-            { title: 'تعطيل Windows Firewall', category: 'system', desc: 'أوقف جدار الحماية المدمج', keywords: 'firewall disable', file: 'disable-firewall.md' },
-            { title: 'تفعيل Remote Desktop (RDP)', category: 'system', desc: 'السماح بالوصول عن بعد', keywords: 'remote desktop rdp', file: 'enable-rdp.md' },
-            { title: 'تعطيل كلمة المرور عند التسجيل', category: 'system', desc: 'الدخول بدون كلمة سر', keywords: 'password login disable', file: 'disable-password.md' },
-            { title: 'تفعيل المسارات الطويلة (Long Path)', category: 'system', desc: 'السماح بمسارات أطول من 260 حرف', keywords: 'long path 260', file: 'long-file-paths.md' },
-            { title: 'إظهار الملفات والامتدادات المخفية', category: 'system', desc: 'عرض الملفات المخفية', keywords: 'hidden files show', file: 'show-hidden-files.md' },
-            { title: 'تفعيل وضع التوافق للبرامج القديمة', category: 'system', desc: 'تشغيل البرامج القديمة', keywords: 'compatibility mode', file: 'enable-compat-mode.md' },
-            { title: 'تعطيل Cortana', category: 'system', desc: 'إيقاف مساعد Cortana', keywords: 'cortana disable', file: 'disable-cortana.md' },
-            { title: 'تفعيل Windows Sandbox', category: 'system', desc: 'بيئة معزولة لاختبار البرامج', keywords: 'sandbox mode', file: 'windows-sandbox.md' },
-            { title: 'تعطيل Windows Defender', category: 'privacy', desc: 'إيقاف برنامج الحماية المدمج', keywords: 'defender disable', file: 'disable-defender.md' },
-            { title: 'تعطيل Location Tracking', category: 'privacy', desc: 'إيقاف تتبع الموقع الجغرافي', keywords: 'location tracking', file: 'disable-location.md' },
-            { title: 'تسريع إقلاع الويندوز', category: 'performance', desc: 'تفعيل Fast Startup', keywords: 'fast boot startup', file: 'fast-boot.md' },
-            { title: 'تنظيف الملفات المؤقتة', category: 'cleanup', desc: 'حذف مجلدات Temp', keywords: 'temp cleanup', file: 'clean-temp.md' },
-            { title: 'إعادة تعيين الشبكة', category: 'fix', desc: 'حل مشاكل الإنترنت', keywords: 'network reset', file: 'network-reset.md' },
-            { title: 'فحص القرص والملفات (CHKDSK + SFC)', category: 'fix', desc: 'فحص وإصلاح أخطاء النظام', keywords: 'chkdsk sfc', file: 'chkdsk-sfc.md' }
+        const topics = [
+            {cat: '🔧 نظام', file: 'add-powershell-to-context-menu.md', title: 'إضافة PowerShell Admin', desc: 'أضف PowerShell عبر Context Menu', key: 'powershell admin menu'},
+            {cat: '🔒 أمان', file: 'windows-privacy-debloat.md', title: 'تعطيل Telemetry', desc: 'منع جمع البيانات', key: 'privacy telemetry'},
+            {cat: '⚡ أداء', file: 'windows-performance-optimization.md', title: 'تحسين الأداء', desc: 'تسريع الويندوز', key: 'performance speed'},
+            {cat: '🧹 تنظيف', file: 'remove-microsoft-onenote.md', title: 'حذف OneNote', desc: 'إزالة نهاية', key: 'onenote remove'},
+            {cat: '🧹 تنظيف', file: 'force-remove-onenote.md', title: 'قسرية OneNote', desc: 'حذف قوي', key: 'force remove onenote'},
+            {cat: '🧹 تنظيف', file: 'remove-office-bloat.md', title: 'حذف Office Bloat', desc: 'ملحقات غير مشروعة', key: 'office bloat'},
+            {cat: '🧹 تنظيف', file: 'clean-context-menu.md', title: 'تنظيف Context Menu', desc: 'إزالة عناصر زائدة', key: 'context menu clean'},
+            {cat: '🔧 نظام', file: 'pin-this-pc-to-taskbar.md', title: 'ثبيت This PC', desc: 'على Taskbar', key: 'taskbar this pc'},
+            {cat: '🧹 تنظيف', file: 'remove-powershell-context-menu.md', title: 'إزالة PowerShell', desc: 'من Context Menu', key: 'powershell remove'},
+            {cat: '🔧 إصلاح', file: 'fix-alt-shift-language-switch.md', title: 'إصلاح Alt+Shift', desc: 'لغة البيانوس', key: 'language switch'},
+            {cat: '🔧 نظام', file: 'disable-windows-update.md', title: 'تعطيل Windows Update', desc: 'أوقف التحديثات', key: 'update disable'},
+            {cat: '🔧 نظام', file: 'god-mode.md', title: 'God Mode', desc: 'صندوق مراقبة', key: 'god mode secrets'},
+            {cat: '🔧 نظام', file: 'disable-uac.md', title: 'تعطيل UAC', desc: 'رسالات التأكيد', key: 'uac disable'},
+            {cat: '🔧 نظام', file: 'disable-firewall.md', title: 'تعطيل Firewall', desc: 'جدار الحماية', key: 'firewall disable'},
+            {cat: '🔧 نظام', file: 'enable-rdp.md', title: 'تفعيل RDP', desc: 'الوصول عن بعد', key: 'rdp remote'},
+            {cat: '🔧 نظام', file: 'disable-password.md', title: 'تعطيل كلمة المرور', desc: 'بدون كلمة سر', key: 'password login'},
+            {cat: '🔧 نظام', file: 'long-file-paths.md', title: 'Long Path', desc: 'مسارات أطول', key: 'long path 260'},
+            {cat: '🔧 نظام', file: 'show-hidden-files.md', title: 'الملفات المخفية', desc: 'عرض الامتدادات', key: 'hidden files'},
+            {cat: '🔧 نظام', file: 'enable-compat-mode.md', title: 'وضع التوافق', desc: 'برامج قديمة', key: 'compatibility'},
+            {cat: '🔧 نظام', file: 'disable-cortana.md', title: 'تعطيل Cortana', desc: 'المساعد', key: 'cortana disable'},
+            {cat: '🔧 نظام', file: 'windows-sandbox.md', title: 'Sandbox', desc: 'بيئة معزولة', key: 'sandbox'},
+            {cat: '🔒 أمان', file: 'disable-defender.md', title: 'تعطيل Defender', desc: 'برنامج الحماية', key: 'defender antivirus'},
+            {cat: '🔒 أمان', file: 'disable-location.md', title: 'تعطيل Location', desc: 'تتبع الموقع', key: 'location tracking'},
+            {cat: '⚡ أداء', file: 'fast-boot.md', title: 'Fast Boot', desc: 'تسريع الإقلاع', key: 'fast boot'},
+            {cat: '🧹 تنظيف', file: 'clean-temp.md', title: 'الملفات المؤقتة', desc: 'Temp Cleanup', key: 'temp files'},
+            {cat: '🔧 إصلاح', file: 'network-reset.md', title: 'إعادة الشبكة', desc: 'مشاكل الإنترنت', key: 'network reset'},
+            {cat: '🔧 إصلاح', file: 'chkdsk-sfc.md', title: 'CHKDSK + SFC', desc: 'فحص وإصلاح', key: 'chkdsk sfc repair'}
         ];
 
-        function getCategoryIcon(cat) {
-            const icons = { system: '🔧', privacy: '🔒', performance: '⚡', cleanup: '🧹', fix: '🔧' };
-            return icons[cat] || '📌';
-        }
+        const tbody = document.getElementById('tbody');
+        const search = document.getElementById('search');
+        const hint = document.getElementById('hint');
+        let rows;
 
-        function getCategoryLabel(cat) {
-            const labels = { system: 'النظام', privacy: 'الأمان', performance: 'الأداء', cleanup: 'التنظيف', fix: 'الإصلاح' };
-            return labels[cat] || 'أخرى';
-        }
-
-        function renderTable(items) {
-            const tbody = document.getElementById('tableBody');
-            tbody.innerHTML = items.map(t => `
-                <tr class="topic-row" data-search="${t.keywords}">
-                    <td><span class="category-label category-${t.category}">${getCategoryIcon(t.category)} ${getCategoryLabel(t.category)}</span></td>
-                    <td><a href="./docs/${t.file}" target="_blank">${t.title}</a></td>
-                    <td class="muted">${t.desc}</td>
-                    <td><span class="badge">${t.category.toUpperCase()}</span></td>
+        function render(data) {
+            tbody.innerHTML = data.map(t => `
+                <tr data-search="${t.key} ${t.title} ${t.desc}">
+                    <td>${t.cat}</td>
+                    <td><a href="./docs/${t.file}" target="_blank">🔗 ${t.title}</a></td>
+                    <td>${t.desc}</td>
+                    <td><span class="badge">${t.file.split('.')[0]}</span></td>
                 </tr>
             `).join('');
+            rows = Array.from(tbody.querySelectorAll('tr'));
         }
 
-        renderTable(topicsData);
-
-        const searchInput = document.getElementById('search');
-        const rows = Array.from(document.querySelectorAll('.topic-row'));
-        const hint = document.getElementById('resultsHint');
-        
-        function normalize(s) { return (s || '').toString().toLowerCase().trim(); }
-        
-        function applySearch(qRaw) {
-            const q = normalize(qRaw);
-            let visible = 0;
+        function search_topics(q) {
+            q = (q || '').toLowerCase().trim();
+            let count = 0;
             rows.forEach(r => {
-                const hay = normalize(r.getAttribute('data-search') + ' ' + r.innerText);
-                const show = !q || hay.includes(q);
-                r.classList.toggle('hidden', !show);
-                if (show) visible++;
+                let match = !q || r.getAttribute('data-search').toLowerCase().includes(q);
+                r.classList.toggle('hidden', !match);
+                if (match) count++;
             });
-            if (q && visible === 0) {
-                hint.textContent = '❌ لا توجد نتائج مطابقة. جرب كلمات مفتاحية أخرى.';
+            if (q && count === 0) {
+                hint.innerHTML = '❌ لا توجد نتائج';
             } else if (q) {
-                hint.textContent = `✅ نتائج البحث: ${visible} من ${rows.length} موضوع`;
+                hint.innerHTML = `✅ ${count} من ${rows.length}`;
             } else {
-                hint.textContent = `📊 إجمالي: ${rows.length} موضوع متاح`;
+                hint.innerHTML = `📊 إجمالي: ${rows.length} موضوع`;
             }
         }
-        
+
         function clearSearch() {
-            searchInput.value = '';
-            applySearch('');
-            searchInput.focus();
+            search.value = '';
+            search_topics('');
+            search.focus();
         }
-        
-        searchInput.addEventListener('input', (e) => applySearch(e.target.value));
-        applySearch('');
+
+        render(topics);
+        search.addEventListener('input', e => search_topics(e.target.value));
+        search_topics('');
     </script>
 </body>
 </html>
