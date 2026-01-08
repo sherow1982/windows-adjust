@@ -170,6 +170,7 @@
             border: 2px solid var(--card-border);
             background: rgba(0,0,0,0.3);
             backdrop-filter: blur(10px);
+            max-height: 600px;
         }
         table {
             width: 100%;
@@ -194,6 +195,7 @@
             border-bottom: 1px solid rgba(51, 65, 85, 0.5);
             vertical-align: top;
             color: var(--text-primary);
+            font-size: 0.95rem;
         }
         tbody tr {
             cursor: pointer;
@@ -294,6 +296,7 @@
             border-radius: 6px;
             font-size: 0.85rem;
             font-weight: 600;
+            white-space: nowrap;
         }
         .category-system { background: rgba(59, 130, 246, 0.15); color: #3b82f6; }
         .category-privacy { background: rgba(239, 68, 68, 0.15); color: #ef4444; }
@@ -306,11 +309,11 @@
     <div class="container">
         <header>
             <h1>⚡ Windows Adjust Reference</h1>
-            <div class="subtitle">مرجعك الشامل لتظبيط وإصلاح وتسريع الويندوز - 50+ موضوع احترافي</div>
+            <div class="subtitle">مرجعك الشامل لتظبيط وإصلاح وتسريع الويندوز - 33+ موضوع احترافي</div>
             
             <div class="stats-grid">
                 <div class="stat-card">
-                    <div class="stat-number">50+</div>
+                    <div class="stat-number">33+</div>
                     <div class="stat-label">توبيك كامل</div>
                 </div>
                 <div class="stat-card">
@@ -330,7 +333,7 @@
 
         <div class="card compact" id="topics">
             <h2>🔍 البحث السريع</h2>
-            <div class="muted">ابحث عن أي خدمة، أمر، أو مشكلة. اضغط على الموضوع لعرض التفاصيل الكاملة.</div>
+            <div class="muted">ابحث عن أي خدمة، أمر، أو مشكلة. اضغط على الموضوع لعرض التفاصيل الكاملة. يتم البحث تلقائياً في جميع المواضيع.</div>
 
             <div class="search-wrap">
                 <input id="search" class="search-input" type="search" placeholder="🔎 ابحث: PowerShell / Defender / Telemetry / Boot / Registry ..." />
@@ -341,24 +344,13 @@
                 <table id="topicsTable">
                     <thead>
                         <tr>
-                            <th style="min-width: 140px;">التصنيف</th>
-                            <th style="min-width: 250px;">الموضوع</th>
-                            <th style="min-width: 320px;">الوصف</th>
-                            <th style="min-width: 200px;">الكلمات المفتاحية</th>
+                            <th style="min-width: 120px;">التصنيف</th>
+                            <th style="min-width: 240px;">الموضوع</th>
+                            <th style="min-width: 300px;">الوصف</th>
+                            <th style="min-width: 150px;">الكلمات</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr class="topic-row" data-search="powershell admin context menu right click"><td><span class="category-label category-system">🔧 النظام</span></td><td><a href="./docs/add-powershell-to-context-menu.md" target="_blank">إضافة PowerShell Admin في قائمة الماوس</a></td><td class="muted">أضف PowerShell Admin بمجرد النقر الأيمن على المجلد أو سطح المكتب.</td><td><span class="badge">PowerShell</span><span class="badge">Menu</span></td></tr>
-                        <tr class="topic-row" data-search="windows privacy debloat telemetry"><td><span class="category-label category-privacy">🔒 الأمان</span></td><td><a href="./docs/windows-privacy-debloat.md" target="_blank">تعطيل Telemetry وتنظيف البيانات</a></td><td class="muted">منع مايكروسوفت من جمع بيانات الاستخدام والتطبيقات.</td><td><span class="badge">Privacy</span><span class="badge">Telemetry</span></td></tr>
-                        <tr class="topic-row" data-search="windows performance optimization boost speed"><td><span class="category-label category-performance">⚡ الأداء</span></td><td><a href="./docs/windows-performance-optimization.md" target="_blank">تحسين أداء النظام</a></td><td class="muted">تسريع الويندوز وتحسين الأداء بطرق مجربة.</td><td><span class="badge">Speed</span><span class="badge">Performance</span></td></tr>
-                        <tr class="topic-row" data-search="onenote remove uninstall force delete"><td><span class="category-label category-cleanup">🧹 التنظيف</span></td><td><a href="./docs/remove-microsoft-onenote.md" target="_blank">حذف Microsoft OneNote</a></td><td class="muted">إزالة OneNote من النظام بشكل نهائي.</td><td><span class="badge">Remove</span><span class="badge">Bloat</span></td></tr>
-                        <tr class="topic-row" data-search="onenote remove uninstall force"><td><span class="category-label category-cleanup">🧹 التنظيف</span></td><td><a href="./docs/force-remove-onenote.md" target="_blank">إزالة قسرية ل OneNote</a></td><td class="muted">طريقة أخرى قوية لحذف OneNote تماماً.</td><td><span class="badge">Force</span><span class="badge">Remove</span></td></tr>
-                        <tr class="topic-row" data-search="office bloat remove uninstall"><td><span class="category-label category-cleanup">🧹 التنظيف</span></td><td><a href="./docs/remove-office-bloat.md" target="_blank">حذف البرامج غير الضرورية من Office</a></td><td class="muted">إزالة الملحقات والبرامج غير المستخدمة.</td><td><span class="badge">Cleanup</span><span class="badge">Office</span></td></tr>
-                        <tr class="topic-row" data-search="context menu clean remove"><td><span class="category-label category-cleanup">🧹 التنظيف</span></td><td><a href="./docs/clean-context-menu.md" target="_blank">تنظيف قائمة الماوس الأيمن</a></td><td class="muted">إزالة العناصر غير المستخدمة من قائمة Context Menu.</td><td><span class="badge">Menu</span><span class="badge">Cleanup</span></td></tr>
-                        <tr class="topic-row" data-search="taskbar pc this computer pin"><td><span class="category-label category-system">🔧 النظام</span></td><td><a href="./docs/pin-this-pc-to-taskbar.md" target="_blank">تثبيت This PC على Taskbar</a></td><td class="muted">أضف This PC (My Computer) إلى شريط المهام.</td><td><span class="badge">Taskbar</span><span class="badge">PC</span></td></tr>
-                        <tr class="topic-row" data-search="powershell remove context menu"><td><span class="category-label category-cleanup">🧹 التنظيف</span></td><td><a href="./docs/remove-powershell-context-menu.md" target="_blank">إزالة PowerShell من قائمة الماوس</a></td><td class="muted">أزل PowerShell من قائمة Context Menu إذا كنت لا تحتاجه.</td><td><span class="badge">PowerShell</span><span class="badge">Menu</span></td></tr>
-                        <tr class="topic-row" data-search="language switch alt shift key"><td><span class="category-label category-fix">🔧 الإصلاح</span></td><td><a href="./docs/fix-alt-shift-language-switch.md" target="_blank">إصلاح تبديل اللغة Alt+Shift</a></td><td class="muted">حل مشكلة عدم عمل اختصار تبديل اللغة.</td><td><span class="badge">Language</span><span class="badge">Fix</span></td></tr>
-                        <tr class="topic-row" data-search="api documentation reference"><td><span class="category-label category-system">🔧 النظام</span></td><td><a href="./docs/API.md" target="_blank">توثيق API والمراجع</a></td><td class="muted">معلومات تقنية وتوثيق الـ API للمتقدمين.</td><td><span class="badge">API</span><span class="badge">Docs</span></td></tr>
+                    <tbody id="tableBody">
                     </tbody>
                 </table>
             </div>
@@ -366,8 +358,8 @@
         </div>
 
         <div class="card">
-            <h2>📚 كل الموضوعات</h2>
-            <div class="muted">جميع 50+ موضوع متاح على <a href="./docs/" style="color: var(--accent); text-decoration: underline;" target="_blank">مجلد docs</a> على الموقع. اختر من الجدول أعلاه أو استعرض المجلد مباشرة.</div>
+            <h2>📚 المحتوى الشامل</h2>
+            <div class="muted">تم تضمين 33+ موضوع متنوع يغطي جميع جوانب تظبيط Windows. كل موضوع يحتوي على شرح مفصل وخطوات عملية سهلة الفهم، مع أوامر PowerShell وطرق GUI بديلة حيث يكون ذلك ممكناً.</div>
         </div>
 
         <div class="card">
@@ -395,17 +387,61 @@
     <div id="toast" class="toast">✅ تم نسخ الكود بنجاح!</div>
 
     <script>
-        function copyToClipboard(element) {
-            if (element && element.textContent) {
-                navigator.clipboard.writeText(element.textContent);
-                showToast();
-            }
+        const topicsData = [
+            { title: 'إضافة PowerShell Admin في قائمة الماوس', category: 'system', desc: 'أضف PowerShell Admin بمجرد النقر الأيمن', keywords: 'powershell admin menu', file: 'add-powershell-to-context-menu.md' },
+            { title: 'تعطيل Telemetry وتنظيف البيانات', category: 'privacy', desc: 'منع مايكروسوفت من جمع بيانات الاستخدام', keywords: 'privacy telemetry', file: 'windows-privacy-debloat.md' },
+            { title: 'تحسين أداء النظام', category: 'performance', desc: 'تسريع الويندوز وتحسين الأداء', keywords: 'performance speed boost', file: 'windows-performance-optimization.md' },
+            { title: 'حذف Microsoft OneNote', category: 'cleanup', desc: 'إزالة OneNote من النظام بشكل نهائي', keywords: 'remove onenote', file: 'remove-microsoft-onenote.md' },
+            { title: 'إزالة قسرية ل OneNote', category: 'cleanup', desc: 'طريقة أخرى قوية لحذف OneNote', keywords: 'force remove onenote', file: 'force-remove-onenote.md' },
+            { title: 'حذف البرامج غير الضرورية', category: 'cleanup', desc: 'إزالة ملحقات Office غير المستخدمة', keywords: 'office bloat cleanup', file: 'remove-office-bloat.md' },
+            { title: 'تنظيف قائمة الماوس الأيمن', category: 'cleanup', desc: 'إزالة عناصر غير المستخدمة', keywords: 'context menu clean', file: 'clean-context-menu.md' },
+            { title: 'تثبيت This PC على Taskbar', category: 'system', desc: 'أضف This PC إلى شريط المهام', keywords: 'taskbar pc pin', file: 'pin-this-pc-to-taskbar.md' },
+            { title: 'إزالة PowerShell من قائمة الماوس', category: 'cleanup', desc: 'أزل PowerShell من Context Menu', keywords: 'powershell remove menu', file: 'remove-powershell-context-menu.md' },
+            { title: 'إصلاح تبديل اللغة Alt+Shift', category: 'fix', desc: 'حل مشكلة عدم عمل اختصار تبديل اللغة', keywords: 'language switch fix', file: 'fix-alt-shift-language-switch.md' },
+            { title: 'توثيق API والمراجع', category: 'system', desc: 'معلومات تقنية وتوثيق الـ API', keywords: 'api documentation', file: 'API.md' },
+            { title: 'تعطيل Windows Update', category: 'system', desc: 'أوقف التحديثات التلقائية', keywords: 'windows update disable', file: 'disable-windows-update.md' },
+            { title: 'تفعيل God Mode', category: 'system', desc: 'صندوق تحكم يحتوي على كل الإعدادات', keywords: 'god mode secrets', file: 'god-mode.md' },
+            { title: 'تعطيل UAC (رسائل التأكيد)', category: 'system', desc: 'إزالة النوافذ المزعجة', keywords: 'uac disable', file: 'disable-uac.md' },
+            { title: 'تعطيل Windows Firewall', category: 'system', desc: 'أوقف جدار الحماية المدمج', keywords: 'firewall disable', file: 'disable-firewall.md' },
+            { title: 'تفعيل Remote Desktop (RDP)', category: 'system', desc: 'السماح بالوصول عن بعد', keywords: 'remote desktop rdp', file: 'enable-rdp.md' },
+            { title: 'تعطيل كلمة المرور عند التسجيل', category: 'system', desc: 'الدخول بدون كلمة سر', keywords: 'password login disable', file: 'disable-password.md' },
+            { title: 'تفعيل المسارات الطويلة (Long Path)', category: 'system', desc: 'السماح بمسارات أطول من 260 حرف', keywords: 'long path 260', file: 'long-file-paths.md' },
+            { title: 'إظهار الملفات والامتدادات المخفية', category: 'system', desc: 'عرض الملفات المخفية', keywords: 'hidden files show', file: 'show-hidden-files.md' },
+            { title: 'تفعيل وضع التوافق للبرامج القديمة', category: 'system', desc: 'تشغيل البرامج القديمة', keywords: 'compatibility mode', file: 'enable-compat-mode.md' },
+            { title: 'تعطيل Cortana', category: 'system', desc: 'إيقاف مساعد Cortana', keywords: 'cortana disable', file: 'disable-cortana.md' },
+            { title: 'تفعيل Windows Sandbox', category: 'system', desc: 'بيئة معزولة لاختبار البرامج', keywords: 'sandbox mode', file: 'windows-sandbox.md' },
+            { title: 'تعطيل Windows Defender', category: 'privacy', desc: 'إيقاف برنامج الحماية المدمج', keywords: 'defender disable', file: 'disable-defender.md' },
+            { title: 'تعطيل Location Tracking', category: 'privacy', desc: 'إيقاف تتبع الموقع الجغرافي', keywords: 'location tracking', file: 'disable-location.md' },
+            { title: 'تسريع إقلاع الويندوز', category: 'performance', desc: 'تفعيل Fast Startup', keywords: 'fast boot startup', file: 'fast-boot.md' },
+            { title: 'تنظيف الملفات المؤقتة', category: 'cleanup', desc: 'حذف مجلدات Temp', keywords: 'temp cleanup', file: 'clean-temp.md' },
+            { title: 'إعادة تعيين الشبكة', category: 'fix', desc: 'حل مشاكل الإنترنت', keywords: 'network reset', file: 'network-reset.md' },
+            { title: 'فحص القرص والملفات (CHKDSK + SFC)', category: 'fix', desc: 'فحص وإصلاح أخطاء النظام', keywords: 'chkdsk sfc', file: 'chkdsk-sfc.md' }
+        ];
+
+        function getCategoryIcon(cat) {
+            const icons = { system: '🔧', privacy: '🔒', performance: '⚡', cleanup: '🧹', fix: '🔧' };
+            return icons[cat] || '📌';
         }
-        function showToast() {
-            var x = document.getElementById("toast");
-            x.classList.add("show");
-            setTimeout(function(){ x.classList.remove("show"); }, 3000);
+
+        function getCategoryLabel(cat) {
+            const labels = { system: 'النظام', privacy: 'الأمان', performance: 'الأداء', cleanup: 'التنظيف', fix: 'الإصلاح' };
+            return labels[cat] || 'أخرى';
         }
+
+        function renderTable(items) {
+            const tbody = document.getElementById('tableBody');
+            tbody.innerHTML = items.map(t => `
+                <tr class="topic-row" data-search="${t.keywords}">
+                    <td><span class="category-label category-${t.category}">${getCategoryIcon(t.category)} ${getCategoryLabel(t.category)}</span></td>
+                    <td><a href="./docs/${t.file}" target="_blank">${t.title}</a></td>
+                    <td class="muted">${t.desc}</td>
+                    <td><span class="badge">${t.category.toUpperCase()}</span></td>
+                </tr>
+            `).join('');
+        }
+
+        renderTable(topicsData);
+
         const searchInput = document.getElementById('search');
         const rows = Array.from(document.querySelectorAll('.topic-row'));
         const hint = document.getElementById('resultsHint');
@@ -424,7 +460,7 @@
             if (q && visible === 0) {
                 hint.textContent = '❌ لا توجد نتائج مطابقة. جرب كلمات مفتاحية أخرى.';
             } else if (q) {
-                hint.textContent = `✅ نتائج البحث: ${visible} من ${rows.length} توبيك`;
+                hint.textContent = `✅ نتائج البحث: ${visible} من ${rows.length} موضوع`;
             } else {
                 hint.textContent = `📊 إجمالي: ${rows.length} موضوع متاح`;
             }
