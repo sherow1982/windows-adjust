@@ -142,11 +142,11 @@
     <div class="container">
         <header>
             <h1>⚡ Windows Adjust Reference</h1>
-            <div class="subtitle">مرجعك الشامل لتظبيط وإصلاح الويندوز - 28+ موضوع احترافي</div>
+            <div class="subtitle">مرجعك الشامل لتظبيط وإصلاح الويندوز - 50+ موضوع احترافي</div>
             
             <div class="stats">
                 <div class="stat-box">
-                    <div class="stat-num">28+</div>
+                    <div class="stat-num">50+</div>
                     <div class="stat-txt">موضوع</div>
                 </div>
                 <div class="stat-box">
@@ -154,7 +154,7 @@
                     <div class="stat-txt">مفتوح المصدر</div>
                 </div>
                 <div class="stat-box">
-                    <div class="stat-num">5</div>
+                    <div class="stat-num">6</div>
                     <div class="stat-txt">تصنيفات</div>
                 </div>
                 <div class="stat-box">
@@ -166,7 +166,7 @@
 
         <div class="card">
             <h2>🔍 البحث السريع</h2>
-            <p>ابحث عن أي موضوع. اضغط على الرابط للفتت.</p>
+            <p>ابحث عن أي موضوع. اضغط على الرابط للفتح.</p>
             
             <div class="search-wrap">
                 <input id="search" class="search-input" type="search" placeholder="🔎 ابحث: PowerShell, Defender, Boot, Registry, Privacy..." />
@@ -196,7 +196,7 @@
             <ul>
                 <li>اعمل System Restore Point قبل أي تعديل</li>
                 <li>استخدم حساب Admin</li>
-                <li>فهم الآمر قبل نسخه</li>
+                <li>فهم الأمر قبل نسخه</li>
                 <li>قد تحتاج لإعادة تشغيل</li>
             </ul>
         </div>
@@ -204,33 +204,61 @@
 
     <script>
         const topics = [
-            {cat: '🔧 نظام', file: 'add-powershell-to-context-menu.md', title: 'إضافة PowerShell Admin', desc: 'أضف PowerShell عبر Context Menu', key: 'powershell admin menu'},
-            {cat: '🔒 أمان', file: 'windows-privacy-debloat.md', title: 'تعطيل Telemetry', desc: 'منع جمع البيانات', key: 'privacy telemetry'},
-            {cat: '⚡ أداء', file: 'windows-performance-optimization.md', title: 'تحسين الأداء', desc: 'تسريع الويندوز', key: 'performance speed'},
-            {cat: '🧹 تنظيف', file: 'remove-microsoft-onenote.md', title: 'حذف OneNote', desc: 'إزالة نهاية', key: 'onenote remove'},
-            {cat: '🧹 تنظيف', file: 'force-remove-onenote.md', title: 'قسرية OneNote', desc: 'حذف قوي', key: 'force remove onenote'},
-            {cat: '🧹 تنظيف', file: 'remove-office-bloat.md', title: 'حذف Office Bloat', desc: 'ملحقات غير مشروعة', key: 'office bloat'},
-            {cat: '🧹 تنظيف', file: 'clean-context-menu.md', title: 'تنظيف Context Menu', desc: 'إزالة عناصر زائدة', key: 'context menu clean'},
-            {cat: '🔧 نظام', file: 'pin-this-pc-to-taskbar.md', title: 'ثبيت This PC', desc: 'على Taskbar', key: 'taskbar this pc'},
-            {cat: '🧹 تنظيف', file: 'remove-powershell-context-menu.md', title: 'إزالة PowerShell', desc: 'من Context Menu', key: 'powershell remove'},
-            {cat: '🔧 إصلاح', file: 'fix-alt-shift-language-switch.md', title: 'إصلاح Alt+Shift', desc: 'لغة البيانوس', key: 'language switch'},
-            {cat: '🔧 نظام', file: 'disable-windows-update.md', title: 'تعطيل Windows Update', desc: 'أوقف التحديثات', key: 'update disable'},
-            {cat: '🔧 نظام', file: 'god-mode.md', title: 'God Mode', desc: 'صندوق مراقبة', key: 'god mode secrets'},
-            {cat: '🔧 نظام', file: 'disable-uac.md', title: 'تعطيل UAC', desc: 'رسالات التأكيد', key: 'uac disable'},
-            {cat: '🔧 نظام', file: 'disable-firewall.md', title: 'تعطيل Firewall', desc: 'جدار الحماية', key: 'firewall disable'},
-            {cat: '🔧 نظام', file: 'enable-rdp.md', title: 'تفعيل RDP', desc: 'الوصول عن بعد', key: 'rdp remote'},
-            {cat: '🔧 نظام', file: 'disable-password.md', title: 'تعطيل كلمة المرور', desc: 'بدون كلمة سر', key: 'password login'},
-            {cat: '🔧 نظام', file: 'long-file-paths.md', title: 'Long Path', desc: 'مسارات أطول', key: 'long path 260'},
-            {cat: '🔧 نظام', file: 'show-hidden-files.md', title: 'الملفات المخفية', desc: 'عرض الامتدادات', key: 'hidden files'},
-            {cat: '🔧 نظام', file: 'enable-compat-mode.md', title: 'وضع التوافق', desc: 'برامج قديمة', key: 'compatibility'},
-            {cat: '🔧 نظام', file: 'disable-cortana.md', title: 'تعطيل Cortana', desc: 'المساعد', key: 'cortana disable'},
-            {cat: '🔧 نظام', file: 'windows-sandbox.md', title: 'Sandbox', desc: 'بيئة معزولة', key: 'sandbox'},
-            {cat: '🔒 أمان', file: 'disable-defender.md', title: 'تعطيل Defender', desc: 'برنامج الحماية', key: 'defender antivirus'},
-            {cat: '🔒 أمان', file: 'disable-location.md', title: 'تعطيل Location', desc: 'تتبع الموقع', key: 'location tracking'},
-            {cat: '⚡ أداء', file: 'fast-boot.md', title: 'Fast Boot', desc: 'تسريع الإقلاع', key: 'fast boot'},
-            {cat: '🧹 تنظيف', file: 'clean-temp.md', title: 'الملفات المؤقتة', desc: 'Temp Cleanup', key: 'temp files'},
-            {cat: '🔧 إصلاح', file: 'network-reset.md', title: 'إعادة الشبكة', desc: 'مشاكل الإنترنت', key: 'network reset'},
-            {cat: '🔧 إصلاح', file: 'chkdsk-sfc.md', title: 'CHKDSK + SFC', desc: 'فحص وإصلاح', key: 'chkdsk sfc repair'}
+            {cat: '🔧 نظام', file: '01-powershell-admin.md', title: 'PowerShell Admin', desc: 'إضافة لقائمة Context Menu', key: 'powershell admin context menu'},
+            {cat: '🔧 نظام', file: '02-disable-windows-update.md', title: 'تعطيل Windows Update', desc: 'إيقاف التحديثات التلقائية', key: 'windows update disable'},
+            {cat: '🔧 نظام', file: '03-god-mode.md', title: 'God Mode', desc: 'صندوق مراقبة شامل', key: 'god mode control panel'},
+            {cat: '🔧 نظام', file: '04-disable-uac.md', title: 'تعطيل UAC', desc: 'رسائل التأكيد المزعجة', key: 'uac user account control'},
+            {cat: '🔧 نظام', file: '05-disable-firewall.md', title: 'تعطيل Firewall', desc: 'جدار الحماية', key: 'firewall windows defender'},
+            {cat: '🔧 نظام', file: '06-enable-rdp.md', title: 'تفعيل RDP', desc: 'الوصول عن بعد', key: 'rdp remote desktop'},
+            {cat: '🔧 نظام', file: '07-disable-password.md', title: 'تعطيل كلمة المرور', desc: 'دخول بدون كلمة سر', key: 'password login auto'},
+            {cat: '🔧 نظام', file: '08-long-file-paths.md', title: 'Long Path', desc: 'مسارات أطول من 260', key: 'long path 260 limit'},
+            {cat: '🔧 نظام', file: '09-show-hidden-files.md', title: 'الملفات المخفية', desc: 'عرض الامتدادات', key: 'hidden files extensions'},
+            {cat: '🔧 نظام', file: '10-enable-compat-mode.md', title: 'وضع التوافق', desc: 'برامج قديمة', key: 'compatibility mode old programs'},
+            {cat: '🔧 نظام', file: '11-disable-cortana.md', title: 'تعطيل Cortana', desc: 'المساعد الصوتي', key: 'cortana voice assistant'},
+            {cat: '🔧 نظام', file: '12-windows-sandbox.md', title: 'Windows Sandbox', desc: 'بيئة معزولة آمنة', key: 'sandbox virtual machine'},
+            
+            {cat: '🔒 أمان', file: '13-disable-defender.md', title: 'تعطيل Defender', desc: 'برنامج الحماية', key: 'defender antivirus realtime'},
+            {cat: '🔒 أمان', file: '14-disable-telemetry.md', title: 'تعطيل Telemetry', desc: 'منع جمع البيانات', key: 'telemetry privacy tracking'},
+            {cat: '🔒 أمان', file: '15-disable-location.md', title: 'تعطيل Location', desc: 'تتبع الموقع', key: 'location tracking gps'},
+            {cat: '🔒 أمان', file: '16-disable-notifications.md', title: 'تعطيل الإشعارات', desc: 'رسائل الإزعاج', key: 'notifications alerts'},
+            
+            {cat: '⚡ أداء', file: '17-fast-boot.md', title: 'Fast Boot', desc: 'تسريع الإقلاع', key: 'fast boot startup'},
+            {cat: '⚡ أداء', file: '18-ultimate-performance.md', title: 'Ultimate Performance', desc: 'أقصى أداء', key: 'ultimate performance power'},
+            {cat: '⚡ أداء', file: '19-fast-dns.md', title: 'Fast DNS', desc: 'تسريع الإنترنت', key: 'dns google cloudflare'},
+            {cat: '⚡ أداء', file: '20-disable-visual-effects.md', title: 'تعطيل المؤثرات', desc: 'المؤثرات البصرية', key: 'visual effects animations'},
+            {cat: '⚡ أداء', file: '21-disable-search.md', title: 'تعطيل Search', desc: 'Windows Search Indexing', key: 'search indexing wsearch'},
+            {cat: '⚡ أداء', file: '22-disable-page-file.md', title: 'تعطيل Page File', desc: 'للرام العالية فقط', key: 'pagefile virtual memory'},
+            {cat: '⚡ أداء', file: '23-ssd-optimization.md', title: 'تحسين SSD', desc: 'TRIM وتعطيل Defrag', key: 'ssd trim defrag'},
+            {cat: '⚡ أداء', file: '24-disable-animations.md', title: 'تعطيل Animations', desc: 'النوافذ والتاسك بار', key: 'animations taskbar windows'},
+            {cat: '⚡ أداء', file: '25-disable-superfetch.md', title: 'تعطيل SuperFetch', desc: 'SysMain للـ SSD', key: 'superfetch sysmain service'},
+            {cat: '⚡ أداء', file: '26-fullscreen-optimization.md', title: 'Fullscreen Optimization', desc: 'للألعاب FPS', key: 'fullscreen games fps'},
+            {cat: '⚡ أداء', file: '27-disable-ipv6.md', title: 'تعطيل IPv6', desc: 'تقليل الموارد', key: 'ipv6 network protocol'},
+            {cat: '⚡ أداء', file: '28-disable-game-bar.md', title: 'تعطيل Game Bar', desc: 'Xbox Game Bar', key: 'game bar xbox dvr'},
+            {cat: '⚡ أداء', file: '29-disable-transparency.md', title: 'تعطيل Transparency', desc: 'الشفافية والظلال', key: 'transparency aero glass'},
+            {cat: '⚡ أداء', file: '30-network-optimization.md', title: 'تحسين الشبكة', desc: 'TCP وتسريع النت', key: 'network tcp throttling'},
+            {cat: '⚡ أداء', file: '31-disable-background-apps.md', title: 'تعطيل Background Apps', desc: 'التطبيقات الخلفية', key: 'background apps battery'},
+            {cat: '⚡ أداء', file: '32-high-performance-processor.md', title: 'High Performance CPU', desc: 'معالج بأقصى سرعة', key: 'cpu processor performance'},
+            
+            {cat: '🧹 تنظيف', file: '33-clean-temp.md', title: 'تنظيف Temp', desc: 'الملفات المؤقتة', key: 'temp files cleanup'},
+            {cat: '🧹 تنظيف', file: '34-remove-bloatware.md', title: 'حذف Bloatware', desc: 'البرامج المثبتة مسبقاً', key: 'bloatware apps uwp'},
+            {cat: '🧹 تنظيف', file: '35-remove-edge.md', title: 'حذف Edge', desc: 'Microsoft Edge', key: 'edge browser remove'},
+            {cat: '🧹 تنظيف', file: '36-remove-onenote.md', title: 'حذف OneNote', desc: 'Microsoft OneNote', key: 'onenote microsoft remove'},
+            {cat: '🧹 تنظيف', file: '37-remove-onedrive.md', title: 'حذف OneDrive', desc: 'التخزين السحابي', key: 'onedrive cloud storage'},
+            {cat: '🧹 تنظيف', file: '38-clear-event-logs.md', title: 'مسح Event Logs', desc: 'سجلات الأحداث', key: 'event logs viewer'},
+            {cat: '🧹 تنظيف', file: '39-clear-cache.md', title: 'مسح Cache', desc: 'DNS وIcons وThumbnails', key: 'cache dns thumbnails'},
+            {cat: '🧹 تنظيف', file: '40-storage-sense.md', title: 'Storage Sense', desc: 'تنظيف تلقائي', key: 'storage sense cleanup'},
+            {cat: '🧹 تنظيف', file: '41-disable-hibernation.md', title: 'تعطيل Hibernation', desc: 'حذف hiberfil.sys', key: 'hibernation hiberfil sleep'},
+            {cat: '🧹 تنظيف', file: '42-disable-backup.md', title: 'تعطيل Backup', desc: 'File History', key: 'backup file history'},
+            {cat: '🧹 تنظيف', file: '43-disk-cleanup.md', title: 'Disk Cleanup', desc: 'متقدم DISM', key: 'disk cleanup dism component'},
+            
+            {cat: '🔧 إصلاح', file: '44-network-reset.md', title: 'إعادة الشبكة', desc: 'مشاكل الإنترنت', key: 'network reset internet fix'},
+            {cat: '🔧 إصلاح', file: '45-alt-shift-fix.md', title: 'إصلاح Alt+Shift', desc: 'تبديل اللغة', key: 'alt shift language keyboard'},
+            {cat: '🔧 إصلاح', file: '46-auto-restart-fix.md', title: 'إيقاف Auto Restart', desc: 'بعد الأخطاء', key: 'auto restart bsod crash'},
+            {cat: '🔧 إصلاح', file: '47-store-fix.md', title: 'إصلاح Store', desc: 'Microsoft Store', key: 'store microsoft fix reset'},
+            {cat: '🔧 إصلاح', file: '48-chkdsk-sfc.md', title: 'CHKDSK + SFC', desc: 'فحص وإصلاح القرص', key: 'chkdsk sfc dism repair'},
+            
+            {cat: '📚 موارد', file: '49-additional-resources.md', title: 'موارد إضافية', desc: 'أدوات ومواقع مفيدة', key: 'resources tools utilities'},
+            {cat: '📚 موارد', file: '50-troubleshooting.md', title: 'استكشاف الأخطاء', desc: 'حلول للمشاكل الشائعة', key: 'troubleshooting problems errors'}
         ];
 
         const tbody = document.getElementById('tbody');
