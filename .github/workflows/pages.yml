@@ -24,14 +24,27 @@ jobs:
 
       - name: 🏗️ Build static site
         run: |
+          # Create dist folder with all project files
           mkdir -p dist
-          cp -r . dist/
-          rm -rf dist/node_modules dist/.git dist/.github
+          # Copy everything except what we don't need
+          cp -r . dist/ || true
+          # Clean up unnecessary folders from dist
+          cd dist
+          rm -rf .git .github node_modules dist 2>/dev/null || true
+          # Verify index.html exists
+          if [ ! -f "index.html" ]; then
+            echo "❌ ERROR: index.html not found in dist/"
+            ls -la
+            exit 1
+          fi
+          echo "✅ Build complete. Files ready for deployment."
+          echo "dist/ contents:"
+          ls -la | head -20
 
       - name: 📦 Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: ./dist
 
   deploy:
     runs-on: ubuntu-latest
