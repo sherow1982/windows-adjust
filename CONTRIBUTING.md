@@ -1,132 +1,173 @@
-# 🤝 دليل المساهمين
+# 🤝 مرشد المساهمة - Contributing Guide
 
-الشكر لرغبتك لالمساهمة في **Windows Adjust Reference**! 🌟
-
----
-
-## 📝 القواعد الأساسية
-
-### ⭐ ها الفمرة للمساهمة:
-
-1. **Fork** الريبو
-2. **Clone** للجهاز الخاص بك
-3. **Branch** للتتبع عملك
-4. **Commit** التغييرات
-5. **Push** للفرع الخاص بك
-6. **Pull Request** للمجبول
+> **شكراً لرغبتك في المساهمة في مشروع Windows Adjust!** 🌟
 
 ---
 
-## 💵 نوعا المساهمات
+## 💫 لماذا المساهمة؟
 
-### 🎨 1. أوامر جديدة (Topics)
+- 🏆 **بناء مجتمع**: كل مساهمة هامة
+- 🌟 **مشع رحب بها**: لا تتردد - ساهم مباشرة!
+- ✨ **يتم مراجعتها**: عم سريع ومحبترم
 
-**هل تريد إضافة أوامر Windows جديدة؟**
+---
 
-**المطلوب:**
-- لا يكون موجود بالفعل في الريبو
-- الأمر الواحد ورافق له بوصف مفصل
-- مختبر على **Windows 10/11 LTSC** على الأقل
+## ✅ أنواع المساهمات
 
-**مع اللينكم والمراجع:**
+### 1️⃣ إضافة توبيكات جديدة
+
+**يمكنك المساهمة بيإضافة:**
+
+- 🖛 أوامر PowerShell/CMD جديدة
+- 🔧 تحسينات نظام مبتكرة
+- 🧹 تقنيات تنظيف متقدمة
+- 🔰 حيل لمشاكل معروفة
+
+### 2️⃣ تحسين المواضيع الحالية
+
+- ✍️ تعديل أر أم تي ملبسة
+- خطأ إملائي بلغرافية عربية
+- تحسين الوصف عن أوامر
+
+### 3️⃣ ترجمة للإنجليزية
+
+- إذا كانت لغتك الإنجليزية جيدة
+
+### 4️⃣ رفع أخطاء ومشاكل
+
+- اعثر على أخطاء في الأوامر
+- أخبرنا بيثير له عبارة
+
+---
+
+## 🚀 بدء المساهمة بسرعة
+
+### **الخطوة 1: Fork**
+
+```
+adhub.com/sherow1982/windows-adjust
+→ اضغط Fork (top right)
+```
+
+### **الخطوة 2: Clone**
+
+```bash
+git clone https://github.com/YOUR_USERNAME/windows-adjust.git
+cd windows-adjust
+```
+
+### **الخطوة 3: انشئ Branch**
+
+```bash
+git checkout -b feature/your-feature-name
+# مثال:
+# git checkout -b feature/add-registry-tweak
+```
+
+### **الخطوة 4: Edit**
+
+عدل `index.html` وأضف توبيكك
+
+### **الخطوة 5: Commit**
+
+```bash
+git add .
+git commit -m "فيالثر: إضافة registry tweak لتسريع Boot"
+# نمط:
+# "Add: [type] - [description]"
+# "Fix: [description]"
+# "Update: [description]"
+```
+
+### **الخطوة 6: Push**
+
+```bash
+git push origin feature/your-feature-name
+```
+
+### **الخطوة 7: Pull Request**
+
+- اذهب لالريبو الأصلي
+- اضغط **New Pull Request**
+- اختر branch بتاعك
+- اوصف ما فعلت
+
+---
+
+## ✅ معايير القبول
+
+للقبول بمساهمتك بنجاح:
+
+- ✅ **لغة عربية سليمة** - بدون أخطاء ملبسة
+- ✅ **أوامر صحيحة** - الأوامر يجب أن تعمل فعلاً
+- ✅ **وصف رائع** - وصف واضح للأمر
+- ✅ **آمن - موثوق** - لا تفعل الأشياء الخطيرة!
+- ✅ **ربط HTML** - صابع بحالها
+
+---
+
+## 📚 مبدأ العمل
+
+### هيكل التوبيك في index.html:
+
 ```html
-<tr class="topic-row" 
-    data-target="my-topic-id" 
-    data-search="keyword1 keyword2 search-terms">
-    <td>التصنيف الرئيسي</td>
-    <td>اسم الخدمة بالعربية</td>
-    <td class="muted">وصف ثلاثي السطر</td>
+<tr class="topic-row" data-target="my-topic" data-search="مفاتيح keyword1 keyword2">
     <td>
-        <span class="badge">KEYWORD</span>
-        <span class="badge">TAG</span>
+        <span class="category-label category-system">🔧 النظام</span>
     </td>
     <td>
-        <button class="btn" onclick="jumpTo('my-topic-id')">فتح</button>
+        <strong>اسم التوبيك</strong>
+    </td>
+    <td class="muted">وصف بسيط</td>
+    <td>
+        <span class="badge">TAG1</span>
+        <span class="badge">TAG2</span>
     </td>
 </tr>
 ```
 
-ثم أضف الكارت:
-```html
-<div class="card topic-card" id="my-topic-id">
-    <span class="card-category cat-system">تظبيط النظام</span>
-    <h2>🔧 اسم الخدمة</h2>
-    <p class="muted">وصف طويل للخدمة.</p>
-    
-    <div class="warning-box">
-        <span class="warning-icon">⚠️</span>
-        <div>تحذير عند الحاجة</div>
-    </div>
-    
-    <div class="code-container">
-        <div class="code-header">
-            PowerShell المسئول
-            <span class="code-tool">ADMIN REQUIRED</span>
-        </div>
-        <pre onclick="copyToClipboard(this)">
-<code>Your-Command-Here</code>
-        </pre>
-    </div>
-</div>
+### الفئات:
+- `category-system` = 🔧 النظام
+- `category-privacy` = 🔒 الخصوصية
+- `category-performance` = ⚡ الأداء
+- `category-cleanup` = 🧹 التنظيف
+- `category-fix` = 🔨 الإصلاح
+
+---
+
+## 💁 ربط مفيدة
+
+- 📚 [README](README.md) - الرئيسية
+- 📋 [TOPICS](TOPICS.md) - قائمة المواضيع
+- 📚 [LICENSE](LICENSE) - الترخيص
+
+---
+
+## 🌠 الأوامر السريعة
+
+```bash
+# Clone + Setup
+git clone https://github.com/YOUR_USERNAME/windows-adjust.git && cd windows-adjust
+
+# Create branch
+git checkout -b feature/your-feature
+
+# Make changes
+# Then...
+
+git add .
+git commit -m "Add: Your awesome feature"
+git push origin feature/your-feature
+
+# افتح Pull Request من GitHub UI
 ```
 
-### 📝 2. تحسينات على واجهة الموقع
+---
 
-**المطلوب:**
-- CSS/UI التحسينات
-- Performance وتسريع الموقع
-- الأذاعات الجديدة
+## ❤️ شكراً!
 
-**ما لا نقبل:**
-- تغييرات مهمة بدون PR
-- إزالة أوامر بدون متابعة
-
-### 📋 3. تحسينات على الوثائق
-
-**المطلوب:**
-- README.md التحسينات
-- Documentation زيادة
-- شرح أعمق للأوامر
+**شكراً لمساهمتك هذه طريقة واحترامنا لوقتك وجهدك!** ❤️
 
 ---
 
-## 📄 مواصلات اللغة والأسلوب
-
-### لغة التراجمة:
-- لا نستخدم المترجمين الآليين (خم عام لا يفهم التراميب)
-- ترجمة يدوية متقنة بما يناسب السياق
-
-### الأسلوب:
-- الارتباط التقني العالي
-- وضوح كاملة
-- لا تسخيف في الشرح
-
----
-
-## ⚠️ أمور مهمة
-
-### تأكد من:
-- [ ] الأمر مدارؤ بالفعل (باختبار)
-- [ ] الوصف واضح ودقيق
-- [ ] تم شتر التغيير والوشيبة
-
-### ما لا تنساه:
-- ❌ لا توار بحرام Windows
-- ❌ لا تعلم بعض الأشياء بدون الاختبار
-- ❌ لا عيب يا خارظ
-
----
-
-## 🚀 بعد التقديم
-
-1. **مراجعة البيانات** - تؤكد من سلامة الأمر
-2. **الإجابة** - برم راجعو أي استفسارات
-3. **الموافقة** - ما عر الثقه 
-
----
-
-## 😉 والموافقه في النهاية
-
-الملفت للآباء العظيم على مساهماتهم! 🌟
-
-**براه عريباث**
+**للأسئلة**: [افتح Issue](https://github.com/sherow1982/windows-adjust/issues/new)
