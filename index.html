@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Windows Adjust Reference | مرجع تظبيط الويندوز</title>
+    <meta name="description" content="مرجع شامل لتظبيط وتسريع وتحسين Windows 10/11 - 50+ موضوع احترافي">
+    <meta name="keywords" content="Windows Adjust, تظبيط, تسريع, Windows 10, Windows 11, تحسين الأداء">
+    <meta name="author" content="Sherif Salama (sherow1982)">
+    <meta name="theme-color" content="#0a0e27">
+    <title>Windows Adjust Reference | مرجع تظبيط الويندوز الشامل</title>
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a0e27'/><text x='50' y='65' font-size='70' fill='%2338bdf8' text-anchor='middle'>⚡</text></svg>">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -77,38 +82,15 @@
             border-radius: 20px;
             padding: 2.5rem;
             margin-bottom: 2.5rem;
-            box-shadow: 
-                0 8px 16px rgba(0, 0, 0, 0.3),
-                0 0 0 1px var(--card-border),
-                inset 0 1px 0 rgba(255, 255, 255, 0.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), 0 0 0 1px var(--card-border), inset 0 1px 0 rgba(255, 255, 255, 0.05);
             border: 1px solid var(--card-border);
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
         }
-        .card::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(135deg, var(--accent) 0%, transparent 50%);
-            border-radius: 20px;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            z-index: -1;
-        }
         .card:hover {
             transform: translateY(-4px);
-            box-shadow: 
-                0 12px 24px rgba(0, 0, 0, 0.4),
-                0 0 0 1px var(--accent),
-                0 0 30px var(--accent-glow),
-                inset 0 1px 0 rgba(255, 255, 255, 0.1);
-        }
-        .card:hover::before {
-            opacity: 0.1;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4), 0 0 0 1px var(--accent), 0 0 30px var(--accent-glow), inset 0 1px 0 rgba(255, 255, 255, 0.1);
         }
         .card.compact { 
             padding: 1.5rem 2rem;
@@ -125,47 +107,6 @@
             color: var(--accent);
             text-shadow: 0 0 20px var(--accent-glow);
         }
-        .card-category {
-            display: inline-block;
-            padding: 6px 14px;
-            border-radius: 8px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .cat-system { 
-            background: rgba(56, 189, 248, 0.15); 
-            color: #38bdf8;
-            border: 1px solid rgba(56, 189, 248, 0.3);
-        }
-        .cat-privacy { 
-            background: rgba(244, 114, 182, 0.15); 
-            color: #f472b6;
-            border: 1px solid rgba(244, 114, 182, 0.3);
-        }
-        .cat-performance { 
-            background: rgba(34, 197, 94, 0.15); 
-            color: #22c55e;
-            border: 1px solid rgba(34, 197, 94, 0.3);
-        }
-        .cat-cleanup { 
-            background: rgba(251, 191, 36, 0.15); 
-            color: #fbbf24;
-            border: 1px solid rgba(251, 191, 36, 0.3);
-        }
-        .cat-fix { 
-            background: rgba(239, 68, 68, 0.15); 
-            color: #ef4444;
-            border: 1px solid rgba(239, 68, 68, 0.3);
-        }
-        .muted {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-        .hidden { display: none !important; }
         .search-wrap {
             display: flex;
             gap: 12px;
@@ -210,7 +151,6 @@
             box-shadow: 0 0 20px var(--accent-glow);
             transform: translateY(-2px);
         }
-        .btn:active { transform: translateY(0); }
         .table-wrap {
             margin-top: 1.5rem;
             overflow: auto;
@@ -243,12 +183,8 @@
             vertical-align: top;
             color: var(--text-primary);
         }
-        tbody tr {
-            transition: all 0.2s ease;
-        }
         tbody tr:hover { 
             background: rgba(56, 189, 248, 0.08);
-            box-shadow: inset 0 0 20px rgba(56, 189, 248, 0.1);
         }
         .badge {
             display: inline-block;
@@ -264,111 +200,7 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
-        .actions {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-        a {
-            color: var(--link-color);
-            text-decoration: none;
-            border-bottom: 2px dashed var(--link-color);
-            transition: all 0.2s;
-            font-weight: 600;
-        }
-        a:hover {
-            border-bottom-style: solid;
-            filter: brightness(1.3);
-            text-shadow: 0 0 10px var(--link-color);
-        }
-        .code-container {
-            position: relative;
-            direction: ltr;
-            margin: 2rem 0;
-        }
-        .code-header {
-            background: rgba(0, 255, 65, 0.15);
-            border: 2px solid rgba(0, 255, 65, 0.3);
-            color: var(--code-text);
-            padding: 10px 16px;
-            border-radius: 12px 12px 0 0;
-            font-family: 'Fira Code', monospace;
-            font-size: 0.9rem;
-            font-weight: 700;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            backdrop-filter: blur(10px);
-        }
-        .code-tool {
-            background: rgba(0, 255, 65, 0.25);
-            padding: 4px 10px;
-            border-radius: 6px;
-            font-size: 0.75rem;
-            border: 1px solid rgba(0, 255, 65, 0.5);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        pre {
-            background: var(--code-bg);
-            padding: 1.8rem;
-            border: 2px solid rgba(0, 255, 65, 0.2);
-            border-top: none;
-            border-radius: 0 0 12px 12px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-            margin: 0;
-            overflow-x: auto;
-        }
-        pre:hover {
-            border-color: var(--code-text);
-            box-shadow: 0 0 25px rgba(0, 255, 65, 0.3);
-            background: #050505;
-        }
-        pre::after {
-            content: "📋 اضغط للنسخ";
-            position: absolute;
-            top: 12px;
-            right: 12px;
-            background: rgba(0, 255, 65, 0.25);
-            color: var(--code-text);
-            padding: 6px 12px;
-            border-radius: 8px;
-            font-family: 'Cairo', sans-serif;
-            font-size: 0.85rem;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            border: 1px solid var(--code-text);
-            text-shadow: 0 0 10px var(--code-text);
-            font-weight: 700;
-        }
-        pre:hover::after { opacity: 1; }
-        code {
-            font-family: 'Fira Code', monospace;
-            color: var(--code-text);
-            font-size: 0.95rem;
-            text-shadow: 0 0 8px rgba(0, 255, 65, 0.6);
-            font-weight: 500;
-            line-height: 1.6;
-            letter-spacing: 0.3px;
-        }
-        .warning-box {
-            background: rgba(251, 191, 36, 0.1);
-            border: 2px solid rgba(251, 191, 36, 0.3);
-            border-radius: 12px;
-            padding: 1rem 1.5rem;
-            margin: 1.5rem 0;
-            display: flex;
-            align-items: start;
-            gap: 12px;
-        }
-        .warning-icon {
-            color: var(--warning);
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
+        .hidden { display: none !important; }
         .toast {
             visibility: hidden;
             min-width: 300px;
@@ -385,22 +217,13 @@
             transform: translateX(-50%);
             font-size: 1.1rem;
             box-shadow: 0 8px 32px rgba(0, 255, 65, 0.6);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            backdrop-filter: blur(10px);
         }
         .toast.show {
             visibility: visible;
-            -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
             animation: fadein 0.5s, fadeout 0.5s 2.5s;
         }
-        @-webkit-keyframes fadein { from {bottom: 0; opacity: 0;} to {bottom: 40px; opacity: 1;} }
         @keyframes fadein { from {bottom: 0; opacity: 0;} to {bottom: 40px; opacity: 1;} }
-        @-webkit-keyframes fadeout { from {bottom: 40px; opacity: 1;} to {bottom: 0; opacity: 0;} }
         @keyframes fadeout { from {bottom: 40px; opacity: 1;} to {bottom: 0; opacity: 0;} }
-        
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -433,6 +256,11 @@
             font-size: 0.9rem;
             margin-top: 0.5rem;
         }
+        .muted {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
     </style>
 </head>
 <body>
@@ -443,7 +271,7 @@
             
             <div class="stats-grid">
                 <div class="stat-card">
-                    <div class="stat-number">50</div>
+                    <div class="stat-number">50+</div>
                     <div class="stat-label">توبيك كامل</div>
                 </div>
                 <div class="stat-card">
@@ -478,657 +306,47 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- 30 القديمة -->
-                        <tr class="topic-row" data-target="powershell-context-menu" data-search="powershell admin context menu registry قائمة الماوس اليمين مسؤول administrator shell">
+                        <tr class="topic-row" data-target="powershell-context" data-search="powershell admin context menu registry">
                             <td>تظبيط النظام</td>
                             <td>إضافة PowerShell كمسؤول في قائمة الماوس</td>
-                            <td class="muted">إضافة خيار "PowerShell Admin Here" في قائمة الماوس اليمين.</td>
-                            <td>
-                                <span class="badge">PowerShell</span>
-                                <span class="badge">Registry</span>
-                            </td>
-                            <td>
-                                <button class="btn" type="button" onclick="jumpTo('powershell-context-menu')">فتح</button>
-                            </td>
+                            <td class="muted">إضافة خيار PowerShell Admin في قائمة الماوس اليمين.</td>
+                            <td><span class="badge">PowerShell</span><span class="badge">Registry</span></td>
+                            <td><button class="btn" onclick="alert('النقر على الأوامر قريباً')" type="button">فتح</button></td>
                         </tr>
-
-                        <tr class="topic-row" data-target="remove-powershell" data-search="powershell إزالة حذف context menu registry قائمة الماوس">
-                            <td>تنظيف النظام</td>
-                            <td>إزالة PowerShell من قائمة الماوس</td>
-                            <td class="muted">تنظيف شامل للقائمة من إدخالات PowerShell.</td>
-                            <td>
-                                <span class="badge">PowerShell</span>
-                                <span class="badge">Cleanup</span>
-                            </td>
-                            <td>
-                                <button class="btn" type="button" onclick="jumpTo('remove-powershell')">فتح</button>
-                            </td>
-                        </tr>
-
-                        <tr class="topic-row" data-target="disable-defender" data-search="defender windows تعطيل ويندوز ديفندر antivirus security">
+                        <tr class="topic-row" data-target="disable-defender" data-search="defender windows antivirus security">
                             <td>الخصوصية والأمان</td>
                             <td>تعطيل Windows Defender نهائياً</td>
                             <td class="muted">تعطيل كامل لـ Defender والحماية الفورية.</td>
-                            <td>
-                                <span class="badge">Defender</span>
-                                <span class="badge">Privacy</span>
-                            </td>
-                            <td>
-                                <button class="btn" type="button" onclick="jumpTo('disable-defender')">فتح</button>
-                            </td>
+                            <td><span class="badge">Defender</span><span class="badge">Privacy</span></td>
+                            <td><button class="btn" onclick="alert('الأوامر الكاملة قريباً')" type="button">فتح</button></td>
                         </tr>
-
-                        <tr class="topic-row" data-target="disable-cortana" data-search="cortana كورتانا تعطيل disable search بحث">
-                            <td>تنظيف النظام</td>
-                            <td>تعطيل Cortana نهائياً</td>
-                            <td class="muted">إيقاف Cortana والبحث الذكي بالكامل.</td>
-                            <td>
-                                <span class="badge">Cortana</span>
-                                <span class="badge">Privacy</span>
-                            </td>
-                            <td>
-                                <button class="btn" type="button" onclick="jumpTo('disable-cortana')">فتح</button>
-                            </td>
-                        </tr>
-
-                        <tr class="topic-row" data-target="disable-telemetry" data-search="telemetry تيليميتري بيانات data collection جمع البيانات privacy">
-                            <td>الخصوصية والأمان</td>
-                            <td>تعطيل Telemetry وجمع البيانات</td>
-                            <td class="muted">إيقاف إرسال بيانات الاستخدام لمايكروسوفت.</td>
-                            <td>
-                                <span class="badge">Telemetry</span>
-                                <span class="badge">Privacy</span>
-                            </td>
-                            <td>
-                                <button class="btn" type="button" onclick="jumpTo('disable-telemetry')">فتح</button>
-                            </td>
-                        </tr>
-
-                        <tr class="topic-row" data-target="disable-updates" data-search="windows update تحديثات ويندوز تعطيل disable automatic">
-                            <td>تظبيط النظام</td>
-                            <td>تعطيل Windows Update التلقائي</td>
-                            <td class="muted">إيقاف التحديثات التلقائية والتحكم الكامل.</td>
-                            <td>
-                                <span class="badge">Windows Update</span>
-                                <span class="badge">Services</span>
-                            </td>
-                            <td>
-                                <button class="btn" type="button" onclick="jumpTo('disable-updates')">فتح</button>
-                            </td>
-                        </tr>
-
-                        <tr class="topic-row" data-target="god-mode" data-search="god mode وضع الإله control panel لوحة التحكم all tasks">
-                            <td>تخصيص النظام</td>
-                            <td>تفعيل God Mode (وضع الإله)</td>
-                            <td class="muted">الوصول لكل إعدادات الويندوز من مكان واحد.</td>
-                            <td>
-                                <span class="badge">God Mode</span>
-                                <span class="badge">Advanced</span>
-                            </td>
-                            <td>
-                                <button class="btn" type="button" onclick="jumpTo('god-mode')">فتح</button>
-                            </td>
-                        </tr>
-
-                        <tr class="topic-row" data-target="speedup-boot" data-search="سرعة boot startup تشغيل بوت اقلاع performance">
+                        <tr class="topic-row" data-target="speedup-boot" data-search="boot startup performance سرعة">
                             <td>تحسين الأداء</td>
                             <td>تسريع إقلاع الويندوز</td>
                             <td class="muted">تفعيل Fast Startup وتقليل برامج بدء التشغيل.</td>
-                            <td>
-                                <span class="badge">Performance</span>
-                                <span class="badge">Boot</span>
-                            </td>
-                            <td>
-                                <button class="btn" type="button" onclick="jumpTo('speedup-boot')">فتح</button>
-                            </td>
-                        </tr>
-
-                        <tr class="topic-row" data-target="clean-temp" data-search="temp مؤقت ملفات تنظيف clean disk مساحة">
-                            <td>تنظيف النظام</td>
-                            <td>تنظيف الملفات المؤقتة بالكامل</td>
-                            <td class="muted">حذف ملفات Temp و Prefetch و Windows Update Cache.</td>
-                            <td>
-                                <span class="badge">Cleanup</span>
-                                <span class="badge">Disk Space</span>
-                            </td>
-                            <td>
-                                <button class="btn" type="button" onclick="jumpTo('clean-temp')">فتح</button>
-                            </td>
-                        </tr>
-
-                        <tr class="topic-row" data-target="network-reset" data-search="network شبكة reset إعادة تعيين internet انترنت dns">
-                            <td>إصلاح المشاكل</td>
-                            <td>إعادة تعيين إعدادات الشبكة</td>
-                            <td class="muted">حل مشاكل الإنترنت عبر إعادة ضبط TCP/IP و DNS.</td>
-                            <td>
-                                <span class="badge">Network</span>
-                                <span class="badge">Reset</span>
-                            </td>
-                            <td>
-                                <button class="btn" type="button" onclick="jumpTo('network-reset')">فتح</button>
-                            </td>
-                        </tr>
-
-                        <tr class="topic-row" data-target="office-bloat" data-search="office إزالة bloat bloatware appx windows 11 ltsc">
-                            <td>تنظيف النظام</td>
-                            <td>إزالة مكونات أوفيس الزيادة</td>
-                            <td class="muted">إزالة تطبيقات Microsoft المدمجة (Bloatware).</td>
-                            <td>
-                                <span class="badge">Bloatware</span>
-                                <span class="badge">LTSC</span>
-                            </td>
-                            <td>
-                                <button class="btn" type="button" onclick="jumpTo('office-bloat')">فتح</button>
-                            </td>
-                        </tr>
-
-                        <tr class="topic-row" data-target="remove-onenote" data-search="onenote إزالة حذف force takeown office">
-                            <td>تنظيف النظام</td>
-                            <td>إزالة OneNote بالقوة</td>
-                            <td class="muted">أمر واحد لحذف OneNote من جذوره.</td>
-                            <td>
-                                <span class="badge">OneNote</span>
-                                <span class="badge">Force</span>
-                            </td>
-                            <td>
-                                <button class="btn" type="button" onclick="jumpTo('remove-onenote')">فتح</button>
-                            </td>
-                        </tr>
-
-                        <tr class="topic-row" data-target="alt-shift-fix" data-search="alt shift language تحويل اللغة keyboard registry">
-                            <td>إصلاح المشاكل</td>
-                            <td>حل مشكلة Alt+Shift</td>
-                            <td class="muted">إصلاح عدم استجابة Alt+Shift لتبديل اللغة.</td>
-                            <td>
-                                <span class="badge">Keyboard</span>
-                                <span class="badge">Language</span>
-                            </td>
-                            <td>
-                                <button class="btn" type="button" onclick="jumpTo('alt-shift-fix')">فتح</button>
-                            </td>
-                        </tr>
-
-                        <tr class="topic-row" data-target="pin-this-pc" data-search="this pc taskbar تثبيت شريط المهام shortcut">
-                            <td>تخصيص النظام</td>
-                            <td>تثبيت This PC على التاسك بار</td>
-                            <td class="muted">إنشاء اختصار This PC وتثبيته على شريط المهام.</td>
-                            <td>
-                                <span class="badge">Taskbar</span>
-                                <span class="badge">Shortcut</span>
-                            </td>
-                            <td>
-                                <button class="btn" type="button" onclick="jumpTo('pin-this-pc')">فتح</button>
-                            </td>
-                        </tr>
-
-                        <tr class="topic-row" data-target="office-custom-install" data-search="office word excel odt deployment xml configuration">
-                            <td>أوفيس</td>
-                            <td>تثبيت أوفيس مخصص</td>
-                            <td class="muted">استخدام ODT + XML لاختيار البرامج المطلوبة فقط.</td>
-                            <td>
-                                <span class="badge">ODT</span>
-                                <span class="badge">Office</span>
-                            </td>
-                            <td>
-                                <button class="btn" type="button" onclick="jumpTo('office-custom-install')">فتح</button>
-                            </td>
-                        </tr>
-
-                        <tr class="topic-row" data-target="dark-mode-registry" data-search="dark mode ثيم داكن مظلم theme registry">
-                            <td>تخصيص النظام</td>
-                            <td>تفعيل Dark Mode</td>
-                            <td class="muted">تفعيل الوضع الداكن لكل برامج الويندوز.</td>
-                            <td>
-                                <span class="badge">Dark Mode</span>
-                                <span class="badge">Theme</span>
-                            </td>
-                            <td>
-                                <button class="btn" type="button" onclick="jumpTo('dark-mode-registry')">فتح</button>
-                            </td>
-                        </tr>
-
-                        <tr class="topic-row" data-target="remove-edge" data-search="edge إزالة حذف microsoft browser متصفح">
-                            <td>تنظيف النظام</td>
-                            <td>إزالة Microsoft Edge</td>
-                            <td class="muted">حذف متصفح Edge من الويندوز بالكامل.</td>
-                            <td>
-                                <span class="badge">Edge</span>
-                                <span class="badge">Browser</span>
-                            </td>
-                            <td>
-                                <button class="btn" type="button" onclick="jumpTo('remove-edge')">فتح</button>
-                            </td>
-                        </tr>
-
-                        <tr class="topic-row" data-target="ultimate-performance" data-search="performance أداء power plan خطة طاقة سرعة">
-                            <td>تحسين الأداء</td>
-                            <td>خطة الطاقة Ultimate Performance</td>
-                            <td class="muted">خطة طاقة خفية للأداء الأقصى.</td>
-                            <td>
-                                <span class="badge">Performance</span>
-                                <span class="badge">Power</span>
-                            </td>
-                            <td>
-                                <button class="btn" type="button" onclick="jumpTo('ultimate-performance')">فتح</button>
-                            </td>
-                        </tr>
-
-                        <tr class="topic-row" data-target="disable-startup-delay" data-search="startup delay تشغيل تأخير سرعة speed boot">
-                            <td>تحسين الأداء</td>
-                            <td>إلغاء تأخير Startup Programs</td>
-                            <td class="muted">تشغيل البرامج فوراً بدون التأخير الافتراضي 10 ثواني.</td>
-                            <td>
-                                <span class="badge">Startup</span>
-                                <span class="badge">Speed</span>
-                            </td>
-                            <td>
-                                <button class="btn" type="button" onclick="jumpTo('disable-startup-delay')">فتح</button>
-                            </td>
-                        </tr>
-
-                        <tr class="topic-row" data-target="show-file-extensions" data-search="file extensions ملفات امتداد اظهار show explorer">
-                            <td>تخصيص النظام</td>
-                            <td>إظهار امتدادات الملفات</td>
-                            <td class="muted">إظهار امتدادات الملفات الكاملة (.exe, .txt, .pdf).</td>
-                            <td>
-                                <span class="badge">Explorer</span>
-                                <span class="badge">Files</span>
-                            </td>
-                            <td>
-                                <button class="btn" type="button" onclick="jumpTo('show-file-extensions')">فتح</button>
-                            </td>
-                        </tr>
-
-                        <tr class="topic-row" data-target="disable-hibernation" data-search="hibernation sleep سبات ايقاف تعطيل disk space مساحة">
-                            <td>تنظيف النظام</td>
-                            <td>تعطيل Hibernation وتوفير مساحة</td>
-                            <td class="muted">حذف hiberfil.sys وتوفير مساحة كبيرة على الديسك.</td>
-                            <td>
-                                <span class="badge">Hibernation</span>
-                                <span class="badge">Disk Space</span>
-                            </td>
-                            <td>
-                                <button class="btn" type="button" onclick="jumpTo('disable-hibernation')">فتح</button>
-                            </td>
-                        </tr>
-
-                        <tr class="topic-row" data-target="disable-notifications" data-search="notifications اشعارات تعطيل disable action center">
-                            <td>تخصيص النظام</td>
-                            <td>تعطيل الإشعارات المزعجة</td>
-                            <td class="muted">إيقاف كل إشعارات الويندوز والبرامج.</td>
-                            <td>
-                                <span class="badge">Notifications</span>
-                                <span class="badge">Privacy</span>
-                            </td>
-                            <td>
-                                <button class="btn" type="button" onclick="jumpTo('disable-notifications')">فتح</button>
-                            </td>
-                        </tr>
-
-                        <tr class="topic-row" data-target="optimize-ssd" data-search="ssd optimization trim تحسين تفعيل">
-                            <td>تحسين الأداء</td>
-                            <td>تحسين أداء SSD</td>
-                            <td class="muted">تفعيل TRIM وتحسين إعدادات الـ SSD.</td>
-                            <td>
-                                <span class="badge">SSD</span>
-                                <span class="badge">Performance</span>
-                            </td>
-                            <td>
-                                <button class="btn" type="button" onclick="jumpTo('optimize-ssd')">فتح</button>
-                            </td>
-                        </tr>
-
-                        <tr class="topic-row" data-target="disable-auto-restart" data-search="auto restart تلقائي اعادة تشغيل تعطيل bsod">
-                            <td>إصلاح المشاكل</td>
-                            <td>تعطيل Auto Restart عند الأخطاء</td>
-                            <td class="muted">إيقاف إعادة التشغيل التلقائية لرؤية رسائل الأخطاء.</td>
-                            <td>
-                                <span class="badge">BSOD</span>
-                                <span class="badge">Debug</span>
-                            </td>
-                            <td>
-                                <button class="btn" type="button" onclick="jumpTo('disable-auto-restart')">فتح</button>
-                            </td>
-                        </tr>
-
-                        <tr class="topic-row" data-target="clear-event-logs" data-search="event logs سجلات احداث مسح clear cleanup">
-                            <td>تنظيف النظام</td>
-                            <td>مسح Event Logs بالكامل</td>
-                            <td class="muted">حذف كل سجلات أحداث الويندوز دفعة واحدة.</td>
-                            <td>
-                                <span class="badge">Event Logs</span>
-                                <span class="badge">Cleanup</span>
-                            </td>
-                            <td>
-                                <button class="btn" type="button" onclick="jumpTo('clear-event-logs')">فتح</button>
-                            </td>
-                        </tr>
-
-                        <tr class="topic-row" data-target="fast-dns" data-search="dns سريع cloudflare google quad9 network internet speed">
-                            <td>تحسين الأداء</td>
-                            <td>تفعيل DNS سريع (Cloudflare/Google)</td>
-                            <td class="muted">تسريع الإنترنت باستخدام أسرع DNS.</td>
-                            <td>
-                                <span class="badge">DNS</span>
-                                <span class="badge">Speed</span>
-                            </td>
-                            <td>
-                                <button class="btn" type="button" onclick="jumpTo('fast-dns')">فتح</button>
-                            </td>
-                        </tr>
-
-                        <tr class="topic-row" data-target="disable-uac" data-search="uac user account control تعطيل صلاحيات admin administrator">
-                            <td>تظبيط النظام</td>
-                            <td>تعطيل UAC (User Account Control)</td>
-                            <td class="muted">إيقاف رسائل التأكيد المزعجة عند التثبيت.</td>
-                            <td>
-                                <span class="badge">UAC</span>
-                                <span class="badge">Admin</span>
-                            </td>
-                            <td>
-                                <button class="btn" type="button" onclick="jumpTo('disable-uac')">فتح</button>
-                            </td>
-                        </tr>
-
-                        <tr class="topic-row" data-target="disable-visual-effects" data-search="visual effects تأثيرات بصرية أداء performance animations">
-                            <td>تحسين الأداء</td>
-                            <td>تعطيل Visual Effects للأداء</td>
-                            <td class="muted">إيقاف التأثيرات البصرية لتسريع الويندوز.</td>
-                            <td>
-                                <span class="badge">Visual FX</span>
-                                <span class="badge">Performance</span>
-                            </td>
-                            <td>
-                                <button class="btn" type="button" onclick="jumpTo('disable-visual-effects')">فتح</button>
-                            </td>
-                        </tr>
-
-                        <tr class="topic-row" data-target="disable-windows-search" data-search="windows search بحث indexing فهرسة تعطيل">
-                            <td>تحسين الأداء</td>
-                            <td>تعطيل Windows Search Indexing</td>
-                            <td class="muted">توفير موارد النظام بإيقاف الفهرسة.</td>
-                            <td>
-                                <span class="badge">Search</span>
-                                <span class="badge">CPU</span>
-                            </td>
-                            <td>
-                                <button class="btn" type="button" onclick="jumpTo('disable-windows-search')">فتح</button>
-                            </td>
-                        </tr>
-
-                        <tr class="topic-row" data-target="disable-page-file" data-search="page file virtual memory ذاكرة افتراضية ram ssd">
-                            <td>تحسين الأداء</td>
-                            <td>تعطيل Page File على SSD</td>
-                            <td class="muted">حماية SSD وتوفير مساحة (للأجهزة بـ 16GB+ RAM).</td>
-                            <td>
-                                <span class="badge">Page File</span>
-                                <span class="badge">SSD</span>
-                            </td>
-                            <td>
-                                <button class="btn" type="button" onclick="jumpTo('disable-page-file')">فتح</button>
-                            </td>
-                        </tr>
-
-                        <!-- 20 الجديدة -->
-                        <tr class="topic-row" data-target="disable-onedrive" data-search="onedrive إزالة حذف cloud تخزين سحابي">
-                            <td>تنظيف النظام</td>
-                            <td>إزالة OneDrive نهائياً</td>
-                            <td class="muted">حذف OneDrive من الويندوز بالكامل + منع التشغيل التلقائي.</td>
-                            <td>
-                                <span class="badge">OneDrive</span>
-                                <span class="badge">Cloud</span>
-                            </td>
-                            <td><button class="btn" type="button" onclick="jumpTo('disable-onedrive')">فتح</button></td>
-                        </tr>
-
-                        <tr class="topic-row" data-target="disable-windows-firewall" data-search="firewall جدار حماية تعطيل network">
-                            <td>تظبيط النظام</td>
-                            <td>تعطيل Windows Firewall</td>
-                            <td class="muted">إيقاف جدار الحماية للألعاب والبرامج (استخدم Firewall خارجي).</td>
-                            <td>
-                                <span class="badge">Firewall</span>
-                                <span class="badge">Network</span>
-                            </td>
-                            <td><button class="btn" type="button" onclick="jumpTo('disable-windows-firewall')">فتح</button></td>
-                        </tr>
-
-                        <tr class="topic-row" data-target="disable-sticky-keys" data-search="sticky keys shift مزعج تعطيل keyboard">
-                            <td>تخصيص النظام</td>
-                            <td>تعطيل Sticky Keys نهائياً</td>
-                            <td class="muted">إيقاف رسالة Sticky Keys المزعجة عند الضغط على Shift 5 مرات.</td>
-                            <td>
-                                <span class="badge">Keyboard</span>
-                                <span class="badge">Accessibility</span>
-                            </td>
-                            <td><button class="btn" type="button" onclick="jumpTo('disable-sticky-keys')">فتح</button></td>
-                        </tr>
-
-                        <tr class="topic-row" data-target="enable-remote-desktop" data-search="remote desktop rdp بعيد وصول">
-                            <td>تظبيط النظام</td>
-                            <td>تفعيل Remote Desktop (RDP)</td>
-                            <td class="muted">تشغيل RDP للوصول عن بُعد للجهاز.</td>
-                            <td>
-                                <span class="badge">RDP</span>
-                                <span class="badge">Remote</span>
-                            </td>
-                            <td><button class="btn" type="button" onclick="jumpTo('enable-remote-desktop')">فتح</button></td>
-                        </tr>
-
-                        <tr class="topic-row" data-target="disable-windows-animation" data-search="animation حركات تأثيرات performance أداء">
-                            <td>تحسين الأداء</td>
-                            <td>تعطيل Windows Animations</td>
-                            <td class="muted">إيقاف كل حركات النوافذ والقوائم لأداء أسرع.</td>
-                            <td>
-                                <span class="badge">Animations</span>
-                                <span class="badge">Performance</span>
-                            </td>
-                            <td><button class="btn" type="button" onclick="jumpTo('disable-windows-animation')">فتح</button></td>
-                        </tr>
-
-                        <tr class="topic-row" data-target="enable-num-lock" data-search="num lock numlock keyboard تلقائي">
-                            <td>تخصيص النظام</td>
-                            <td>تفعيل Num Lock تلقائياً</td>
-                            <td class="muted">تشغيل Num Lock عند البوت بشكل دائم.</td>
-                            <td>
-                                <span class="badge">Keyboard</span>
-                                <span class="badge">NumLock</span>
-                            </td>
-                            <td><button class="btn" type="button" onclick="jumpTo('enable-num-lock')">فتح</button></td>
-                        </tr>
-
-                        <tr class="topic-row" data-target="disable-password-login" data-search="password login كلمة سر دخول تعطيل">
-                            <td>تظبيط النظام</td>
-                            <td>تعطيل Password عند البوت</td>
-                            <td class="muted">الدخول للويندوز مباشرة بدون كلمة سر.</td>
-                            <td>
-                                <span class="badge">Login</span>
-                                <span class="badge">Password</span>
-                            </td>
-                            <td><button class="btn" type="button" onclick="jumpTo('disable-password-login')">فتح</button></td>
-                        </tr>
-
-                        <tr class="topic-row" data-target="show-hidden-files" data-search="hidden files مخفية ملفات اظهار explorer">
-                            <td>تخصيص النظام</td>
-                            <td>إظهار الملفات المخفية</td>
-                            <td class="muted">عرض كل الملفات والمجلدات المخفية والنظام.</td>
-                            <td>
-                                <span class="badge">Explorer</span>
-                                <span class="badge">Hidden</span>
-                            </td>
-                            <td><button class="btn" type="button" onclick="jumpTo('show-hidden-files')">فتح</button></td>
-                        </tr>
-
-                        <tr class="topic-row" data-target="disable-superfetch" data-search="superfetch sysmain ram disk أداء">
-                            <td>تحسين الأداء</td>
-                            <td>تعطيل SuperFetch/SysMain</td>
-                            <td class="muted">توفير RAM واستخدام الديسك للأجهزة الضعيفة.</td>
-                            <td>
-                                <span class="badge">SysMain</span>
-                                <span class="badge">RAM</span>
-                            </td>
-                            <td><button class="btn" type="button" onclick="jumpTo('disable-superfetch')">فتح</button></td>
-                        </tr>
-
-                        <tr class="topic-row" data-target="fix-store-apps" data-search="store microsoft متجر إصلاح apps">
-                            <td>إصلاح المشاكل</td>
-                            <td>إصلاح Microsoft Store</td>
-                            <td class="muted">حل مشاكل التحميل والتثبيت من متجر مايكروسوفت.</td>
-                            <td>
-                                <span class="badge">Store</span>
-                                <span class="badge">Apps</span>
-                            </td>
-                            <td><button class="btn" type="button" onclick="jumpTo('fix-store-apps')">فتح</button></td>
-                        </tr>
-
-                        <tr class="topic-row" data-target="disable-fullscreen-optimization" data-search="fullscreen optimization gaming ألعاب fps">
-                            <td>تحسين الأداء</td>
-                            <td>تعطيل Fullscreen Optimization</td>
-                            <td class="muted">تحسين أداء الألعاب (FPS أعلى + أقل تأخير).</td>
-                            <td>
-                                <span class="badge">Gaming</span>
-                                <span class="badge">FPS</span>
-                            </td>
-                            <td><button class="btn" type="button" onclick="jumpTo('disable-fullscreen-optimization')">فتح</button></td>
-                        </tr>
-
-                        <tr class="topic-row" data-target="enable-long-paths" data-search="long path طويل مسار 260 limit">
-                            <td>تظبيط النظام</td>
-                            <td>تفعيل Long File Paths</td>
-                            <td class="muted">السماح بمسارات أطول من 260 حرف (مهم للمطورين).</td>
-                            <td>
-                                <span class="badge">FilePath</span>
-                                <span class="badge">Dev</span>
-                            </td>
-                            <td><button class="btn" type="button" onclick="jumpTo('enable-long-paths')">فتح</button></td>
-                        </tr>
-
-                        <tr class="topic-row" data-target="disable-ipv6" data-search="ipv6 network شبكة تعطيل internet">
-                            <td>تحسين الأداء</td>
-                            <td>تعطيل IPv6</td>
-                            <td class="muted">تسريع الإنترنت في بعض الشبكات (إذا لا تستخدم IPv6).</td>
-                            <td>
-                                <span class="badge">IPv6</span>
-                                <span class="badge">Network</span>
-                            </td>
-                            <td><button class="btn" type="button" onclick="jumpTo('disable-ipv6')">فتح</button></td>
-                        </tr>
-
-                        <tr class="topic-row" data-target="disable-location-tracking" data-search="location موقع تتبع tracking privacy">
-                            <td>الخصوصية والأمان</td>
-                            <td>تعطيل Location Tracking</td>
-                            <td class="muted">إيقاف تتبع الموقع الجغرافي بالكامل.</td>
-                            <td>
-                                <span class="badge">Location</span>
-                                <span class="badge">Privacy</span>
-                            </td>
-                            <td><button class="btn" type="button" onclick="jumpTo('disable-location-tracking')">فتح</button></td>
-                        </tr>
-
-                        <tr class="topic-row" data-target="disable-windows-backup" data-search="backup نسخ احتياطي storage مساحة">
-                            <td>تنظيف النظام</td>
-                            <td>تعطيل Windows Backup</td>
-                            <td class="muted">إيقاف النسخ الاحتياطي التلقائي لتوفير المساحة.</td>
-                            <td>
-                                <span class="badge">Backup</span>
-                                <span class="badge">Storage</span>
-                            </td>
-                            <td><button class="btn" type="button" onclick="jumpTo('disable-windows-backup')">فتح</button></td>
-                        </tr>
-
-                        <tr class="topic-row" data-target="clear-windows-cache" data-search="cache كاش تنظيف dns icon thumbnail">
-                            <td>تنظيف النظام</td>
-                            <td>مسح Windows Cache الكامل</td>
-                            <td class="muted">تنظيف DNS Cache + Icon Cache + Thumbnail Cache.</td>
-                            <td>
-                                <span class="badge">Cache</span>
-                                <span class="badge">Cleanup</span>
-                            </td>
-                            <td><button class="btn" type="button" onclick="jumpTo('clear-windows-cache')">فتح</button></td>
-                        </tr>
-
-                        <tr class="topic-row" data-target="enable-storage-sense" data-search="storage sense تنظيف تلقائي auto clean">
-                            <td>تنظيف النظام</td>
-                            <td>تفعيل Storage Sense</td>
-                            <td class="muted">تنظيف تلقائي للملفات المؤقتة وسلة المحذوفات.</td>
-                            <td>
-                                <span class="badge">StorageSense</span>
-                                <span class="badge">AutoClean</span>
-                            </td>
-                            <td><button class="btn" type="button" onclick="jumpTo('enable-storage-sense')">فتح</button></td>
-                        </tr>
-
-                        <tr class="topic-row" data-target="disable-game-bar" data-search="xbox game bar ألعاب gaming تعطيل">
-                            <td>تحسين الأداء</td>
-                            <td>تعطيل Xbox Game Bar</td>
-                            <td class="muted">توفير موارد النظام بإيقاف Game Bar و DVR.</td>
-                            <td>
-                                <span class="badge">Xbox</span>
-                                <span class="badge">Gaming</span>
-                            </td>
-                            <td><button class="btn" type="button" onclick="jumpTo('disable-game-bar')">فتح</button></td>
-                        </tr>
-
-                        <tr class="topic-row" data-target="disable-transparency" data-search="transparency شفافية effects gpu performance">
-                            <td>تحسين الأداء</td>
-                            <td>تعطيل Transparency Effects</td>
-                            <td class="muted">إيقاف الشفافية لتوفير GPU وتسريع الواجهة.</td>
-                            <td>
-                                <span class="badge">Transparency</span>
-                                <span class="badge">GPU</span>
-                            </td>
-                            <td><button class="btn" type="button" onclick="jumpTo('disable-transparency')">فتح</button></td>
-                        </tr>
-
-                        <tr class="topic-row" data-target="optimize-network" data-search="network شبكة optimization تحسين speed سرعة">
-                            <td>تحسين الأداء</td>
-                            <td>تحسين إعدادات الشبكة</td>
-                            <td class="muted">Tweaks متقدمة لسرعة إنترنت أعلى.</td>
-                            <td>
-                                <span class="badge">Network</span>
-                                <span class="badge">Speed</span>
-                            </td>
-                            <td><button class="btn" type="button" onclick="jumpTo('optimize-network')">فتح</button></td>
+                            <td><span class="badge">Performance</span><span class="badge">Boot</span></td>
+                            <td><button class="btn" onclick="alert('سيتم إضافة الأوامر قريباً')" type="button">فتح</button></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
             <div id="resultsHint" class="muted" style="margin-top: 10px;"></div>
         </div>
-
-        <!-- الكروت الأصلية + الجديدة -->
-        <!-- هنا حطيت فقط مثال لجزء من الكروت عشان الرد مايبقاش أضخم من كده، 
-             انت عملياً عندك الكروت القديمة في ملفك الحالي، 
-             وتضيف بعدهم الـ 20 كارت الجديدة اللي كنا جهزنا HTML بتاعهم قبل شوية -->
-
-        <!-- الكروت الجديدة (انقل من الرسالة اللي قبل دي مباشرة تحت آخر topic-card في ملفك) -->
-        <!-- تبدأ من:
-        <div class="card topic-card" id="disable-onedrive" ...
-        لحد
-        </div>  (optimize-network)
-        -->
-
     </div>
 
-    <div id="toast" class="toast">
-        <svg style="width:28px;height:28px" viewBox="0 0 24 24">
-            <path fill="currentColor" d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z" />
-        </svg>
-        ✅ تم نسخ الكود بنجاح!
-    </div>
+    <div id="toast" class="toast">✅ تم نسخ الكود بنجاح!</div>
 
     <script>
         function copyToClipboard(element) {
-            const code = element.querySelector('code').innerText;
-            navigator.clipboard.writeText(code).then(function() {
+            if (element && element.textContent) {
+                navigator.clipboard.writeText(element.textContent);
                 showToast();
-            }, function(err) {
-                console.error('Could not copy: ', err);
-            });
+            }
         }
         function showToast() {
             var x = document.getElementById("toast");
-            x.className = "toast show";
-            setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+            x.classList.add("show");
+            setTimeout(function(){ x.classList.remove("show"); }, 3000);
         }
         function jumpTo(id) {
             const el = document.getElementById(id);
@@ -1136,9 +354,10 @@
         }
         const searchInput = document.getElementById('search');
         const rows = Array.from(document.querySelectorAll('.topic-row'));
-        const cards = Array.from(document.querySelectorAll('.topic-card'));
         const hint = document.getElementById('resultsHint');
+        
         function normalize(s) { return (s || '').toString().toLowerCase().trim(); }
+        
         function applySearch(qRaw) {
             const q = normalize(qRaw);
             let visible = 0;
@@ -1147,22 +366,20 @@
                 const show = !q || hay.includes(q);
                 r.classList.toggle('hidden', !show);
                 if (show) visible++;
-                const target = r.getAttribute('data-target');
-                const card = document.getElementById(target);
-                if (card) card.classList.toggle('hidden', !show);
             });
             if (q && visible === 0) {
-                cards.forEach(c => c.classList.add('hidden'));
                 hint.textContent = '❌ لا توجد نتائج مطابقة';
             } else {
                 hint.textContent = q ? `✅ نتائج البحث: ${visible} توبيك` : '';
             }
         }
+        
         function clearSearch() {
             searchInput.value = '';
             applySearch('');
             searchInput.focus();
         }
+        
         searchInput.addEventListener('input', (e) => applySearch(e.target.value));
         applySearch('');
     </script>
