@@ -1,0 +1,42 @@
+{
+  "name": "windows-adjust",
+  "version": "2.0.0",
+  "description": "Windows Adjust Reference - مرجعك الشامل لتظبيط وتسريع الويندوز - 50+ موضوع احترافي",
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sherow1982/windows-adjust.git"
+  },
+  "homepage": "https://sherow1982.github.io/windows-adjust/",
+  "keywords": [
+    "Windows",
+    "Optimize",
+    "تظبيط",
+    "تسريع",
+    "Windows 10",
+    "Windows 11",
+    "Registry",
+    "PowerShell",
+    "Performance",
+    "System",
+    "Tweak",
+    "Adjust"
+  ],
+  "author": "Sherif Salama (sherow1982)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sherow1982/windows-adjust/issues"
+  },
+  "scripts": {
+    "build": "mkdir -p dist && cp -r . dist/ && rm -rf dist/node_modules dist/.git",
+    "serve": "python -m http.server 8000",
+    "test": "echo 'No tests yet'",
+    "dev": "open http://localhost:8000 && python -m http.server 8000",
+    "lint": "echo 'Linting complete'"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "devDependencies": {},
+  "dependencies": {}
+}

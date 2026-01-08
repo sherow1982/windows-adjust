@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="مرجع شامل لتظبيط وتسريع وتحسين Windows 10/11 - 50+ موضوع احترافي مفتوح المصدر">
+    <meta name="keywords" content="Windows Adjust, تظبيط, تسريع, Windows 10, Windows 11, تحسين الأداء, Registry, PowerShell, Optimization">
+    <meta name="author" content="Sherif Salama (sherow1982)">
+    <meta name="theme-color" content="#0a0e27">
+    <meta property="og:title" content="Windows Adjust Reference - مرجع تظبيط الويندوز">
+    <meta property="og:description" content="50+ توبيك احترافي لتظبيط Windows بدون برامج وبدون مشاكل">
+    <meta property="og:image" content="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630'><rect fill='%230a0e27'/><text x='600' y='315' font-size='140' fill='%2338bdf8' text-anchor='middle' font-family='Arial'>⚡ Windows Adjust</text></svg>">
+    <title>Windows Adjust Reference | مرجع تظبيط الويندوز الشامل</title>
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a0e27'/><text x='50' y='65' font-size='70' fill='%2338bdf8' text-anchor='middle'>⚡</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0a0e27;
+            --card-bg: linear-gradient(135deg, #1a1f3a 0%, #0f1729 100%);
+            --card-border: rgba(56, 189, 248, 0.2);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent: #38bdf8;
+            --accent-glow: rgba(56, 189, 248, 0.4);
+            --accent-hover: #0ea5e9;
+            --code-bg: #000000;
+            --code-text: #00ff41;
+            --success: #22c55e;
+            --link-color: #f472b6;
+            --border: #334155;
+            --warning: #fbbf24;
+            --danger: #ef4444;
+        }
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+            color: var(--text-primary);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 3rem 0;
+            border-bottom: 2px solid var(--card-border);
+            position: relative;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+            opacity: 0.3;
+            pointer-events: none;
+        }
+        h1 {
+            font-size: 3rem;
+            background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            text-shadow: 0 0 30px var(--accent-glow);
+        }
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
+        }
+        .card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), 0 0 0 1px var(--card-border), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--card-border);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4), 0 0 0 1px var(--accent), 0 0 30px var(--accent-glow), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+        .card.compact { 
+            padding: 1.5rem 2rem;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        }
+        h2 {
+            border-bottom: 3px solid;
+            border-image: linear-gradient(90deg, var(--accent) 0%, transparent 100%) 1;
+            padding-bottom: 0.75rem;
+            margin: 0 0 1.5rem;
+            display: inline-block;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-shadow: 0 0 20px var(--accent-glow);
+        }
+        .search-wrap {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-top: 1.5rem;
+        }
+        .search-input {
+            flex: 1;
+            min-width: 280px;
+            background: rgba(255,255,255,0.05);
+            color: var(--text-primary);
+            border: 2px solid var(--border);
+            border-radius: 14px;
+            padding: 14px 18px;
+            font-family: 'Cairo', sans-serif;
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        .search-input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 4px var(--accent-glow), 0 0 20px var(--accent-glow);
+            background: rgba(255,255,255,0.08);
+        }
+        .btn {
+            border: 2px solid var(--border);
+            background: rgba(255,255,255,0.05);
+            color: var(--text-primary);
+            padding: 12px 20px;
+            border-radius: 14px;
+            cursor: pointer;
+            font-family: 'Cairo', sans-serif;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        .btn:hover { 
+            border-color: var(--accent);
+            background: rgba(56, 189, 248, 0.1);
+            box-shadow: 0 0 20px var(--accent-glow);
+            transform: translateY(-2px);
+        }
+        .btn.success {
+            border-color: var(--success);
+            background: rgba(34, 197, 94, 0.1);
+        }
+        .btn.success:hover {
+            box-shadow: 0 0 20px rgba(34, 197, 94, 0.6);
+        }
+        .table-wrap {
+            margin-top: 1.5rem;
+            overflow: auto;
+            border-radius: 16px;
+            border: 2px solid var(--card-border);
+            background: rgba(0,0,0,0.3);
+            backdrop-filter: blur(10px);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 900px;
+        }
+        thead th {
+            text-align: right;
+            padding: 16px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            background: rgba(56, 189, 248, 0.1);
+            border-bottom: 2px solid var(--accent);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            backdrop-filter: blur(10px);
+        }
+        tbody td {
+            padding: 16px;
+            border-bottom: 1px solid rgba(51, 65, 85, 0.5);
+            vertical-align: top;
+            color: var(--text-primary);
+        }
+        tbody tr:hover { 
+            background: rgba(56, 189, 248, 0.08);
+        }
+        .badge {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border: 1px solid rgba(0, 255, 65, 0.35);
+            color: var(--code-text);
+            background: rgba(0, 255, 65, 0.1);
+            margin: 2px 4px 2px 0;
+            white-space: nowrap;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .hidden { display: none !important; }
+        .toast {
+            visibility: hidden;
+            min-width: 300px;
+            background: linear-gradient(135deg, var(--code-text) 0%, #00cc33 100%);
+            color: #000;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 12px;
+            padding: 18px 24px;
+            position: fixed;
+            z-index: 999;
+            left: 50%;
+            bottom: 40px;
+            transform: translateX(-50%);
+            font-size: 1.1rem;
+            box-shadow: 0 8px 32px rgba(0, 255, 65, 0.6);
+        }
+        .toast.show {
+            visibility: visible;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        }
+        @keyframes fadein { from {bottom: 0; opacity: 0;} to {bottom: 40px; opacity: 1;} }
+        @keyframes fadeout { from {bottom: 40px; opacity: 1;} to {bottom: 0; opacity: 0;} }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        .stat-card {
+            background: rgba(255,255,255,0.03);
+            border: 2px solid var(--card-border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .stat-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent);
+            box-shadow: 0 0 20px var(--accent-glow);
+        }
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent) 0%, #818cf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+        .muted {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        .category-label {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        .category-system { background: rgba(59, 130, 246, 0.15); color: #3b82f6; }
+        .category-privacy { background: rgba(239, 68, 68, 0.15); color: #ef4444; }
+        .category-performance { background: rgba(34, 197, 94, 0.15); color: #22c55e; }
+        .category-cleanup { background: rgba(251, 191, 36, 0.15); color: #fbbf24; }
+        .category-fix { background: rgba(168, 85, 247, 0.15); color: #a855f7; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>⚡ Windows Adjust Reference</h1>
+            <div class="subtitle">مرجعك الشامل لتظبيط وإصلاح وتسريع الويندوز - 50+ موضوع احترافي</div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">توبيك كامل</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">مفتوح المصدر</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">تصنيفات</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">MIT</div>
+                    <div class="stat-label">ترخيص</div>
+                </div>
+            </div>
+        </header>
+
+        <div class="card compact" id="topics">
+            <h2>🔍 البحث السريع</h2>
+            <div class="muted">ابحث عن أي خدمة، أمر، أو مشكلة. الجداول ستظهر تلقائياً.</div>
+
+            <div class="search-wrap">
+                <input id="search" class="search-input" type="search" placeholder="🔎 ابحث: PowerShell / Defender / Telemetry / Boot / Registry ..." />
+                <button class="btn" type="button" onclick="clearSearch()">مسح البحث</button>
+            </div>
+
+            <div class="table-wrap">
+                <table id="topicsTable">
+                    <thead>
+                        <tr>
+                            <th style="min-width: 140px;">التصنيف</th>
+                            <th style="min-width: 250px;">الموضوع</th>
+                            <th style="min-width: 320px;">الوصف</th>
+                            <th style="min-width: 200px;">الكلمات المفتاحية</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- ===== تظبيط النظام (12) ===== -->
+                        <tr class="topic-row" data-target="powershell-admin" data-search="powershell admin context menu right click">
+                            <td><span class="category-label category-system">🔧 النظام</span></td>
+                            <td>إضافة PowerShell Admin في قائمة الماوس</td>
+                            <td class="muted">أضف PowerShell Admin بمجرد النقر الأيمن على المجلد أو سطح المكتب.</td>
+                            <td><span class="badge">PowerShell</span><span class="badge">Menu</span></td>
+                        </tr>
+                        <tr class="topic-row" data-target="disable-windows-update" data-search="windows update تعطيل disable">
+                            <td><span class="category-label category-system">🔧 النظام</span></td>
+                            <td>تعطيل Windows Update</td>
+                            <td class="muted">أوقف التحديثات التلقائية بشكل نهائي والتحكم الكامل فيها.</td>
+                            <td><span class="badge">Update</span><span class="badge">Control</span></td>
+                        </tr>
+                        <tr class="topic-row" data-target="god-mode" data-search="god mode اله وضع god">
+                            <td><span class="category-label category-system">🔧 النظام</span></td>
+                            <td>تفعيل وضع الإله (God Mode)</td>
+                            <td class="muted">الدخول لصندوق تحكم يحتوي على كل إعدادات الويندوز في مكان واحد.</td>
+                            <td><span class="badge">Secrets</span><span class="badge">Admin</span></td>
+                        </tr>
+                        <tr class="topic-row" data-target="disable-uac" data-search="uac disable user account control">
+                            <td><span class="category-label category-system">🔧 النظام</span></td>
+                            <td>تعطيل UAC (رسائل التأكيد)</td>
+                            <td class="muted">إزالة النوافذ المزعجة التي تطلب إذن صلاحيات.</td>
+                            <td><span class="badge">UAC</span><span class="badge">Annoying</span></td>
+                        </tr>
+                        <tr class="topic-row" data-target="disable-firewall" data-search="firewall windows disable جدار">
+                            <td><span class="category-label category-system">🔧 النظام</span></td>
+                            <td>تعطيل Windows Firewall</td>
+                            <td class="muted">أوقف جدار الحماية المدمج في الويندوز.</td>
+                            <td><span class="badge">Firewall</span><span class="badge">Network</span></td>
+                        </tr>
+                        <tr class="topic-row" data-target="enable-rdp" data-search="remote desktop rdp enable">
+                            <td><span class="category-label category-system">🔧 النظام</span></td>
+                            <td>تفعيل Remote Desktop (RDP)</td>
+                            <td class="muted">السماح بالوصول عن بعد لجهازك من أجهزة أخرى.</td>
+                            <td><span class="badge">Remote</span><span class="badge">RDP</span></td>
+                        </tr>
+                        <tr class="topic-row" data-target="disable-password" data-search="password login disable skip">
+                            <td><span class="category-label category-system">🔧 النظام</span></td>
+                            <td>تعطيل كلمة المرور عند التسجيل</td>
+                            <td class="muted">الدخول للويندوز بدون كلمة سر (استخدم بحذر!).</td>
+                            <td><span class="badge">Security</span><span class="badge">Login</span></td>
+                        </tr>
+                        <tr class="topic-row" data-target="long-file-paths" data-search="long file paths 260 characters">
+                            <td><span class="category-label category-system">🔧 النظام</span></td>
+                            <td>تفعيل المسارات الطويلة (Long Path)</td>
+                            <td class="muted">السماح بمسارات أطول من 260 حرف للملفات والمجلدات.</td>
+                            <td><span class="badge">Paths</span><span class="badge">Registry</span></td>
+                        </tr>
+                        <tr class="topic-row" data-target="show-hidden-files" data-search="hidden files show extensions">
+                            <td><span class="category-label category-system">🔧 النظام</span></td>
+                            <td>إظهار الملفات والامتدادات المخفية</td>
+                            <td class="muted">عرض الملفات المخفية والامتدادات لكل الملفات.</td>
+                            <td><span class="badge">Files</span><span class="badge">View</span></td>
+                        </tr>
+                        <tr class="topic-row" data-target="enable-compat-mode" data-search="compatibility mode old programs">
+                            <td><span class="category-label category-system">🔧 النظام</span></td>
+                            <td>تفعيل وضع التوافق للبرامج القديمة</td>
+                            <td class="muted">تشغيل البرامج القديمة على إصدارات جديدة من الويندوز.</td>
+                            <td><span class="badge">Compat</span><span class="badge">Legacy</span></td>
+                        </tr>
+                        <tr class="topic-row" data-target="disable-cortana" data-search="cortana disable search">
+                            <td><span class="category-label category-system">🔧 النظام</span></td>
+                            <td>تعطيل Cortana (مساعد مايكروسوفت)</td>
+                            <td class="muted">إيقاف مساعد Cortana والبحث المتقدم.</td>
+                            <td><span class="badge">Cortana</span><span class="badge">Assistant</span></td>
+                        </tr>
+                        <tr class="topic-row" data-target="windows-sandbox" data-search="windows sandbox sandbox mode">
+                            <td><span class="category-label category-system">🔧 النظام</span></td>
+                            <td>تفعيل Windows Sandbox</td>
+                            <td class="muted">تشغيل بيئة معزولة لاختبار البرامج بأمان.</td>
+                            <td><span class="badge">Security</span><span class="badge">Test</span></td>
+                        </tr>
+                        
+                        <!-- ===== الخصوصية والأمان (4) ===== -->
+                        <tr class="topic-row" data-target="disable-defender" data-search="windows defender antivirus security">
+                            <td><span class="category-label category-privacy">🔒 الأمان</span></td>
+                            <td>تعطيل Windows Defender</td>
+                            <td class="muted">إيقاف برنامج الحماية المدمج بشكل نهائي.</td>
+                            <td><span class="badge">Defender</span><span class="badge">Privacy</span></td>
+                        </tr>
+                        <tr class="topic-row" data-target="disable-telemetry" data-search="telemetry data collection privacy">
+                            <td><span class="category-label category-privacy">🔒 الأمان</span></td>
+                            <td>تعطيل Telemetry (جمع البيانات)</td>
+                            <td class="muted">منع مايكروسوفت من جمع بيانات الاستخدام والتطبيقات.</td>
+                            <td><span class="badge">Privacy</span><span class="badge">Telemetry</span></td>
+                        </tr>
+                        <tr class="topic-row" data-target="disable-location" data-search="location tracking gps position">
+                            <td><span class="category-label category-privacy">🔒 الأمان</span></td>
+                            <td>تعطيل Location Tracking</td>
+                            <td class="muted">إيقاف تتبع الموقع الجغرافي لجهازك.</td>
+                            <td><span class="badge">Location</span><span class="badge">Privacy</span></td>
+                        </tr>
+                        <tr class="topic-row" data-target="disable-notifications" data-search="notifications disable popup">
+                            <td><span class="category-label category-privacy">🔒 الأمان</span></td>
+                            <td>تعطيل الإشعارات المزعجة</td>
+                            <td class="muted">إيقاف إشعارات النظام والتطبيقات.</td>
+                            <td><span class="badge">Notifications</span><span class="badge">Annoy</span></td>
+                        </tr>
+
+                        <!-- ===== تحسين الأداء (18) ===== -->
+                        <tr class="topic-row" data-target="fast-boot" data-search="boot startup speedup سرعة اقلاع">
+                            <td><span class="category-label category-performance">⚡ الأداء</span></td>
+                            <td>تسريع إقلاع الويندوز (Fast Boot)</td>
+                            <td class="muted">تفعيل Fast Startup وتقليل وقت التشغيل بشكل ملحوظ.</td>
+                            <td><span class="badge">Boot</span><span class="badge">Speed</span></td>
+                        </tr>
+                        <tr class="topic-row" data-target="ultimate-performance" data-search="ultimate performance power plan">
+                            <td><span class="category-label category-performance">⚡ الأداء</span></td>
+                            <td>تفعيل خطة الأداء القصوى (Ultimate)</td>
+                            <td class="muted">تفعيل الأداء الأقصى على حساب استهلاك الطاقة.</td>
+                            <td><span class="badge">Power</span><span class="badge">Max</span></td>
+                        </tr>
+                        <tr class="topic-row" data-target="fast-dns" data-search="dns cloudflare google fast">
+                            <td><span class="category-label category-performance">⚡ الأداء</span></td>
+                            <td>تعيين DNS سريع (Cloudflare/Google)</td>
+                            <td class="muted">استبدال DNS الافتراضي بـ Cloudflare أو Google لسرعة أفضل.</td>
+                            <td><span class="badge">DNS</span><span class="badge">Internet</span></td>
+                        </tr>
+                        <tr class="topic-row" data-target="disable-visual-effects" data-search="visual effects animations slow">
+                            <td><span class="category-label category-performance">⚡ الأداء</span></td>
+                            <td>تعطيل التأثيرات البصرية</td>
+                            <td class="muted">إيقاف الرسومات والظلال والتأثيرات المرئية.</td>
+                            <td><span class="badge">Graphics</span><span class="badge">Speed</span></td>
+                        </tr>
+                        <tr class="topic-row" data-target="disable-search" data-search="windows search disable indexing">
+                            <td><span class="category-label category-performance">⚡ الأداء</span></td>
+                            <td>تعطيل Windows Search</td>
+                            <td class="muted">إيقاف فهرسة الملفات المستمرة والبحث البطيء.</td>
+                            <td><span class="badge">Search</span><span class="badge">Indexing</span></td>
+                        </tr>
+                        <tr class="topic-row" data-target="disable-page-file" data-search="page file virtual memory">
+                            <td><span class="category-label category-performance">⚡ الأداء</span></td>
+                            <td>تعطيل صفحة الذاكرة الافتراضية (Page File)</td>
+                            <td class="muted">حرر مساحة قرصك بتعطيل ملف الذاكرة الافتراضية.</td>
+                            <td><span class="badge">Memory</span><span class="badge">Disk</span></td>
+                        </tr>
+                        <tr class="topic-row" data-target="ssd-optimization" data-search="ssd optimization trim solid state">
+                            <td><span class="category-label category-performance">⚡ الأداء</span></td>
+                            <td>تحسين أداء SSD</td>
+                            <td class="muted">تفعيل TRIM وتحسينات SSD للأقراص الصلبة.</td>
+                            <td><span class="badge">SSD</span><span class="badge">Speed</span></td>
+                        </tr>
+                        <tr class="topic-row" data-target="disable-animations" data-search="animations transitions smooth disable">
+                            <td><span class="category-label category-performance">⚡ الأداء</span></td>
+                            <td>تعطيل الحركات والانتقالات</td>
+                            <td class="muted">إيقاف حركات فتح النوافذ والقوائم.</td>
+                            <td><span class="badge">Animation</span><span class="badge">UI</span></td>
+                        </tr>
+                        <tr class="topic-row" data-target="disable-superfetch" data-search="superfetch sysmain prefetch">
+                            <td><span class="category-label category-performance">⚡ الأداء</span></td>
+                            <td>تعطيل SuperFetch (Sysmain)</td>
+                            <td class="muted">وقف الخدمة التي تستهلك الرام والمعالج.</td>
+                            <td><span class="badge">Memory</span><span class="badge">Service</span></td>
+                        </tr>
+                        <tr class="topic-row" data-target="fullscreen-optimization" data-search="fullscreen optimization games performance">
+                            <td><span class="category-label category-performance">⚡ الأداء</span></td>
+                            <td>تحسين الألعاب (Fullscreen Optimization)</td>
+                            <td class="muted">تحسين أداء الألعاب بتفعيل وضع الشاشة الكاملة.</td>
+                            <td><span class="badge">Games</span><span class="badge">Gaming</span></td>
+                        </tr>
+                        <tr class="topic-row" data-target="disable-ipv6" data-search="ipv6 disable internet protocol">
+                            <td><span class="category-label category-performance">⚡ الأداء</span></td>
+                            <td>تعطيل IPv6</td>
+                            <td class="muted">تعطيل بروتوكول IPv6 لتسريع الإنترنت.</td>
+                            <td><span class="badge">Network</span><span class="badge">Internet</span></td>
+                        </tr>
+                        <tr class="topic-row" data-target="disable-game-bar" data-search="game bar disable overlay">
+                            <td><span class="category-label category-performance">⚡ الأداء</span></td>
+                            <td>تعطيل Game Bar</td>
+                            <td class="muted">إيقاف شريط الألعاب الذي يستهلك الموارد.</td>
+                            <td><span class="badge">Gaming</span><span class="badge">Overlay</span></td>
+                        </tr>
+                        <tr class="topic-row" data-target="disable-transparency" data-search="transparency effect glass blur">
+                            <td><span class="category-label category-performance">⚡ الأداء</span></td>
+                            <td>تعطيل التأثيرات الشفافة والضبابية</td>
+                            <td class="muted">إيقاف تأثيرات Glass والضبابية في الواجهة.</td>
+                            <td><span class="badge">UI</span><span class="badge">Speed</span></td>
+                        </tr>
+                        <tr class="topic-row" data-target="network-optimization" data-search="network optimization bandwidth tcp">
+                            <td><span class="category-label category-performance">⚡ الأداء</span></td>
+                            <td>تحسين سرعة الشبكة</td>
+                            <td class="muted">تحسين معايير TCP وسرعة نقل البيانات.</td>
+                            <td><span class="badge">Network</span><span class="badge">Speed</span></td>
+                        </tr>
+                        <tr class="topic-row" data-target="disable-background-apps" data-search="background applications disable memory">
+                            <td><span class="category-label category-performance">⚡ الأداء</span></td>
+                            <td>تعطيل تطبيقات الخلفية</td>
+                            <td class="muted">إيقاف التطبيقات التي تعمل في الخلفية.</td>
+                            <td><span class="badge">Apps</span><span class="badge">Background</span></td>
+                        </tr>
+                        <tr class="topic-row" data-target="high-performance-processor" data-search="processor performance cpu governor">
+                            <td><span class="category-label category-performance">⚡ الأداء</span></td>
+                            <td>تفعيل وضع الأداء العالي للمعالج</td>
+                            <td class="muted">تشغيل المعالج بأقصى سرعة دائماً.</td>
+                            <td><span class="badge">CPU</span><span class="badge">Power</span></td>
+                        </tr>
+
+                        <!-- ===== تنظيف النظام (11) ===== -->
+                        <tr class="topic-row" data-target="clean-temp" data-search="temp files temporary cleanup">
+                            <td><span class="category-label category-cleanup">🧹 التنظيف</span></td>
+                            <td>حذف الملفات المؤقتة</td>
+                            <td class="muted">تنظيف مجلدات Temp والملفات المؤقتة.</td>
+                            <td><span class="badge">Cleanup</span><span class="badge">Temp</span></td>
+                        </tr>
+                        <tr class="topic-row" data-target="remove-bloatware" data-search="bloatware remove uninstall apps">
+                            <td><span class="category-label category-cleanup">🧹 التنظيف</span></td>
+                            <td>حذف Bloatware (برامج مايكروسوفت الزيادة)</td>
+                            <td class="muted">إزالة البرامج غير المستخدمة من مايكروسوفت.</td>
+                            <td><span class="badge">Apps</span><span class="badge">Remove</span></td>
+                        </tr>
+                        <tr class="topic-row" data-target="remove-edge" data-search="edge remove uninstall chromium">
+                            <td><span class="category-label category-cleanup">🧹 التنظيف</span></td>
+                            <td>حذف متصفح Edge</td>
+                            <td class="muted">إزالة متصفح Edge بشكل نهائي من الويندوز.</td>
+                            <td><span class="badge">Browser</span><span class="badge">Remove</span></td>
+                        </tr>
+                        <tr class="topic-row" data-target="remove-onenote" data-search="onenote remove uninstall delete">
+                            <td><span class="category-label category-cleanup">🧹 التنظيف</span></td>
+                            <td>حذف OneNote</td>
+                            <td class="muted">إزالة OneNote من الويندوز بالقوة.</td>
+                            <td><span class="badge">Apps</span><span class="badge">OneNote</span></td>
+                        </tr>
+                        <tr class="topic-row" data-target="remove-onedrive" data-search="onedrive remove uninstall cloud">
+                            <td><span class="category-label category-cleanup">🧹 التنظيف</span></td>
+                            <td>حذف OneDrive</td>
+                            <td class="muted">إزالة التخزين السحابي OneDrive من الويندوز.</td>
+                            <td><span class="badge">Cloud</span><span class="badge">Storage</span></td>
+                        </tr>
+                        <tr class="topic-row" data-target="clear-event-logs" data-search="event logs clear delete system">
+                            <td><span class="category-label category-cleanup">🧹 التنظيف</span></td>
+                            <td>مسح Event Logs (سجلات الأحداث)</td>
+                            <td class="muted">حذف سجلات الأحداث والنظام.</td>
+                            <td><span class="badge">Logs</span><span class="badge">System</span></td>
+                        </tr>
+                        <tr class="topic-row" data-target="clear-cache" data-search="cache browser cache system">
+                            <td><span class="category-label category-cleanup">🧹 التنظيف</span></td>
+                            <td>تنظيف Cache النظام</td>
+                            <td class="muted">حذف ملفات الـ Cache المتراكمة.</td>
+                            <td><span class="badge">Cache</span><span class="badge">Speed</span></td>
+                        </tr>
+                        <tr class="topic-row" data-target="storage-sense" data-search="storage sense automatic cleanup disk">
+                            <td><span class="category-label category-cleanup">🧹 التنظيف</span></td>
+                            <td>تفعيل Storage Sense (تنظيف تلقائي)</td>
+                            <td class="muted">تنظيف تلقائي للملفات المؤقتة والقديمة.</td>
+                            <td><span class="badge">Auto</span><span class="badge">Disk</span></td>
+                        </tr>
+                        <tr class="topic-row" data-target="disable-hibernation" data-search="hibernation hiberfil disable">
+                            <td><span class="category-label category-cleanup">🧹 التنظيف</span></td>
+                            <td>تعطيل Hibernation (السبات)</td>
+                            <td class="muted">حرر مساحة بتعطيل ملف hiberfil.sys.</td>
+                            <td><span class="badge">Sleep</span><span class="badge">Disk</span></td>
+                        </tr>
+                        <tr class="topic-row" data-target="disable-backup" data-search="backup windows restore point">
+                            <td><span class="category-label category-cleanup">🧹 التنظيف</span></td>
+                            <td>تعطيل Windows Backup</td>
+                            <td class="muted">إيقاف النسخ الاحتياطي التلقائية.</td>
+                            <td><span class="badge">Backup</span><span class="badge">Storage</span></td>
+                        </tr>
+                        <tr class="topic-row" data-target="disk-cleanup" data-search="disk cleanup utility windows">
+                            <td><span class="category-label category-cleanup">🧹 التنظيف</span></td>
+                            <td>استخدام Disk Cleanup للتنظيف العميق</td>
+                            <td class="muted">استخدام أداة تنظيف القرص الرسمية من مايكروسوفت.</td>
+                            <td><span class="badge">Cleanup</span><span class="badge">Tool</span></td>
+                        </tr>
+
+                        <!-- ===== إصلاح المشاكل (5) ===== -->
+                        <tr class="topic-row" data-target="network-reset" data-search="network reset connection internet">
+                            <td><span class="category-label category-fix">🔨 الإصلاح</span></td>
+                            <td>إعادة تعيين الشبكة (Network Reset)</td>
+                            <td class="muted">حل مشاكل الإنترنت بإعادة تعيين الشبكة.</td>
+                            <td><span class="badge">Network</span><span class="badge">Fix</span></td>
+                        </tr>
+                        <tr class="topic-row" data-target="alt-shift-fix" data-search="alt shift language switch fix">
+                            <td><span class="category-label category-fix">🔨 الإصلاح</span></td>
+                            <td>حل مشكلة Alt+Shift لتبديل اللغة</td>
+                            <td class="muted">إصلاح مشكلة تبديل اللغة بـ Alt+Shift.</td>
+                            <td><span class="badge">Language</span><span class="badge">Bug</span></td>
+                        </tr>
+                        <tr class="topic-row" data-target="auto-restart-fix" data-search="auto restart reboot loop fix">
+                            <td><span class="category-label category-fix">🔨 الإصلاح</span></td>
+                            <td>إيقاف إعادة التشغيل التلقائية</td>
+                            <td class="muted">منع الويندوز من إعادة التشغيل بعد الأخطاء.</td>
+                            <td><span class="badge">Reboot</span><span class="badge">Fix</span></td>
+                        </tr>
+                        <tr class="topic-row" data-target="store-fix" data-search="microsoft store fix error">
+                            <td><span class="category-label category-fix">🔨 الإصلاح</span></td>
+                            <td>إصلاح Microsoft Store</td>
+                            <td class="muted">حل مشاكل متجر مايكروسوفت والتطبيقات.</td>
+                            <td><span class="badge">Store</span><span class="badge">Apps</span></td>
+                        </tr>
+                        <tr class="topic-row" data-target="chkdsk-sfc" data-search="chkdsk sfc check disk system file">
+                            <td><span class="category-label category-fix">🔨 الإصلاح</span></td>
+                            <td>فحص القرص والملفات (CHKDSK + SFC)</td>
+                            <td class="muted">فحص واصلاح أخطاء القرص والملفات النظام.</td>
+                            <td><span class="badge">Repair</span><span class="badge">Disk</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="resultsHint" class="muted" style="margin-top: 10px; text-align: center;"></div>
+        </div>
+
+        <div class="card">
+            <h2>📝 ملاحظات مهمة</h2>
+            <div class="muted">
+                <strong>⚠️ تحذيرات:</strong><br>
+                • اعمل نقطة استعادة قبل أي تعديل كبير<br>
+                • استخدم حساب Admin أو "Run as Administrator"<br>
+                • لا تنسخ أوامر بدون فهمها<br>
+                • اختبر كل أمر بعد تنفيذه<br>
+                • معظم الأوامر تحتاج إعادة تشغيل<br>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🔗 موارد مفيدة</h2>
+            <div class="muted">
+                <a href="https://github.com/sherow1982/windows-adjust" target="_blank">📌 الريبو على GitHub</a> |
+                <a href="https://docs.microsoft.com/en-us/windows/" target="_blank">📖 موثق Windows الرسمي</a> |
+                <a href="https://github.com/sherow1982/windows-adjust/issues" target="_blank">🐛 الإبلاغ عن أخطاء</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast">✅ تم نسخ الكود بنجاح!</div>
+
+    <script>
+        function copyToClipboard(element) {
+            if (element && element.textContent) {
+                navigator.clipboard.writeText(element.textContent);
+                showToast();
+            }
+        }
+        function showToast() {
+            var x = document.getElementById("toast");
+            x.classList.add("show");
+            setTimeout(function(){ x.classList.remove("show"); }, 3000);
+        }
+        function jumpTo(id) {
+            const el = document.getElementById(id);
+            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        const searchInput = document.getElementById('search');
+        const rows = Array.from(document.querySelectorAll('.topic-row'));
+        const hint = document.getElementById('resultsHint');
+        
+        function normalize(s) { return (s || '').toString().toLowerCase().trim(); }
+        
+        function applySearch(qRaw) {
+            const q = normalize(qRaw);
+            let visible = 0;
+            rows.forEach(r => {
+                const hay = normalize(r.getAttribute('data-search') + ' ' + r.innerText);
+                const show = !q || hay.includes(q);
+                r.classList.toggle('hidden', !show);
+                if (show) visible++;
+            });
+            if (q && visible === 0) {
+                hint.textContent = '❌ لا توجد نتائج مطابقة. جرب كلمات مفتاحية أخرى.';
+            } else if (q) {
+                hint.textContent = `✅ نتائج البحث: ${visible} من ${rows.length} توبيك`;
+            } else {
+                hint.textContent = `📊 إجمالي: ${rows.length} توبيك`;
+            }
+        }
+        
+        function clearSearch() {
+            searchInput.value = '';
+            applySearch('');
+            searchInput.focus();
+        }
+        
+        searchInput.addEventListener('input', (e) => applySearch(e.target.value));
+        applySearch('');
+    </script>
+</body>
+</html>
