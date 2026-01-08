@@ -1,29 +1,20 @@
-# إزالة Microsoft OneNote بالقوة
+# إزالة مايكروسوفت ون نوت بالقوة (Force Remove OneNote)
 
-هذا الأمر يقوم بأخذ الملكية (Ownership) ومنح صلاحيات كاملة، ثم حذف ملف `ONENOTE.EXE` بشكل نهائي.
+## الوصف
+أمر سطر واحد لإجبار حذف تطبيق OneNote (النسخة المكتبية) من جذوره في حال لم يتم حذفه بالطرق التقليدية.
 
-## الكود (CMD)
+## الكود (PowerShell)
 
-افتح CMD كمسؤول (Run as Administrator) والصق الأمر التالي:
-
-```cmd
-takeown /F "C:\Program Files\Microsoft Office\root\Office16\ONENOTE.EXE" /A & icacls "C:\Program Files\Microsoft Office\root\Office16\ONENOTE.EXE" /grant Administrators:F & taskkill /F /IM OneNote.exe 2>nul & del /F "C:\Program Files\Microsoft Office\root\Office16\ONENOTE.EXE"
-```
-
-## بديل PowerShell
-
-إذا كنت تفضل PowerShell:
+قم بتشغيل PowerShell كمسؤول (Administrator) ونفض الأمر التالي:
 
 ```powershell
 takeown /F "C:\Program Files\Microsoft Office\root\Office16\ONENOTE.EXE" /A; icacls "C:\Program Files\Microsoft Office\root\Office16\ONENOTE.EXE" /grant Administrators:F; Stop-Process -Name "OneNote*" -Force -EA 0; Remove-Item "C:\Program Files\Microsoft Office\root\Office16\ONENOTE.EXE" -Force
 ```
 
 ## ملاحظات
-
-- يجب تشغيل CMD أو PowerShell كمسؤول
-- يغلق OneNote قبل الحذف تلقائياً
-- الأمر يحذف ملف التنفيذ فقط (OneNote لن يعمل)
-- مناسب لإصدارات Office المثبتة مع Windows 11 IoT LTSC
+- يجب تشغيل PowerShell بصلاحيات مسؤول
+- الأمر يأخذ ملكية الملف ثم يحذفه نهائياً
+- قد يتطلب إغلاق OneNote يدوياً إذا كان قيد التشغيل
 
 ---
 
