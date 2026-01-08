@@ -1,0 +1,98 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+    branches:
+      - main
+      - master
+  workflow_dispatch:
+
+# الصلاحيات الضرورية للـ Actions Bot
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# منع تشغيل workflows متعددة في نفس الوقت
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: 🏗️ Build
+    runs-on: windows-latest
+    
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          
+      - name: 🔧 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+          cache: 'npm'
+
+      - name: 📦 Install Dependencies (Windows)
+        run: |
+          npm ci --verbose
+        shell: powershell
+        
+      - name: 🏗️ Build Project
+        run: |
+          npm run build
+        shell: powershell
+        env:
+          CI: true
+          
+      - name: 📤 Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-output
+          path: dist/
+          retention-days: 1
+
+  deploy:
+    name: 🚀 Deploy
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
+        
+      - name: 📥 Download Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: build-output
+          path: dist/
+
+      - name: 🔐 Setup Git Config
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: 📤 Deploy with peaceiris
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          cname: ''  # أضف custom domain إذا كان عندك
+          force_orphan: false
+          allow_empty_commit: true
+          
+      - name: ✅ Deployment Summary
+        run: |
+          echo "✅ Site deployed successfully to GitHub Pages"
+          echo "🌐 URL: https://sherow1982.github.io/windows-adjust"
