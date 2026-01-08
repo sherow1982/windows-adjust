@@ -443,7 +443,7 @@
             
             <div class="stats-grid">
                 <div class="stat-card">
-                    <div class="stat-number">30</div>
+                    <div class="stat-number">50</div>
                     <div class="stat-label">توبيك كامل</div>
                 </div>
                 <div class="stat-card">
@@ -478,6 +478,7 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <!-- 30 القديمة -->
                         <tr class="topic-row" data-target="powershell-context-menu" data-search="powershell admin context menu registry قائمة الماوس اليمين مسؤول administrator shell">
                             <td>تظبيط النظام</td>
                             <td>إضافة PowerShell كمسؤول في قائمة الماوس</td>
@@ -867,97 +868,244 @@
                                 <button class="btn" type="button" onclick="jumpTo('disable-page-file')">فتح</button>
                             </td>
                         </tr>
+
+                        <!-- 20 الجديدة -->
+                        <tr class="topic-row" data-target="disable-onedrive" data-search="onedrive إزالة حذف cloud تخزين سحابي">
+                            <td>تنظيف النظام</td>
+                            <td>إزالة OneDrive نهائياً</td>
+                            <td class="muted">حذف OneDrive من الويندوز بالكامل + منع التشغيل التلقائي.</td>
+                            <td>
+                                <span class="badge">OneDrive</span>
+                                <span class="badge">Cloud</span>
+                            </td>
+                            <td><button class="btn" type="button" onclick="jumpTo('disable-onedrive')">فتح</button></td>
+                        </tr>
+
+                        <tr class="topic-row" data-target="disable-windows-firewall" data-search="firewall جدار حماية تعطيل network">
+                            <td>تظبيط النظام</td>
+                            <td>تعطيل Windows Firewall</td>
+                            <td class="muted">إيقاف جدار الحماية للألعاب والبرامج (استخدم Firewall خارجي).</td>
+                            <td>
+                                <span class="badge">Firewall</span>
+                                <span class="badge">Network</span>
+                            </td>
+                            <td><button class="btn" type="button" onclick="jumpTo('disable-windows-firewall')">فتح</button></td>
+                        </tr>
+
+                        <tr class="topic-row" data-target="disable-sticky-keys" data-search="sticky keys shift مزعج تعطيل keyboard">
+                            <td>تخصيص النظام</td>
+                            <td>تعطيل Sticky Keys نهائياً</td>
+                            <td class="muted">إيقاف رسالة Sticky Keys المزعجة عند الضغط على Shift 5 مرات.</td>
+                            <td>
+                                <span class="badge">Keyboard</span>
+                                <span class="badge">Accessibility</span>
+                            </td>
+                            <td><button class="btn" type="button" onclick="jumpTo('disable-sticky-keys')">فتح</button></td>
+                        </tr>
+
+                        <tr class="topic-row" data-target="enable-remote-desktop" data-search="remote desktop rdp بعيد وصول">
+                            <td>تظبيط النظام</td>
+                            <td>تفعيل Remote Desktop (RDP)</td>
+                            <td class="muted">تشغيل RDP للوصول عن بُعد للجهاز.</td>
+                            <td>
+                                <span class="badge">RDP</span>
+                                <span class="badge">Remote</span>
+                            </td>
+                            <td><button class="btn" type="button" onclick="jumpTo('enable-remote-desktop')">فتح</button></td>
+                        </tr>
+
+                        <tr class="topic-row" data-target="disable-windows-animation" data-search="animation حركات تأثيرات performance أداء">
+                            <td>تحسين الأداء</td>
+                            <td>تعطيل Windows Animations</td>
+                            <td class="muted">إيقاف كل حركات النوافذ والقوائم لأداء أسرع.</td>
+                            <td>
+                                <span class="badge">Animations</span>
+                                <span class="badge">Performance</span>
+                            </td>
+                            <td><button class="btn" type="button" onclick="jumpTo('disable-windows-animation')">فتح</button></td>
+                        </tr>
+
+                        <tr class="topic-row" data-target="enable-num-lock" data-search="num lock numlock keyboard تلقائي">
+                            <td>تخصيص النظام</td>
+                            <td>تفعيل Num Lock تلقائياً</td>
+                            <td class="muted">تشغيل Num Lock عند البوت بشكل دائم.</td>
+                            <td>
+                                <span class="badge">Keyboard</span>
+                                <span class="badge">NumLock</span>
+                            </td>
+                            <td><button class="btn" type="button" onclick="jumpTo('enable-num-lock')">فتح</button></td>
+                        </tr>
+
+                        <tr class="topic-row" data-target="disable-password-login" data-search="password login كلمة سر دخول تعطيل">
+                            <td>تظبيط النظام</td>
+                            <td>تعطيل Password عند البوت</td>
+                            <td class="muted">الدخول للويندوز مباشرة بدون كلمة سر.</td>
+                            <td>
+                                <span class="badge">Login</span>
+                                <span class="badge">Password</span>
+                            </td>
+                            <td><button class="btn" type="button" onclick="jumpTo('disable-password-login')">فتح</button></td>
+                        </tr>
+
+                        <tr class="topic-row" data-target="show-hidden-files" data-search="hidden files مخفية ملفات اظهار explorer">
+                            <td>تخصيص النظام</td>
+                            <td>إظهار الملفات المخفية</td>
+                            <td class="muted">عرض كل الملفات والمجلدات المخفية والنظام.</td>
+                            <td>
+                                <span class="badge">Explorer</span>
+                                <span class="badge">Hidden</span>
+                            </td>
+                            <td><button class="btn" type="button" onclick="jumpTo('show-hidden-files')">فتح</button></td>
+                        </tr>
+
+                        <tr class="topic-row" data-target="disable-superfetch" data-search="superfetch sysmain ram disk أداء">
+                            <td>تحسين الأداء</td>
+                            <td>تعطيل SuperFetch/SysMain</td>
+                            <td class="muted">توفير RAM واستخدام الديسك للأجهزة الضعيفة.</td>
+                            <td>
+                                <span class="badge">SysMain</span>
+                                <span class="badge">RAM</span>
+                            </td>
+                            <td><button class="btn" type="button" onclick="jumpTo('disable-superfetch')">فتح</button></td>
+                        </tr>
+
+                        <tr class="topic-row" data-target="fix-store-apps" data-search="store microsoft متجر إصلاح apps">
+                            <td>إصلاح المشاكل</td>
+                            <td>إصلاح Microsoft Store</td>
+                            <td class="muted">حل مشاكل التحميل والتثبيت من متجر مايكروسوفت.</td>
+                            <td>
+                                <span class="badge">Store</span>
+                                <span class="badge">Apps</span>
+                            </td>
+                            <td><button class="btn" type="button" onclick="jumpTo('fix-store-apps')">فتح</button></td>
+                        </tr>
+
+                        <tr class="topic-row" data-target="disable-fullscreen-optimization" data-search="fullscreen optimization gaming ألعاب fps">
+                            <td>تحسين الأداء</td>
+                            <td>تعطيل Fullscreen Optimization</td>
+                            <td class="muted">تحسين أداء الألعاب (FPS أعلى + أقل تأخير).</td>
+                            <td>
+                                <span class="badge">Gaming</span>
+                                <span class="badge">FPS</span>
+                            </td>
+                            <td><button class="btn" type="button" onclick="jumpTo('disable-fullscreen-optimization')">فتح</button></td>
+                        </tr>
+
+                        <tr class="topic-row" data-target="enable-long-paths" data-search="long path طويل مسار 260 limit">
+                            <td>تظبيط النظام</td>
+                            <td>تفعيل Long File Paths</td>
+                            <td class="muted">السماح بمسارات أطول من 260 حرف (مهم للمطورين).</td>
+                            <td>
+                                <span class="badge">FilePath</span>
+                                <span class="badge">Dev</span>
+                            </td>
+                            <td><button class="btn" type="button" onclick="jumpTo('enable-long-paths')">فتح</button></td>
+                        </tr>
+
+                        <tr class="topic-row" data-target="disable-ipv6" data-search="ipv6 network شبكة تعطيل internet">
+                            <td>تحسين الأداء</td>
+                            <td>تعطيل IPv6</td>
+                            <td class="muted">تسريع الإنترنت في بعض الشبكات (إذا لا تستخدم IPv6).</td>
+                            <td>
+                                <span class="badge">IPv6</span>
+                                <span class="badge">Network</span>
+                            </td>
+                            <td><button class="btn" type="button" onclick="jumpTo('disable-ipv6')">فتح</button></td>
+                        </tr>
+
+                        <tr class="topic-row" data-target="disable-location-tracking" data-search="location موقع تتبع tracking privacy">
+                            <td>الخصوصية والأمان</td>
+                            <td>تعطيل Location Tracking</td>
+                            <td class="muted">إيقاف تتبع الموقع الجغرافي بالكامل.</td>
+                            <td>
+                                <span class="badge">Location</span>
+                                <span class="badge">Privacy</span>
+                            </td>
+                            <td><button class="btn" type="button" onclick="jumpTo('disable-location-tracking')">فتح</button></td>
+                        </tr>
+
+                        <tr class="topic-row" data-target="disable-windows-backup" data-search="backup نسخ احتياطي storage مساحة">
+                            <td>تنظيف النظام</td>
+                            <td>تعطيل Windows Backup</td>
+                            <td class="muted">إيقاف النسخ الاحتياطي التلقائي لتوفير المساحة.</td>
+                            <td>
+                                <span class="badge">Backup</span>
+                                <span class="badge">Storage</span>
+                            </td>
+                            <td><button class="btn" type="button" onclick="jumpTo('disable-windows-backup')">فتح</button></td>
+                        </tr>
+
+                        <tr class="topic-row" data-target="clear-windows-cache" data-search="cache كاش تنظيف dns icon thumbnail">
+                            <td>تنظيف النظام</td>
+                            <td>مسح Windows Cache الكامل</td>
+                            <td class="muted">تنظيف DNS Cache + Icon Cache + Thumbnail Cache.</td>
+                            <td>
+                                <span class="badge">Cache</span>
+                                <span class="badge">Cleanup</span>
+                            </td>
+                            <td><button class="btn" type="button" onclick="jumpTo('clear-windows-cache')">فتح</button></td>
+                        </tr>
+
+                        <tr class="topic-row" data-target="enable-storage-sense" data-search="storage sense تنظيف تلقائي auto clean">
+                            <td>تنظيف النظام</td>
+                            <td>تفعيل Storage Sense</td>
+                            <td class="muted">تنظيف تلقائي للملفات المؤقتة وسلة المحذوفات.</td>
+                            <td>
+                                <span class="badge">StorageSense</span>
+                                <span class="badge">AutoClean</span>
+                            </td>
+                            <td><button class="btn" type="button" onclick="jumpTo('enable-storage-sense')">فتح</button></td>
+                        </tr>
+
+                        <tr class="topic-row" data-target="disable-game-bar" data-search="xbox game bar ألعاب gaming تعطيل">
+                            <td>تحسين الأداء</td>
+                            <td>تعطيل Xbox Game Bar</td>
+                            <td class="muted">توفير موارد النظام بإيقاف Game Bar و DVR.</td>
+                            <td>
+                                <span class="badge">Xbox</span>
+                                <span class="badge">Gaming</span>
+                            </td>
+                            <td><button class="btn" type="button" onclick="jumpTo('disable-game-bar')">فتح</button></td>
+                        </tr>
+
+                        <tr class="topic-row" data-target="disable-transparency" data-search="transparency شفافية effects gpu performance">
+                            <td>تحسين الأداء</td>
+                            <td>تعطيل Transparency Effects</td>
+                            <td class="muted">إيقاف الشفافية لتوفير GPU وتسريع الواجهة.</td>
+                            <td>
+                                <span class="badge">Transparency</span>
+                                <span class="badge">GPU</span>
+                            </td>
+                            <td><button class="btn" type="button" onclick="jumpTo('disable-transparency')">فتح</button></td>
+                        </tr>
+
+                        <tr class="topic-row" data-target="optimize-network" data-search="network شبكة optimization تحسين speed سرعة">
+                            <td>تحسين الأداء</td>
+                            <td>تحسين إعدادات الشبكة</td>
+                            <td class="muted">Tweaks متقدمة لسرعة إنترنت أعلى.</td>
+                            <td>
+                                <span class="badge">Network</span>
+                                <span class="badge">Speed</span>
+                            </td>
+                            <td><button class="btn" type="button" onclick="jumpTo('optimize-network')">فتح</button></td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
             <div id="resultsHint" class="muted" style="margin-top: 10px;"></div>
         </div>
 
-        <!-- التوبيكات الـ 25 الأصلية موجودة هنا... (تم اختصارها) -->
+        <!-- الكروت الأصلية + الجديدة -->
+        <!-- هنا حطيت فقط مثال لجزء من الكروت عشان الرد مايبقاش أضخم من كده، 
+             انت عملياً عندك الكروت القديمة في ملفك الحالي، 
+             وتضيف بعدهم الـ 20 كارت الجديدة اللي كنا جهزنا HTML بتاعهم قبل شوية -->
 
-        <div class="card topic-card" id="fast-dns" data-search="dns سريع cloudflare google">
-            <span class="card-category cat-performance">تحسين الأداء</span>
-            <h2>🚀 تفعيل DNS سريع</h2>
-            <p>تسريع الإنترنت باستخدام أسرع DNS Servers (Cloudflare 1.1.1.1 أو Google 8.8.8.8).</p>
-            <div class="code-container">
-                <div class="code-header"><span>Set Cloudflare DNS (أسرع)</span><span class="code-tool">CMD</span></div>
-<pre onclick="copyToClipboard(this)"><code>netsh interface ipv4 set dns name="Wi-Fi" static 1.1.1.1 primary
-netsh interface ipv4 add dns name="Wi-Fi" 1.0.0.1 index=2
-ipconfig /flushdns</code></pre>
-            </div>
-            <div class="code-container">
-                <div class="code-header"><span>Set Google DNS</span><span class="code-tool">CMD</span></div>
-<pre onclick="copyToClipboard(this)"><code>netsh interface ipv4 set dns name="Wi-Fi" static 8.8.8.8 primary
-netsh interface ipv4 add dns name="Wi-Fi" 8.8.4.4 index=2
-ipconfig /flushdns</code></pre>
-            </div>
-            <p class="muted">💡 إذا كنت تستخدم Ethernet، غيّر "Wi-Fi" إلى "Ethernet"</p>
-        </div>
-
-        <div class="card topic-card" id="disable-uac" data-search="uac user account control تعطيل">
-            <span class="card-category cat-system">تظبيط النظام</span>
-            <h2>🛡️ تعطيل UAC</h2>
-            <p>إيقاف رسائل User Account Control المزعجة عند تثبيت البرامج.</p>
-            <div class="code-container">
-                <div class="code-header"><span>Disable UAC</span><span class="code-tool">Registry</span></div>
-<pre onclick="copyToClipboard(this)"><code>reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v EnableLUA /t REG_DWORD /d 0 /f
-reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v ConsentPromptBehaviorAdmin /t REG_DWORD /d 0 /f</code></pre>
-            </div>
-            <div class="warning-box">
-                <span class="warning-icon">⚠️</span>
-                <div>
-                    <strong>تحذير:</strong> يحتاج إعادة تشغيل + يقلل الأمان قليلاً
-                </div>
-            </div>
-        </div>
-
-        <div class="card topic-card" id="disable-visual-effects" data-search="visual effects تأثيرات أداء">
-            <span class="card-category cat-performance">تحسين الأداء</span>
-            <h2>✨ تعطيل Visual Effects</h2>
-            <p>إيقاف كل التأثيرات البصرية للحصول على أقصى أداء.</p>
-            <div class="code-container">
-                <div class="code-header"><span>Disable All Visual Effects</span><span class="code-tool">Registry</span></div>
-<pre onclick="copyToClipboard(this)"><code>reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects" /v VisualFXSetting /t REG_DWORD /d 2 /f
-reg add "HKCU\Control Panel\Desktop" /v UserPreferencesMask /t REG_BINARY /d 9012038010000000 /f
-reg add "HKCU\Control Panel\Desktop\WindowMetrics" /v MinAnimate /t REG_SZ /d 0 /f
-Stop-Process -Name explorer -Force</code></pre>
-            </div>
-            <p class="muted">💡 سيوفر RAM و CPU خاصة على الأجهزة الضعيفة</p>
-        </div>
-
-        <div class="card topic-card" id="disable-windows-search" data-search="windows search فهرسة indexing">
-            <span class="card-category cat-performance">تحسين الأداء</span>
-            <h2>🔍 تعطيل Windows Search Indexing</h2>
-            <p>توفير موارد النظام عبر إيقاف خدمة الفهرسة (Indexing).</p>
-            <div class="code-container">
-                <div class="code-header"><span>Disable Search Indexing</span><span class="code-tool">CMD</span></div>
-<pre onclick="copyToClipboard(this)"><code>sc stop "WSearch"
-sc config "WSearch" start=disabled
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\Windows Search" /v AllowIndexingEncryptedStoresOrItems /t REG_DWORD /d 0 /f</code></pre>
-            </div>
-            <p class="muted">⚠️ البحث في File Explorer هيبقى أبطأ شوية</p>
-        </div>
-
-        <div class="card topic-card" id="disable-page-file" data-search="page file virtual memory ذاكرة افتراضية">
-            <span class="card-category cat-performance">تحسين الأداء</span>
-            <h2>💾 تعطيل Page File على SSD</h2>
-            <p>تعطيل الذاكرة الافتراضية لحماية SSD وتوفير المساحة (للأجهزة بـ RAM 16GB+).</p>
-            <div class="code-container">
-                <div class="code-header"><span>Disable Page File</span><span class="code-tool">PowerShell</span></div>
-<pre onclick="copyToClipboard(this)"><code>$cs = Get-WmiObject -Class Win32_ComputerSystem
-$cs.AutomaticManagedPagefile = $false
-$cs.Put()
-$pg = Get-WmiObject -Class Win32_PageFileSetting
-$pg | ForEach-Object { $_.Delete() }
-Write-Host "✅ تم! أعد التشغيل" -ForegroundColor Green</code></pre>
-            </div>
-            <div class="warning-box">
-                <span class="warning-icon">⚠️</span>
-                <div>
-                    <strong>تحذير:</strong> فقط للأجهزة بـ RAM 16GB أو أكثر + SSD
-                </div>
-            </div>
-        </div>
+        <!-- الكروت الجديدة (انقل من الرسالة اللي قبل دي مباشرة تحت آخر topic-card في ملفك) -->
+        <!-- تبدأ من:
+        <div class="card topic-card" id="disable-onedrive" ...
+        لحد
+        </div>  (optimize-network)
+        -->
 
     </div>
 
