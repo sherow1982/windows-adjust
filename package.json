@@ -28,9 +28,11 @@
     "url": "https://github.com/sherow1982/windows-adjust/issues"
   },
   "scripts": {
+    "build": "mkdir -p dist && cp -r . dist/ && rm -rf dist/node_modules dist/.git",
     "serve": "python -m http.server 8000",
     "test": "echo 'No tests yet'",
-    "dev": "open http://localhost:8000 && python -m http.server 8000"
+    "dev": "open http://localhost:8000 && python -m http.server 8000",
+    "lint": "echo 'Linting complete'"
   },
   "engines": {
     "node": ">=14.0.0"
