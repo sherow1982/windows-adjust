@@ -359,8 +359,25 @@
                             </td>
                         </tr>
 
+                        <tr class="topic-row" data-target="remove-powershell" data-search="powershell إزالة حذف context menu registry قائمة الماوس اليمين programmaticaccessonly hide">
+                            <td>تنظيف النظام</td>
+                            <td>إزالة PowerShell من قائمة الماوس اليمين</td>
+                            <td class="muted">سكربت شامل لتنظيف القائمة من إدخالات PowerShell (اليدوية والافتراضية).</td>
+                            <td>
+                                <span class="badge">PowerShell</span>
+                                <span class="badge">Registry</span>
+                                <span class="badge">Context Menu</span>
+                                <span class="badge">Cleanup</span>
+                            </td>
+                            <td>
+                                <div class="actions">
+                                    <button class="btn" type="button" onclick="jumpTo('remove-powershell')">فتح</button>
+                                </div>
+                            </td>
+                        </tr>
+
                         <tr class="topic-row" data-target="office-bloat" data-search="office إزالة bloat bloatware appx remove-appxpackage ltsc windows 11">
-                            <td>تنضيف النظام</td>
+                            <td>تنظيف النظام</td>
                             <td>إزالة مكونات أوفيس الزيادة</td>
                             <td class="muted">إزالة تطبيقات Microsoft المدمجة (Bloatware) من Windows 11 LTSC.</td>
                             <td>
@@ -372,6 +389,55 @@
                             <td>
                                 <div class="actions">
                                     <button class="btn" type="button" onclick="jumpTo('office-bloat')">فتح</button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr class="topic-row" data-target="remove-onenote" data-search="onenote إزالة حذف force takeown icacls office">
+                            <td>تنظيف النظام</td>
+                            <td>إزالة مايكروسوفت ون نوت بالقوة</td>
+                            <td class="muted">أمر سطر واحد لإجبار حذف OneNote من جذوره.</td>
+                            <td>
+                                <span class="badge">OneNote</span>
+                                <span class="badge">PowerShell</span>
+                                <span class="badge">Force</span>
+                            </td>
+                            <td>
+                                <div class="actions">
+                                    <button class="btn" type="button" onclick="jumpTo('remove-onenote')">فتح</button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr class="topic-row" data-target="alt-shift-fix" data-search="alt shift language تحويل اللغة keyboard registry scancode windows 10 11 لوحة المفاتيح">
+                            <td>إصلاح المشاكل</td>
+                            <td>حل مشكلة Alt+Shift لتحويل اللغة (Win 10/11)</td>
+                            <td class="muted">أمر Registry لإصلاح عدم استجابة Alt+Shift الأيمن لتبديل اللغة.</td>
+                            <td>
+                                <span class="badge">Registry</span>
+                                <span class="badge">Keyboard</span>
+                                <span class="badge">Windows 10</span>
+                                <span class="badge">Windows 11</span>
+                            </td>
+                            <td>
+                                <div class="actions">
+                                    <button class="btn" type="button" onclick="jumpTo('alt-shift-fix')">فتح</button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr class="topic-row" data-target="pin-this-pc" data-search="this pc taskbar تثبيت شريط المهام my computer shortcut اختصار">
+                            <td>تخصيص النظام</td>
+                            <td>تثبيت This PC على شريط المهام</td>
+                            <td class="muted">سكربت PowerShell لإنشاء اختصار This PC وتثبيته على التاسك بار.</td>
+                            <td>
+                                <span class="badge">PowerShell</span>
+                                <span class="badge">Taskbar</span>
+                                <span class="badge">Shortcut</span>
+                            </td>
+                            <td>
+                                <div class="actions">
+                                    <button class="btn" type="button" onclick="jumpTo('pin-this-pc')">فتح</button>
                                 </div>
                             </td>
                         </tr>
@@ -445,6 +511,53 @@ Write-Host "✅ تم! افتح Explorer واضغط F5" -ForegroundColor Green</c
             <p class="muted">* بعد التشغيل، افتح Windows Explorer واضغط F5 لتحديث القوائم</p>
         </div>
 
+        <!-- NEW CARD: Remove PowerShell -->
+        <div class="card topic-card" id="remove-powershell" data-search="powershell إزالة حذف context menu registry قائمة الماوس اليمين programmaticaccessonly hide">
+            <h2>إزالة PowerShell من قائمة الماوس اليمين</h2>
+            <p>سكربت شامل لتنظيف قائمة الماوس اليمين من إدخالات PowerShell (اليدوية والافتراضية) دون الإضرار بالنظام.</p>
+
+            <div class="code-container">
+                <div class="code-header">
+                    <span>Remove PowerShell from Context Menu</span>
+                    <span class="code-tool">PowerShell</span>
+                </div>
+<pre onclick="copyToClipboard(this)"><code># 1) احذف أي Entries أنت ضايفها تحت حسابك (HKCU)
+$hkcuShells = @(
+  'HKCU:\Software\Classes\Directory\shell',
+  'HKCU:\Software\Classes\Directory\Background\shell',
+  'HKCU:\Software\Classes\Drive\shell'
+)
+foreach($p in $hkcuShells){
+  if(Test-Path $p){
+    Get-ChildItem $p -ErrorAction SilentlyContinue |
+      Where-Object { $_.PSChildName -match 'powershell|pwsh|psadmin' } |
+      Remove-Item -Recurse -Force -ErrorAction SilentlyContinue
+  }
+}
+
+# 2) اخفِ PowerShell الافتراضي بتاع ويندوز (بدون ما تكسر النظام)
+$hkcrTargets = @(
+  'Registry::HKEY_CLASSES_ROOT\Directory\shell\Powershell',
+  'Registry::HKEY_CLASSES_ROOT\Directory\Background\shell\Powershell',
+  'Registry::HKEY_CLASSES_ROOT\Drive\shell\Powershell',
+  'Registry::HKEY_CLASSES_ROOT\Drive\Background\shell\Powershell'
+)
+foreach($t in $hkcrTargets){
+  if(Test-Path $t){
+    New-ItemProperty -Path $t -Name 'ProgrammaticAccessOnly' -PropertyType String -Value '' -Force -ErrorAction SilentlyContinue | Out-Null
+  }
+}
+
+# 3) (اختياري) شيل "Run with PowerShell" من كليك يمين على ملفات .ps1
+Remove-Item 'Registry::HKEY_CLASSES_ROOT\Microsoft.PowerShellScript.1\Shell\Run with PowerShell' -Recurse -Force -ErrorAction SilentlyContinue
+
+# 4) ريستارت Explorer عشان التغييرات تظهر فوراً
+Stop-Process -Name explorer -Force
+Start-Process explorer</code></pre>
+            </div>
+            <p class="muted">* يحتاج صلاحيات Administrator</p>
+        </div>
+
         <!-- Command Card 2 -->
         <div class="card topic-card" id="office-bloat" data-search="office إزالة bloat bloatware appx remove-appxpackage ltsc windows 11 powershell">
             <h2>إزالة مكونات أوفيس الزيادة</h2>
@@ -490,6 +603,52 @@ foreach ($app in $apps) {
 Write-Host "تم إزالة مكونات أوفيس الزيادة." -ForegroundColor Green</code></pre>
             </div>
             <p class="muted">* اضغط على الكود لنسخه مباشرة</p>
+        </div>
+
+        <!-- NEW CARD: Force Remove OneNote -->
+        <div class="card topic-card" id="remove-onenote" data-search="onenote إزالة حذف force takeown icacls office">
+            <h2>إزالة مايكروسوفت ون نوت بالقوة</h2>
+            <p>أمر سطر واحد لإجبار حذف OneNote (النسخة المكتبية) من جذوره.</p>
+
+            <div class="code-container">
+                <div class="code-header">
+                    <span>Force Remove OneNote</span>
+                    <span class="code-tool">PowerShell</span>
+                </div>
+<pre onclick="copyToClipboard(this)"><code>takeown /F "C:\Program Files\Microsoft Office\root\Office16\ONENOTE.EXE" /A; icacls "C:\Program Files\Microsoft Office\root\Office16\ONENOTE.EXE" /grant Administrators:F; Stop-Process -Name "OneNote*" -Force -EA 0; Remove-Item "C:\Program Files\Microsoft Office\root\Office16\ONENOTE.EXE" -Force</code></pre>
+            </div>
+            <p class="muted">* يجب تشغيل PowerShell بصلاحيات Administrator</p>
+        </div>
+
+        <!-- NEW CARD: Alt+Shift Fix -->
+        <div class="card topic-card" id="alt-shift-fix" data-search="alt shift language تحويل اللغة keyboard registry scancode windows 10 11 لوحة المفاتيح">
+            <h2>حل مشكلة Alt+Shift لتحويل اللغة (Windows 10/11)</h2>
+            <p>إصلاح مشكلة عدم استجابة <strong>Alt + Shift الأيمن</strong> لتبديل اللغة عبر تعديل Registry.</p>
+
+            <div class="code-container">
+                <div class="code-header">
+                    <span>Fix Alt+Shift Language Switch</span>
+                    <span class="code-tool">CMD</span>
+                </div>
+<pre onclick="copyToClipboard(this)"><code>reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout" /v "Scancode Map" /t REG_BINARY /d 000000000000000002000000380038E000000000 /f</code></pre>
+            </div>
+            <p class="muted">* افتح CMD كـ Administrator</p>
+            <p class="muted">* بعد التنفيذ، أعد تشغيل الكمبيوتر لتطبيق التغييرات</p>
+        </div>
+
+        <!-- NEW CARD: Pin This PC -->
+        <div class="card topic-card" id="pin-this-pc" data-search="this pc taskbar تثبيت شريط المهام my computer shortcut اختصار">
+            <h2>تثبيت This PC على شريط المهام</h2>
+            <p>سكربت PowerShell لإنشاء اختصار "This PC" على سطح المكتب ومحاولة تثبيته تلقائياً على التاسك بار.</p>
+
+            <div class="code-container">
+                <div class="code-header">
+                    <span>Pin This PC to Taskbar</span>
+                    <span class="code-tool">PowerShell</span>
+                </div>
+<pre onclick="copyToClipboard(this)"><code>$Desktop = [Environment]::GetFolderPath('Desktop'); $ShortcutPath = "$Desktop\This PC.lnk"; $WshShell = New-Object -ComObject WScript.Shell; $Shortcut = $WshShell.CreateShortcut($ShortcutPath); $Shortcut.TargetPath = 'explorer.exe'; $Shortcut.Arguments = 'shell:MyComputerFolder'; $Shortcut.IconLocation = '%SystemRoot%\System32\imageres.dll,-107'; $Shortcut.Save(); Start-Sleep 2; $shell = New-Object -ComObject Shell.Application; $Pinned = $shell.Namespace("$env:APPDATA\Microsoft\Internet Explorer\Quick Launch\User Pinned\TaskBar"); $Item = $Pinned.ParseName((Split-Path $ShortcutPath -Leaf)); if ($Item) { $Item.InvokeVerb('taskbarpin') } else { Write-Host 'اختصار موجود بس مش مثبت، ثبت يدوي' }; Write-Host 'تم الإنشاء والتثبيت!'</code></pre>
+            </div>
+            <p class="muted">* بعد التشغيل، انقر بالماوس الأيمن على الاختصار على سطح المكتب واختر "Pin to taskbar" إذا لم يُثبت تلقائياً</p>
         </div>
 
         <!-- Command Card 3 -->
