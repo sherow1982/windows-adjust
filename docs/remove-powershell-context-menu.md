@@ -1,22 +1,14 @@
-# إزالة PowerShell من قائمة الماوس اليمين
+# إزالة PowerShell من قائمة الماوس اليمين (Remove PowerShell Context Menu)
 
 ## الوصف
-إزالة جميع خيارات PowerShell من قائمة السياق (الكليك اليمين) بشكل كامل وآمن.
+سكربت شامل لتنظيف قائمة الماوس اليمين من إدخالات PowerShell، سواء التي تمت إضافتها يدوياً أو الإدخالات الافتراضية للنظام.
 
----
+## الكود (PowerShell)
 
-## طريقة التنفيذ
-
-### الخطوات
-
-1. **فتح PowerShell كمسؤول**
-   - اضغط كليك يمين على قائمة Start
-   - اختر **Windows PowerShell (Admin)**
-
-2. **الصق ونفذ الكود التالي**
+قم بتشغيل PowerShell كمسؤول (Administrator) وانسخ الكود كاملاً:
 
 ```powershell
-# 1) حذف أي Entries أنت ضايفها تحت حسابك (HKCU)
+# 1) احذف أي Entries أنت ضايفها تحت حسابك (HKCU)
 $hkcuShells = @(
   'HKCU:\Software\Classes\Directory\shell',
   'HKCU:\Software\Classes\Directory\Background\shell',
@@ -50,27 +42,9 @@ Remove-Item 'Registry::HKEY_CLASSES_ROOT\Microsoft.PowerShellScript.1\Shell\Run 
 # 4) ريستارت Explorer عشان التغييرات تظهر فوراً
 Stop-Process -Name explorer -Force
 Start-Process explorer
-
-Write-Host "✅ تم إزالة جميع عناصر PowerShell من القائمة!" -ForegroundColor Green
 ```
 
----
-
-## ما يفعله السكريبت
-
-1. **حذف العناصر المخصصة**: يحذف أي PowerShell أضفته يدوياً تحت حساب المستخدم (HKCU)
-2. **إخفاء PowerShell الافتراضي**: يخفي خيار PowerShell الرسمي من ويندوز بشكل آمن
-3. **حذف "Run with PowerShell"**: يزيل الخيار من ملفات .ps1 (اختياري)
-4. **إعادة تشغيل Explorer**: لتفعيل التغييرات فوراً
-
----
-
-## ملاحظات مهمة
-
-- ⚠️ **يجب تشغيل PowerShell كمسؤول** لتعديل HKEY_CLASSES_ROOT
-- ✅ **آمن تماماً**: لا يحذف ملفات النظام، فقط يخفي العناصر من القائمة
-- 🔄 **إعادة تشغيل Explorer** تتم تلقائياً في السكريبت
-
----
-
-*تم الإضافة بتاريخ: 2026-01-08*
+## ملاحظات
+- السكربت يخفي إدخالات PowerShell دون حذف ملفات النظام
+- يعيد تشغيل Explorer تلقائياً لتطبيق التغييرات
+- آمن ولا يؤثر على وظائف النظام الأساسية
