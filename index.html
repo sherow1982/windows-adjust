@@ -13,17 +13,14 @@
             --text-secondary: #94a3b8;
             --accent: #38bdf8;
             --accent-hover: #0ea5e9;
-            --code-bg: #000000; /* Pure black */
-            --code-text: #00ff41; /* Matrix Green */
+            --code-bg: #000000;
+            --code-text: #00ff41;
             --success: #22c55e;
             --link-color: #f472b6;
             --border: #334155;
         }
-
         * { box-sizing: border-box; }
-
         html { scroll-behavior: smooth; }
-
         body {
             font-family: 'Cairo', sans-serif;
             background-color: var(--bg-color);
@@ -32,31 +29,26 @@
             padding: 0;
             line-height: 1.6;
         }
-
         .container {
             max-width: 1000px;
             margin: 0 auto;
             padding: 2rem;
         }
-
         header {
             text-align: center;
             margin-bottom: 2rem;
             padding: 2rem 0;
             border-bottom: 1px solid var(--border);
         }
-
         h1 {
             font-size: 2.5rem;
             color: var(--accent);
             margin-bottom: 0.5rem;
         }
-
         .subtitle {
             color: var(--text-secondary);
             font-size: 1.1rem;
         }
-
         .card {
             background: var(--card-bg);
             border-radius: 16px;
@@ -66,31 +58,22 @@
             border: 1px solid var(--border);
             transition: transform 0.2s, border-color 0.2s;
         }
-
         .card:hover {
             transform: translateY(-2px);
             border-color: var(--accent);
         }
-
-        .card.compact {
-            padding: 1.25rem 1.5rem;
-        }
-
+        .card.compact { padding: 1.25rem 1.5rem; }
         h2 {
             border-bottom: 2px solid var(--accent);
             padding-bottom: 0.5rem;
             margin: 0 0 1rem;
             display: inline-block;
         }
-
         .muted {
             color: var(--text-secondary);
             font-size: 0.95rem;
         }
-
         .hidden { display: none !important; }
-
-        /* Search */
         .search-wrap {
             display: flex;
             gap: 12px;
@@ -98,7 +81,6 @@
             align-items: center;
             margin-top: 1rem;
         }
-
         .search-input {
             flex: 1;
             min-width: 240px;
@@ -112,12 +94,10 @@
             outline: none;
             transition: border-color 0.2s, box-shadow 0.2s;
         }
-
         .search-input:focus {
             border-color: var(--code-text);
             box-shadow: 0 0 0 4px rgba(0, 255, 65, 0.12);
         }
-
         .btn {
             border: 1px solid var(--border);
             background: rgba(255,255,255,0.04);
@@ -128,11 +108,8 @@
             font-family: 'Cairo', sans-serif;
             transition: border-color 0.2s, transform 0.05s;
         }
-
         .btn:hover { border-color: var(--accent); }
         .btn:active { transform: translateY(1px); }
-
-        /* Table */
         .table-wrap {
             margin-top: 1.2rem;
             overflow: auto;
@@ -140,13 +117,11 @@
             border: 1px solid var(--border);
             background: rgba(0,0,0,0.18);
         }
-
         table {
             width: 100%;
             border-collapse: collapse;
             min-width: 720px;
         }
-
         thead th {
             text-align: right;
             padding: 14px 14px;
@@ -158,18 +133,13 @@
             top: 0;
             z-index: 1;
         }
-
         tbody td {
             padding: 14px;
             border-bottom: 1px solid rgba(51, 65, 85, 0.5);
             vertical-align: top;
             color: var(--text-primary);
         }
-
-        tbody tr:hover {
-            background: rgba(0, 255, 65, 0.05);
-        }
-
+        tbody tr:hover { background: rgba(0, 255, 65, 0.05); }
         .badge {
             display: inline-block;
             padding: 4px 10px;
@@ -181,32 +151,26 @@
             margin: 2px 0 0 6px;
             white-space: nowrap;
         }
-
         .actions {
             display: flex;
             gap: 10px;
             flex-wrap: wrap;
         }
-
         a {
             color: var(--link-color);
             text-decoration: none;
             border-bottom: 1px dashed var(--link-color);
             transition: all 0.2s;
         }
-
         a:hover {
             border-bottom-style: solid;
             filter: brightness(1.2);
         }
-
-        /* Code */
         .code-container {
             position: relative;
-            direction: ltr; /* Force code LTR */
+            direction: ltr;
             margin: 1.5rem 0;
         }
-
         .code-header {
             background: rgba(0, 255, 65, 0.12);
             border: 1px solid rgba(0, 255, 65, 0.3);
@@ -220,7 +184,6 @@
             justify-content: space-between;
             align-items: center;
         }
-
         .code-tool {
             background: rgba(0, 255, 65, 0.2);
             padding: 2px 8px;
@@ -228,7 +191,6 @@
             font-size: 0.75rem;
             border: 1px solid rgba(0, 255, 65, 0.4);
         }
-
         pre {
             background: var(--code-bg);
             padding: 1.5rem;
@@ -241,12 +203,10 @@
             margin: 0;
             overflow-x: auto;
         }
-
         pre:hover {
             border-color: var(--code-text);
             box-shadow: 0 0 15px rgba(0, 255, 65, 0.2);
         }
-
         pre::after {
             content: "اضغط للنسخ";
             position: absolute;
@@ -264,20 +224,16 @@
             text-shadow: none;
             font-weight: 600;
         }
-
         pre:hover::after { opacity: 1; }
-
         code {
             font-family: 'Fira Code', monospace;
             color: var(--code-text);
             font-size: 0.9rem;
-            text-shadow: 0 0 6px rgba(0, 255, 65, 0.6); /* Matrix Glow */
+            text-shadow: 0 0 6px rgba(0, 255, 65, 0.6);
             font-weight: 500;
             line-height: 1.5;
             letter-spacing: 0.5px;
         }
-
-        /* Toast */
         .toast {
             visibility: hidden;
             min-width: 250px;
@@ -299,13 +255,11 @@
             justify-content: center;
             gap: 10px;
         }
-
         .toast.show {
             visibility: visible;
             -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
             animation: fadein 0.5s, fadeout 0.5s 2.5s;
         }
-
         @-webkit-keyframes fadein { from {bottom: 0; opacity: 0;} to {bottom: 30px; opacity: 1;} }
         @keyframes fadein { from {bottom: 0; opacity: 0;} to {bottom: 30px; opacity: 1;} }
         @-webkit-keyframes fadeout { from {bottom: 30px; opacity: 1;} to {bottom: 0; opacity: 0;} }
@@ -313,20 +267,18 @@
     </style>
 </head>
 <body>
-
     <div class="container">
         <header>
             <h1>Windows Adjust Reference</h1>
             <div class="subtitle">مرجعك الشامل لتظبيط وإصلاح الويندوز</div>
         </header>
 
-        <!-- Topics Table + Search -->
         <div class="card compact" id="topics">
             <h2>التوبيكات</h2>
             <div class="muted">ابحث عن أي خدمة/أمر بسرعة، واضغط "فتح" للانتقال للتفاصيل أو اضغط على أي كود لنسخه مباشرة.</div>
 
             <div class="search-wrap">
-                <input id="search" class="search-input" type="search" placeholder="ابحث: PowerShell / Office / Registry / Context Menu ..." />
+                <input id="search" class="search-input" type="search" placeholder="ابحث: PowerShell / Defender / Telemetry / Registry ..." />
                 <button class="btn" type="button" onclick="clearSearch()">مسح البحث</button>
             </div>
 
@@ -350,7 +302,6 @@
                                 <span class="badge">PowerShell</span>
                                 <span class="badge">Registry</span>
                                 <span class="badge">Context Menu</span>
-                                <span class="badge">Admin</span>
                             </td>
                             <td>
                                 <div class="actions">
@@ -366,12 +317,139 @@
                             <td>
                                 <span class="badge">PowerShell</span>
                                 <span class="badge">Registry</span>
-                                <span class="badge">Context Menu</span>
                                 <span class="badge">Cleanup</span>
                             </td>
                             <td>
                                 <div class="actions">
                                     <button class="btn" type="button" onclick="jumpTo('remove-powershell')">فتح</button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr class="topic-row" data-target="disable-defender" data-search="defender windows تعطيل ويندوز ديفندر antivirus security مكافح الفيروسات">
+                            <td>الخصوصية والأمان</td>
+                            <td>تعطيل Windows Defender نهائياً</td>
+                            <td class="muted">تعطيل كامل لـ Windows Defender والحماية الفورية عبر Registry و Group Policy.</td>
+                            <td>
+                                <span class="badge">Defender</span>
+                                <span class="badge">Registry</span>
+                                <span class="badge">Privacy</span>
+                            </td>
+                            <td>
+                                <div class="actions">
+                                    <button class="btn" type="button" onclick="jumpTo('disable-defender')">فتح</button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr class="topic-row" data-target="disable-cortana" data-search="cortana كورتانا تعطيل disable search بحث">
+                            <td>تنظيف النظام</td>
+                            <td>تعطيل Cortana نهائياً</td>
+                            <td class="muted">إيقاف Cortana والبحث الذكي من الويندوز بالكامل.</td>
+                            <td>
+                                <span class="badge">Cortana</span>
+                                <span class="badge">Registry</span>
+                                <span class="badge">Privacy</span>
+                            </td>
+                            <td>
+                                <div class="actions">
+                                    <button class="btn" type="button" onclick="jumpTo('disable-cortana')">فتح</button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr class="topic-row" data-target="disable-telemetry" data-search="telemetry تيليميتري بيانات data collection جمع البيانات privacy خصوصية">
+                            <td>الخصوصية والأمان</td>
+                            <td>تعطيل Telemetry وجمع البيانات</td>
+                            <td class="muted">إيقاف إرسال بيانات الاستخدام والتشخيص لمايكروسوفت.</td>
+                            <td>
+                                <span class="badge">Telemetry</span>
+                                <span class="badge">Privacy</span>
+                                <span class="badge">Services</span>
+                            </td>
+                            <td>
+                                <div class="actions">
+                                    <button class="btn" type="button" onclick="jumpTo('disable-telemetry')">فتح</button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr class="topic-row" data-target="disable-updates" data-search="windows update تحديثات ويندوز تعطيل disable automatic">
+                            <td>تظبيط النظام</td>
+                            <td>تعطيل Windows Update التلقائي</td>
+                            <td class="muted">إيقاف التحديثات التلقائية والتحكم الكامل في موعد التحديث.</td>
+                            <td>
+                                <span class="badge">Windows Update</span>
+                                <span class="badge">Services</span>
+                                <span class="badge">Registry</span>
+                            </td>
+                            <td>
+                                <div class="actions">
+                                    <button class="btn" type="button" onclick="jumpTo('disable-updates')">فتح</button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr class="topic-row" data-target="god-mode" data-search="god mode وضع الإله control panel لوحة التحكم all tasks">
+                            <td>تخصيص النظام</td>
+                            <td>تفعيل God Mode (وضع الإله)</td>
+                            <td class="muted">الوصول لكل إعدادات الويندوز من مكان واحد.</td>
+                            <td>
+                                <span class="badge">God Mode</span>
+                                <span class="badge">Control Panel</span>
+                                <span class="badge">Advanced</span>
+                            </td>
+                            <td>
+                                <div class="actions">
+                                    <button class="btn" type="button" onclick="jumpTo('god-mode')">فتح</button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr class="topic-row" data-target="speedup-boot" data-search="سرعة boot startup تشغيل بوت اقلاع performance">
+                            <td>تحسين الأداء</td>
+                            <td>تسريع إقلاع الويندوز</td>
+                            <td class="muted">تقليل برامج بدء التشغيل وتفعيل Fast Startup.</td>
+                            <td>
+                                <span class="badge">Performance</span>
+                                <span class="badge">Startup</span>
+                                <span class="badge">Boot</span>
+                            </td>
+                            <td>
+                                <div class="actions">
+                                    <button class="btn" type="button" onclick="jumpTo('speedup-boot')">فتح</button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr class="topic-row" data-target="clean-temp" data-search="temp مؤقت ملفات تنظيف clean disk مساحة">
+                            <td>تنظيف النظام</td>
+                            <td>تنظيف الملفات المؤقتة بالكامل</td>
+                            <td class="muted">حذف ملفات Temp و Prefetch و Windows Update Cache.</td>
+                            <td>
+                                <span class="badge">Cleanup</span>
+                                <span class="badge">Temp Files</span>
+                                <span class="badge">Disk Space</span>
+                            </td>
+                            <td>
+                                <div class="actions">
+                                    <button class="btn" type="button" onclick="jumpTo('clean-temp')">فتح</button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr class="topic-row" data-target="network-reset" data-search="network شبكة reset إعادة تعيين internet انترنت dns">
+                            <td>إصلاح المشاكل</td>
+                            <td>إعادة تعيين إعدادات الشبكة</td>
+                            <td class="muted">حل مشاكل الإنترنت والشبكة عبر إعادة ضبط TCP/IP و DNS.</td>
+                            <td>
+                                <span class="badge">Network</span>
+                                <span class="badge">Internet</span>
+                                <span class="badge">Reset</span>
+                            </td>
+                            <td>
+                                <div class="actions">
+                                    <button class="btn" type="button" onclick="jumpTo('network-reset')">فتح</button>
                                 </div>
                             </td>
                         </tr>
@@ -383,7 +461,6 @@
                             <td>
                                 <span class="badge">Windows 11</span>
                                 <span class="badge">LTSC</span>
-                                <span class="badge">PowerShell</span>
                                 <span class="badge">Appx</span>
                             </td>
                             <td>
@@ -399,8 +476,7 @@
                             <td class="muted">أمر سطر واحد لإجبار حذف OneNote من جذوره.</td>
                             <td>
                                 <span class="badge">OneNote</span>
-                                <span class="badge">PowerShell</span>
-                                <span class="badge">Force</span>
+                                <span class="badge">Force Remove</span>
                             </td>
                             <td>
                                 <div class="actions">
@@ -411,13 +487,12 @@
 
                         <tr class="topic-row" data-target="alt-shift-fix" data-search="alt shift language تحويل اللغة keyboard registry scancode windows 10 11 لوحة المفاتيح">
                             <td>إصلاح المشاكل</td>
-                            <td>حل مشكلة Alt+Shift لتحويل اللغة (Win 10/11)</td>
+                            <td>حل مشكلة Alt+Shift لتحويل اللغة</td>
                             <td class="muted">أمر Registry لإصلاح عدم استجابة Alt+Shift الأيمن لتبديل اللغة.</td>
                             <td>
                                 <span class="badge">Registry</span>
                                 <span class="badge">Keyboard</span>
-                                <span class="badge">Windows 10</span>
-                                <span class="badge">Windows 11</span>
+                                <span class="badge">Language</span>
                             </td>
                             <td>
                                 <div class="actions">
@@ -431,7 +506,6 @@
                             <td>تثبيت This PC على شريط المهام</td>
                             <td class="muted">سكربت PowerShell لإنشاء اختصار This PC وتثبيته على التاسك بار.</td>
                             <td>
-                                <span class="badge">PowerShell</span>
                                 <span class="badge">Taskbar</span>
                                 <span class="badge">Shortcut</span>
                             </td>
@@ -449,8 +523,7 @@
                             <td>
                                 <span class="badge">ODT</span>
                                 <span class="badge">XML</span>
-                                <span class="badge">Word</span>
-                                <span class="badge">Excel</span>
+                                <span class="badge">Office</span>
                             </td>
                             <td>
                                 <div class="actions">
@@ -459,19 +532,65 @@
                                 </div>
                             </td>
                         </tr>
+
+                        <tr class="topic-row" data-target="dark-mode-registry" data-search="dark mode ثيم داكن مظلم theme registry">
+                            <td>تخصيص النظام</td>
+                            <td>تفعيل Dark Mode عبر Registry</td>
+                            <td class="muted">تفعيل الوضع الداكن لكل برامج الويندوز.</td>
+                            <td>
+                                <span class="badge">Dark Mode</span>
+                                <span class="badge">Registry</span>
+                                <span class="badge">Theme</span>
+                            </td>
+                            <td>
+                                <div class="actions">
+                                    <button class="btn" type="button" onclick="jumpTo('dark-mode-registry')">فتح</button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr class="topic-row" data-target="remove-edge" data-search="edge إزالة حذف microsoft browser متصفح">
+                            <td>تنظيف النظام</td>
+                            <td>إزالة Microsoft Edge</td>
+                            <td class="muted">حذف متصفح Edge من الويندوز بالكامل.</td>
+                            <td>
+                                <span class="badge">Edge</span>
+                                <span class="badge">Browser</span>
+                                <span class="badge">Remove</span>
+                            </td>
+                            <td>
+                                <div class="actions">
+                                    <button class="btn" type="button" onclick="jumpTo('remove-edge')">فتح</button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr class="topic-row" data-target="ultimate-performance" data-search="performance أداء power plan خطة طاقة سرعة">
+                            <td>تحسين الأداء</td>
+                            <td>تفعيل خطة الطاقة Ultimate Performance</td>
+                            <td class="muted">خطة طاقة خفية للأداء الأقصى (للأجهزة القوية).</td>
+                            <td>
+                                <span class="badge">Performance</span>
+                                <span class="badge">Power Plan</span>
+                                <span class="badge">Speed</span>
+                            </td>
+                            <td>
+                                <div class="actions">
+                                    <button class="btn" type="button" onclick="jumpTo('ultimate-performance')">فتح</button>
+                                </div>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
-
             <div id="resultsHint" class="muted" style="margin-top: 10px;"></div>
         </div>
 
-        <!-- Command Card 1: PowerShell Context Menu -->
+        <!-- CARDS START HERE -->
+
         <div class="card topic-card" id="powershell-context-menu" data-search="powershell admin context menu registry قائمة الماوس اليمين مسؤول administrator shell">
             <h2>إضافة PowerShell كمسؤول في قائمة الماوس اليمين</h2>
             <p>هذا السكريبت يضيف خيار <strong>"PowerShell Admin Here"</strong> في قائمة الماوس اليمين على المجلدات والدرايفات والخلفية.</p>
-            <p>يعمل على: <strong>المجلدات</strong> | <strong>الخلفية داخل المجلدات</strong> | <strong>الدرايفات (C:, D:)</strong></p>
-
             <div class="code-container">
                 <div class="code-header">
                     <span>Add PowerShell Admin to Context Menu</span>
@@ -481,7 +600,6 @@
 $MenuText    = "PowerShell Admin Here"
 $Icon        = "$env:WINDIR\System32\WindowsPowerShell\v1.0\powershell.exe"
 
-# للمجلدات (كليك يمين على فولدر)
 $dir1 = "HKCU:\Software\Classes\Directory\shell\$MenuKeyName"
 New-Item -Path $dir1 -Force | Out-Null
 New-Item -Path "$dir1\command" -Force | Out-Null
@@ -489,7 +607,6 @@ Set-ItemProperty -Path $dir1 -Name '(Default)' -Value $MenuText -Force
 Set-ItemProperty -Path $dir1 -Name 'Icon' -Value $Icon -Force
 Set-ItemProperty -Path "$dir1\command" -Name '(Default)' -Value 'powershell.exe -NoProfile -Command "Start-Process powershell.exe -Verb RunAs -WorkingDirectory ''''%V'''' -ArgumentList ''''-NoExit'''',''''-NoProfile'''',''''-Command'''',''''Set-Location -LiteralPath ""%V""''''"' -Force
 
-# للخلفية (كليك يمين في مساحة فارغة داخل فولدر)
 $dir2 = "HKCU:\Software\Classes\Directory\Background\shell\$MenuKeyName"
 New-Item -Path $dir2 -Force | Out-Null
 New-Item -Path "$dir2\command" -Force | Out-Null
@@ -497,7 +614,6 @@ Set-ItemProperty -Path $dir2 -Name '(Default)' -Value $MenuText -Force
 Set-ItemProperty -Path $dir2 -Name 'Icon' -Value $Icon -Force
 Set-ItemProperty -Path "$dir2\command" -Name '(Default)' -Value 'powershell.exe -NoProfile -Command "Start-Process powershell.exe -Verb RunAs -WorkingDirectory ''''%V'''' -ArgumentList ''''-NoExit'''',''''-NoProfile'''',''''-Command'''',''''Set-Location -LiteralPath ""%V""''''"' -Force
 
-# للدرايفات (كليك يمين على C:, D:, إلخ)
 $dir3 = "HKCU:\Software\Classes\Drive\shell\$MenuKeyName"
 New-Item -Path $dir3 -Force | Out-Null
 New-Item -Path "$dir3\command" -Force | Out-Null
@@ -507,193 +623,212 @@ Set-ItemProperty -Path "$dir3\command" -Name '(Default)' -Value 'powershell.exe 
 
 Write-Host "✅ تم! افتح Explorer واضغط F5" -ForegroundColor Green</code></pre>
             </div>
-            <p class="muted">* افتح PowerShell عادي (مش كـ Administrator) وانسخ السكريبت كامل</p>
-            <p class="muted">* بعد التشغيل، افتح Windows Explorer واضغط F5 لتحديث القوائم</p>
         </div>
 
-        <!-- NEW CARD: Remove PowerShell -->
-        <div class="card topic-card" id="remove-powershell" data-search="powershell إزالة حذف context menu registry قائمة الماوس اليمين programmaticaccessonly hide">
+        <div class="card topic-card" id="remove-powershell" data-search="powershell إزالة حذف context menu registry قائمة الماوس اليمين">
             <h2>إزالة PowerShell من قائمة الماوس اليمين</h2>
-            <p>سكربت شامل لتنظيف قائمة الماوس اليمين من إدخالات PowerShell (اليدوية والافتراضية) دون الإضرار بالنظام.</p>
-
+            <p>سكربت شامل لتنظيف قائمة الماوس اليمين من إدخالات PowerShell.</p>
             <div class="code-container">
-                <div class="code-header">
-                    <span>Remove PowerShell from Context Menu</span>
-                    <span class="code-tool">PowerShell</span>
-                </div>
-<pre onclick="copyToClipboard(this)"><code># 1) احذف أي Entries أنت ضايفها تحت حسابك (HKCU)
-$hkcuShells = @(
-  'HKCU:\Software\Classes\Directory\shell',
-  'HKCU:\Software\Classes\Directory\Background\shell',
-  'HKCU:\Software\Classes\Drive\shell'
-)
+                <div class="code-header"><span>Remove PowerShell</span><span class="code-tool">PowerShell</span></div>
+<pre onclick="copyToClipboard(this)"><code>$hkcuShells = @('HKCU:\Software\Classes\Directory\shell','HKCU:\Software\Classes\Directory\Background\shell','HKCU:\Software\Classes\Drive\shell')
 foreach($p in $hkcuShells){
   if(Test-Path $p){
-    Get-ChildItem $p -ErrorAction SilentlyContinue |
-      Where-Object { $_.PSChildName -match 'powershell|pwsh|psadmin' } |
-      Remove-Item -Recurse -Force -ErrorAction SilentlyContinue
+    Get-ChildItem $p -ErrorAction SilentlyContinue | Where-Object { $_.PSChildName -match 'powershell|pwsh|psadmin' } | Remove-Item -Recurse -Force -ErrorAction SilentlyContinue
   }
 }
-
-# 2) اخفِ PowerShell الافتراضي بتاع ويندوز (بدون ما تكسر النظام)
-$hkcrTargets = @(
-  'Registry::HKEY_CLASSES_ROOT\Directory\shell\Powershell',
-  'Registry::HKEY_CLASSES_ROOT\Directory\Background\shell\Powershell',
-  'Registry::HKEY_CLASSES_ROOT\Drive\shell\Powershell',
-  'Registry::HKEY_CLASSES_ROOT\Drive\Background\shell\Powershell'
-)
+$hkcrTargets = @('Registry::HKEY_CLASSES_ROOT\Directory\shell\Powershell','Registry::HKEY_CLASSES_ROOT\Directory\Background\shell\Powershell','Registry::HKEY_CLASSES_ROOT\Drive\shell\Powershell')
 foreach($t in $hkcrTargets){
-  if(Test-Path $t){
-    New-ItemProperty -Path $t -Name 'ProgrammaticAccessOnly' -PropertyType String -Value '' -Force -ErrorAction SilentlyContinue | Out-Null
-  }
+  if(Test-Path $t){ New-ItemProperty -Path $t -Name 'ProgrammaticAccessOnly' -PropertyType String -Value '' -Force -ErrorAction SilentlyContinue | Out-Null }
 }
-
-# 3) (اختياري) شيل "Run with PowerShell" من كليك يمين على ملفات .ps1
-Remove-Item 'Registry::HKEY_CLASSES_ROOT\Microsoft.PowerShellScript.1\Shell\Run with PowerShell' -Recurse -Force -ErrorAction SilentlyContinue
-
-# 4) ريستارت Explorer عشان التغييرات تظهر فوراً
-Stop-Process -Name explorer -Force
-Start-Process explorer</code></pre>
+Stop-Process -Name explorer -Force; Start-Process explorer</code></pre>
             </div>
-            <p class="muted">* يحتاج صلاحيات Administrator</p>
         </div>
 
-        <!-- Command Card 2 -->
-        <div class="card topic-card" id="office-bloat" data-search="office إزالة bloat bloatware appx remove-appxpackage ltsc windows 11 powershell">
-            <h2>إزالة مكونات أوفيس الزيادة</h2>
-            <p>خاص بنسخة <strong>Windows 11 IoT Enterprise LTSC</strong>. هذا السكريبت يقوم بإزالة تطبيقات Microsoft المثبتة مسبقاً وغير الضرورية (Bloatware) دفعة واحدة.</p>
-
+        <div class="card topic-card" id="disable-defender" data-search="defender windows تعطيل ويندوز ديفندر antivirus">
+            <h2>تعطيل Windows Defender نهائياً</h2>
+            <p>تعطيل كامل لـ Windows Defender والحماية الفورية.</p>
             <div class="code-container">
-                <div class="code-header">
-                    <span>Remove Office Bloatware</span>
-                    <span class="code-tool">PowerShell</span>
-                </div>
-<pre onclick="copyToClipboard(this)"><code># إزالة كل مكونات أوفيس اللي مش أساسية
-$apps = @(
-    "Microsoft.3DBuilder",
-    "Microsoft.BingWeather",
-    "Microsoft.GetHelp",
-    "Microsoft.Getstarted",
-    "Microsoft.MicrosoftOfficeHub",
-    "Microsoft.MicrosoftSolitaireCollection",
-    "Microsoft.MicrosoftStickyNotes",
-    "Microsoft.MixedReality.Portal",
-    "Microsoft.OneConnect",
-    "Microsoft.People",
-    "Microsoft.Print3D",
-    "Microsoft.SkypeApp",
-    "Microsoft.Wallet",
-    "Microsoft.WebMediaExtensions",
-    "Microsoft.WebpImageExtensions",
-    "Microsoft.Xbox.TCUI",
-    "Microsoft.XboxApp",
-    "Microsoft.XboxGameOverlay",
-    "Microsoft.XboxGamingOverlay",
-    "Microsoft.XboxIdentityProvider",
-    "Microsoft.XboxSpeechToTextOverlay",
-    "Microsoft.YourPhone",
-    "Microsoft.ZuneMusic",
-    "Microsoft.ZuneVideo"
-)
+                <div class="code-header"><span>Disable Defender</span><span class="code-tool">PowerShell</span></div>
+<pre onclick="copyToClipboard(this)"><code>Set-MpPreference -DisableRealtimeMonitoring $true
+New-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows Defender" -Name DisableAntiSpyware -Value 1 -PropertyType DWORD -Force
+Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows Defender\Real-Time Protection" -Name DisableRealtimeMonitoring -Value 1 -Force
+Write-Host "تم تعطيل Defender - أعد التشغيل" -ForegroundColor Green</code></pre>
+            </div>
+            <p class="muted">⚠️ يحتاج صلاحيات Administrator + إعادة تشغيل</p>
+        </div>
 
+        <div class="card topic-card" id="disable-cortana" data-search="cortana كورتانا تعطيل disable">
+            <h2>تعطيل Cortana نهائياً</h2>
+            <p>إيقاف Cortana والبحث الذكي.</p>
+            <div class="code-container">
+                <div class="code-header"><span>Disable Cortana</span><span class="code-tool">Registry</span></div>
+<pre onclick="copyToClipboard(this)"><code>reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\Windows Search" /v AllowCortana /t REG_DWORD /d 0 /f
+reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Search" /v BingSearchEnabled /t REG_DWORD /d 0 /f</code></pre>
+            </div>
+        </div>
+
+        <div class="card topic-card" id="disable-telemetry" data-search="telemetry تيليميتري بيانات data collection">
+            <h2>تعطيل Telemetry وجمع البيانات</h2>
+            <p>إيقاف إرسال بيانات الاستخدام والتشخيص لمايكروسوفت.</p>
+            <div class="code-container">
+                <div class="code-header"><span>Disable Telemetry</span><span class="code-tool">CMD</span></div>
+<pre onclick="copyToClipboard(this)"><code>sc stop DiagTrack
+sc config DiagTrack start=disabled
+sc stop dmwappushservice
+sc config dmwappushservice start=disabled
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection" /v AllowTelemetry /t REG_DWORD /d 0 /f</code></pre>
+            </div>
+        </div>
+
+        <div class="card topic-card" id="disable-updates" data-search="windows update تحديثات ويندوز تعطيل">
+            <h2>تعطيل Windows Update التلقائي</h2>
+            <p>إيقاف التحديثات التلقائية.</p>
+            <div class="code-container">
+                <div class="code-header"><span>Disable Updates</span><span class="code-tool">CMD</span></div>
+<pre onclick="copyToClipboard(this)"><code>sc stop wuauserv
+sc config wuauserv start=disabled
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" /v NoAutoUpdate /t REG_DWORD /d 1 /f</code></pre>
+            </div>
+        </div>
+
+        <div class="card topic-card" id="god-mode" data-search="god mode وضع الإله control panel">
+            <h2>تفعيل God Mode</h2>
+            <p>الوصول لكل إعدادات الويندوز من مكان واحد.</p>
+            <div class="code-container">
+                <div class="code-header"><span>Enable God Mode</span><span class="code-tool">PowerShell</span></div>
+<pre onclick="copyToClipboard(this)"><code>$Desktop = [Environment]::GetFolderPath('Desktop')
+New-Item -Path "$Desktop\GodMode.{ED7BA470-8E54-465E-825C-99712043E01C}" -ItemType Directory -Force
+Write-Host "تم! افتح المجلد على سطح المكتب" -ForegroundColor Green</code></pre>
+            </div>
+        </div>
+
+        <div class="card topic-card" id="speedup-boot" data-search="سرعة boot startup تشغيل بوت اقلاع">
+            <h2>تسريع إقلاع الويندوز</h2>
+            <p>تفعيل Fast Startup وتقليل برامج بدء التشغيل.</p>
+            <div class="code-container">
+                <div class="code-header"><span>Speed Up Boot</span><span class="code-tool">CMD</span></div>
+<pre onclick="copyToClipboard(this)"><code>powercfg /hibernate on
+reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Power" /v HiberbootEnabled /t REG_DWORD /d 1 /f
+bcdedit /set {current} bootmenupolicy legacy
+bcdedit /timeout 3</code></pre>
+            </div>
+        </div>
+
+        <div class="card topic-card" id="clean-temp" data-search="temp مؤقت ملفات تنظيف clean">
+            <h2>تنظيف الملفات المؤقتة بالكامل</h2>
+            <p>حذف ملفات Temp و Prefetch و Windows Update Cache.</p>
+            <div class="code-container">
+                <div class="code-header"><span>Clean Temp Files</span><span class="code-tool">CMD</span></div>
+<pre onclick="copyToClipboard(this)"><code>del /q/f/s %TEMP%\*
+del /q/f/s C:\Windows\Temp\*
+del /q/f/s C:\Windows\Prefetch\*
+net stop wuauserv
+del /q/f/s C:\Windows\SoftwareDistribution\Download\*
+net start wuauserv
+cleanmgr /sagerun:1</code></pre>
+            </div>
+        </div>
+
+        <div class="card topic-card" id="network-reset" data-search="network شبكة reset إعادة تعيين internet">
+            <h2>إعادة تعيين إعدادات الشبكة</h2>
+            <p>حل مشاكل الإنترنت والشبكة عبر إعادة ضبط TCP/IP و DNS.</p>
+            <div class="code-container">
+                <div class="code-header"><span>Network Reset</span><span class="code-tool">CMD</span></div>
+<pre onclick="copyToClipboard(this)"><code>ipconfig /release
+ipconfig /flushdns
+ipconfig /renew
+netsh int ip reset
+netsh winsock reset
+netsh advfirewall reset</code></pre>
+            </div>
+            <p class="muted">* أعد تشغيل الكمبيوتر بعد التنفيذ</p>
+        </div>
+
+        <div class="card topic-card" id="office-bloat" data-search="office إزالة bloat bloatware appx">
+            <h2>إزالة مكونات أوفيس الزيادة</h2>
+            <p>خاص بنسخة <strong>Windows 11 IoT Enterprise LTSC</strong>.</p>
+            <div class="code-container">
+                <div class="code-header"><span>Remove Bloatware</span><span class="code-tool">PowerShell</span></div>
+<pre onclick="copyToClipboard(this)"><code>$apps = @("Microsoft.3DBuilder","Microsoft.BingWeather","Microsoft.MicrosoftOfficeHub","Microsoft.MicrosoftSolitaireCollection","Microsoft.XboxApp","Microsoft.ZuneMusic","Microsoft.ZuneVideo")
 foreach ($app in $apps) {
     Get-AppxPackage -Name $app -AllUsers | Remove-AppxPackage -AllUsers -ErrorAction SilentlyContinue
-    Get-AppxProvisionedPackage -Online | Where-Object DisplayName -like $app | Remove-AppxProvisionedPackage -Online -ErrorAction SilentlyContinue
-}
-Write-Host "تم إزالة مكونات أوفيس الزيادة." -ForegroundColor Green</code></pre>
+}</code></pre>
             </div>
-            <p class="muted">* اضغط على الكود لنسخه مباشرة</p>
         </div>
 
-        <!-- NEW CARD: Force Remove OneNote -->
-        <div class="card topic-card" id="remove-onenote" data-search="onenote إزالة حذف force takeown icacls office">
+        <div class="card topic-card" id="remove-onenote" data-search="onenote إزالة حذف force">
             <h2>إزالة مايكروسوفت ون نوت بالقوة</h2>
-            <p>أمر سطر واحد لإجبار حذف OneNote (النسخة المكتبية) من جذوره.</p>
-
             <div class="code-container">
-                <div class="code-header">
-                    <span>Force Remove OneNote</span>
-                    <span class="code-tool">PowerShell</span>
-                </div>
+                <div class="code-header"><span>Force Remove OneNote</span><span class="code-tool">PowerShell</span></div>
 <pre onclick="copyToClipboard(this)"><code>takeown /F "C:\Program Files\Microsoft Office\root\Office16\ONENOTE.EXE" /A; icacls "C:\Program Files\Microsoft Office\root\Office16\ONENOTE.EXE" /grant Administrators:F; Stop-Process -Name "OneNote*" -Force -EA 0; Remove-Item "C:\Program Files\Microsoft Office\root\Office16\ONENOTE.EXE" -Force</code></pre>
             </div>
-            <p class="muted">* يجب تشغيل PowerShell بصلاحيات Administrator</p>
         </div>
 
-        <!-- NEW CARD: Alt+Shift Fix -->
-        <div class="card topic-card" id="alt-shift-fix" data-search="alt shift language تحويل اللغة keyboard registry scancode windows 10 11 لوحة المفاتيح">
-            <h2>حل مشكلة Alt+Shift لتحويل اللغة (Windows 10/11)</h2>
-            <p>إصلاح مشكلة عدم استجابة <strong>Alt + Shift الأيمن</strong> لتبديل اللغة عبر تعديل Registry.</p>
-
+        <div class="card topic-card" id="alt-shift-fix" data-search="alt shift language تحويل اللغة keyboard">
+            <h2>حل مشكلة Alt+Shift لتحويل اللغة</h2>
             <div class="code-container">
-                <div class="code-header">
-                    <span>Fix Alt+Shift Language Switch</span>
-                    <span class="code-tool">CMD</span>
-                </div>
+                <div class="code-header"><span>Fix Alt+Shift</span><span class="code-tool">CMD</span></div>
 <pre onclick="copyToClipboard(this)"><code>reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout" /v "Scancode Map" /t REG_BINARY /d 000000000000000002000000380038E000000000 /f</code></pre>
             </div>
-            <p class="muted">* افتح CMD كـ Administrator</p>
-            <p class="muted">* بعد التنفيذ، أعد تشغيل الكمبيوتر لتطبيق التغييرات</p>
         </div>
 
-        <!-- NEW CARD: Pin This PC -->
-        <div class="card topic-card" id="pin-this-pc" data-search="this pc taskbar تثبيت شريط المهام my computer shortcut اختصار">
+        <div class="card topic-card" id="pin-this-pc" data-search="this pc taskbar تثبيت شريط المهام">
             <h2>تثبيت This PC على شريط المهام</h2>
-            <p>سكربت PowerShell لإنشاء اختصار "This PC" على سطح المكتب ومحاولة تثبيته تلقائياً على التاسك بار.</p>
-
             <div class="code-container">
-                <div class="code-header">
-                    <span>Pin This PC to Taskbar</span>
-                    <span class="code-tool">PowerShell</span>
-                </div>
-<pre onclick="copyToClipboard(this)"><code>$Desktop = [Environment]::GetFolderPath('Desktop'); $ShortcutPath = "$Desktop\This PC.lnk"; $WshShell = New-Object -ComObject WScript.Shell; $Shortcut = $WshShell.CreateShortcut($ShortcutPath); $Shortcut.TargetPath = 'explorer.exe'; $Shortcut.Arguments = 'shell:MyComputerFolder'; $Shortcut.IconLocation = '%SystemRoot%\System32\imageres.dll,-107'; $Shortcut.Save(); Start-Sleep 2; $shell = New-Object -ComObject Shell.Application; $Pinned = $shell.Namespace("$env:APPDATA\Microsoft\Internet Explorer\Quick Launch\User Pinned\TaskBar"); $Item = $Pinned.ParseName((Split-Path $ShortcutPath -Leaf)); if ($Item) { $Item.InvokeVerb('taskbarpin') } else { Write-Host 'اختصار موجود بس مش مثبت، ثبت يدوي' }; Write-Host 'تم الإنشاء والتثبيت!'</code></pre>
+                <div class="code-header"><span>Pin This PC</span><span class="code-tool">PowerShell</span></div>
+<pre onclick="copyToClipboard(this)"><code>$Desktop = [Environment]::GetFolderPath('Desktop'); $ShortcutPath = "$Desktop\This PC.lnk"; $WshShell = New-Object -ComObject WScript.Shell; $Shortcut = $WshShell.CreateShortcut($ShortcutPath); $Shortcut.TargetPath = 'explorer.exe'; $Shortcut.Arguments = 'shell:MyComputerFolder'; $Shortcut.IconLocation = '%SystemRoot%\System32\imageres.dll,-107'; $Shortcut.Save()</code></pre>
             </div>
-            <p class="muted">* بعد التشغيل، انقر بالماوس الأيمن على الاختصار على سطح المكتب واختر "Pin to taskbar" إذا لم يُثبت تلقائياً</p>
         </div>
 
-        <!-- Command Card 3 -->
-        <div class="card topic-card" id="office-custom-install" data-search="office word excel odt deployment tool xml configuration proplus ltsc install excludeapp">
-            <h2>تثبيت أوفيس مخصص (Word/Excel فقط)</h2>
-            <p>لتثبيت برامج محددة فقط من حزمة الأوفيس، نستخدم أداة <strong>Office Deployment Tool (ODT)</strong>.</p>
-            <p>1. قم بتحميل الأداة من <a href="https://www.microsoft.com/en-us/download/details.aspx?id=49117" target="_blank">الموقع الرسمي لمايكروسوفت</a>.</p>
-            <p>2. أنشئ ملف باسم <code>configuration.xml</code> بجانب ملف <code>setup.exe</code> وضع فيه الكود التالي:</p>
-
+        <div class="card topic-card" id="office-custom-install" data-search="office word excel odt deployment">
+            <h2>تثبيت أوفيس مخصص (Word/Excel)</h2>
+            <p>استخدام ODT + ملف XML لاختيار البرامج.</p>
             <div class="code-container">
-                <div class="code-header">
-                    <span>configuration.xml</span>
-                    <span class="code-tool">XML</span>
-                </div>
+                <div class="code-header"><span>configuration.xml</span><span class="code-tool">XML</span></div>
 <pre onclick="copyToClipboard(this)"><code>&lt;Configuration&gt;
   &lt;Add OfficeClientEdition="64" Channel="LTSC2021"&gt;
     &lt;Product ID="ProPlus2021Volume"&gt;
       &lt;Language ID="en-us" /&gt;
-      &lt;!-- البرامج التي لا نريد تثبيتها --&gt;
       &lt;ExcludeApp ID="Access" /&gt;
-      &lt;ExcludeApp ID="Lync" /&gt;
       &lt;ExcludeApp ID="OneDrive" /&gt;
       &lt;ExcludeApp ID="OneNote" /&gt;
       &lt;ExcludeApp ID="Outlook" /&gt;
       &lt;ExcludeApp ID="Publisher" /&gt;
-      &lt;ExcludeApp ID="Teams" /&gt;
     &lt;/Product&gt;
   &lt;/Add&gt;
-  &lt;Display Level="Full" AcceptEULA="TRUE" /&gt;
 &lt;/Configuration&gt;</code></pre>
             </div>
-            <p class="muted">3. افتح <strong>CMD</strong> في نفس المجلد واكتب الأمر التالي:</p>
+        </div>
 
+        <div class="card topic-card" id="dark-mode-registry" data-search="dark mode ثيم داكن مظلم theme">
+            <h2>تفعيل Dark Mode عبر Registry</h2>
             <div class="code-container">
-                <div class="code-header">
-                    <span>Run ODT Setup</span>
-                    <span class="code-tool">CMD</span>
-                </div>
-<pre onclick="copyToClipboard(this)"><code>setup.exe /configure configuration.xml</code></pre>
+                <div class="code-header"><span>Enable Dark Mode</span><span class="code-tool">Registry</span></div>
+<pre onclick="copyToClipboard(this)"><code>reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize" /v AppsUseLightTheme /t REG_DWORD /d 0 /f
+reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize" /v SystemUsesLightTheme /t REG_DWORD /d 0 /f</code></pre>
+            </div>
+        </div>
+
+        <div class="card topic-card" id="remove-edge" data-search="edge إزالة حذف microsoft browser">
+            <h2>إزالة Microsoft Edge</h2>
+            <div class="code-container">
+                <div class="code-header"><span>Remove Edge</span><span class="code-tool">CMD</span></div>
+<pre onclick="copyToClipboard(this)"><code>cd %PROGRAMFILES(X86)%\Microsoft\Edge\Application\1*\Installer
+setup.exe --uninstall --force-uninstall --system-level</code></pre>
+            </div>
+        </div>
+
+        <div class="card topic-card" id="ultimate-performance" data-search="performance أداء power plan خطة طاقة">
+            <h2>تفعيل خطة الطاقة Ultimate Performance</h2>
+            <div class="code-container">
+                <div class="code-header"><span>Enable Ultimate Performance</span><span class="code-tool">CMD</span></div>
+<pre onclick="copyToClipboard(this)"><code>powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61
+Write-Host "تم! افتح Power Options من Control Panel" -ForegroundColor Green</code></pre>
             </div>
         </div>
 
     </div>
 
-    <!-- Toast Notification Element -->
     <div id="toast" class="toast">
         <svg style="width:24px;height:24px" viewBox="0 0 24 24">
             <path fill="currentColor" d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z" />
@@ -702,73 +837,53 @@ Write-Host "تم إزالة مكونات أوفيس الزيادة." -Foreground
     </div>
 
     <script>
-        // Copy on click for any code block
         function copyToClipboard(element) {
             const code = element.querySelector('code').innerText;
             navigator.clipboard.writeText(code).then(function() {
                 showToast();
             }, function(err) {
-                console.error('Async: Could not copy text: ', err);
+                console.error('Could not copy: ', err);
             });
         }
-
         function showToast() {
             var x = document.getElementById("toast");
             x.className = "toast show";
             setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
         }
-
-        // Jump to section
         function jumpTo(id) {
             const el = document.getElementById(id);
-            if (!el) return;
-            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
-
-        // Search
         const searchInput = document.getElementById('search');
         const rows = Array.from(document.querySelectorAll('.topic-row'));
         const cards = Array.from(document.querySelectorAll('.topic-card'));
         const hint = document.getElementById('resultsHint');
-
-        function normalize(s) {
-            return (s || '').toString().toLowerCase().trim();
-        }
-
+        function normalize(s) { return (s || '').toString().toLowerCase().trim(); }
         function applySearch(qRaw) {
             const q = normalize(qRaw);
-
             let visible = 0;
-
             rows.forEach(r => {
                 const hay = normalize(r.getAttribute('data-search') + ' ' + r.innerText);
                 const show = !q || hay.includes(q);
                 r.classList.toggle('hidden', !show);
                 if (show) visible++;
-
                 const target = r.getAttribute('data-target');
                 const card = document.getElementById(target);
                 if (card) card.classList.toggle('hidden', !show);
             });
-
-            // If user searches for something that doesn't match any row, hide all cards
             if (q && visible === 0) {
                 cards.forEach(c => c.classList.add('hidden'));
-                hint.textContent = 'لا توجد نتائج مطابقة. جرّب كلمات مثل: PowerShell, Registry, Office, Context Menu';
+                hint.textContent = 'لا توجد نتائج مطابقة';
             } else {
                 hint.textContent = q ? `نتائج البحث: ${visible}` : '';
             }
         }
-
         function clearSearch() {
             searchInput.value = '';
             applySearch('');
             searchInput.focus();
         }
-
         searchInput.addEventListener('input', (e) => applySearch(e.target.value));
-
-        // Initial state
         applySearch('');
     </script>
 </body>
