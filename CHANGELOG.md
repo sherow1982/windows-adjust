@@ -1,68 +1,106 @@
-# Changelog
+# 📊 Changelog - Windows Adjust
 
-جميع التغييرات المهمة لهذا المشروع سيتم توثيقها هنا.
-
-التنسيق مبني على [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-وهذا المشروع يتبع [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+> **مسجل التغييرات والتحديثات الرسمي**
 
 ---
 
-## [2.0.0] - 2025-01-08
+## [v2.0.0] - 2026-01-08
 
-### ✅ أضيف (Added)
+### ✅ Added
+- ✅ **50+ Windows Optimization Topics** - مائتي الأوامر الملتبرة
+- ✅ **Official GitHub Pages Deployment** - Workflows رسمية
+- ✅ **CI/CD Pipeline** - الاختبار التلقائية
+- ✅ **Comprehensive Documentation** - وثائق كاملة
+- ✅ **Contributing Guidelines** - مرشد المساهمة
+- ✅ **Topics Reference** - قائمة المواضيع
 
-- ⚡ **50+ توبيك شاملة** لتظبيط وتسريع Windows
-- 🔍 **بحث حي وفوري** للبحث عن التوبيكات
-- 🎨 **تصميم عصري جميل** مع Gradient Colors
-- 🌙 **Dark Theme** مريح للعين
-- 📱 **Responsive Design** لجميع الأجهزة
-- 🚀 **GitHub Actions** للنشر التلقائي
-- 📋 **وثائق شاملة**: README, CONTRIBUTING, SECURITY, CODE_OF_CONDUCT
+### 🔧 Fixed
+- 🔧 GitHub Actions Permissions - المشاكل الأمنية
+- 🔧 Workflow Configuration - التهيئة الرسمية
+- 🔧 Build Process - عملية البناء
 
-### 🔢 تغيير (Changed)
-
-- 🔧 تحسين بنية index.html بالكامل
-- 🎨 تحسين CSS والأنيميشنز
-- 📚 إعادة هيكلة README.md بسلاسة ووضوح
-
-### ❌ حدف (Removed)
-
-- ⚠️ إزالة الأوامر البجرية من index.html (سيتم الإضافة لاحقاً)
-
-### 🐛 إصلاح (Fixed)
-
-- ✅ تحسين التوافق مع متصفحات مختلفة
-- ✅ إصلاح مشاكل البحث
-
-### 📦 ميزات حديثة (Features)
-
-- 📜 نعد استخدام الأوامر (Copy to Clipboard) - قريباً
-- 💰 Dark/Light Theme Toggle - قريباً
-- 💫 Advanced Search Filters - يجري العمل عليه
+### 🚄 Changed
+- 🚄 Updated Build Architecture - معمار جديدة
+- 🚄 Optimized Deployment - نشر أسرع
 
 ---
 
-## [1.0.0] - 2024-12-01
+## [v1.0.0] - 2025-12-01
 
-### ✅ أضيف (Added)
-
-- 🚀 إطلاق الإصدار الأول البسيط
-- 📜 وثائق أساسية
-- 🔏 MIT License
-
----
-
-## الكلمات المستخدمة
-
-- **Added** للميزات الجديدة
-- **Changed** للتغييرات بالميزات الموجودة
-- **Deprecated** للميزات المقررة الحذف
-- **Removed** للميزات المصدرة بالفعل
-- **Fixed** للأخطاء المملوءة
-- **Security** للأمان الثغرات
+### 📝 Initial Release
+- 📝 First public release
+- 📝 30+ topics
+- 📝 Basic documentation
 
 ---
 
-## لينكات مسرعة
+## 📆 Upcoming (Roadmap)
 
-[المقارنة بين الإصدارات](https://github.com/sherow1982/windows-adjust/compare)
+### v2.1.0 - Q1 2026
+- [ ] English translation
+- [ ] PowerShell script directly executable
+- [ ] Video tutorials (YouTube)
+- [ ] Community forum
+
+### v2.5.0 - Q2 2026
+- [ ] Windows application (.exe)
+- [ ] Advanced search with filters
+- [ ] Favorites system
+- [ ] Offline support
+
+### v3.0.0 - Q3 2026
+- [ ] Multi-language support (5+ languages)
+- [ ] Advanced registry editor
+- [ ] System restore points management
+- [ ] Community scripts repository
+- [ ] Mobile app (Android/iOS)
+
+---
+
+## 🔗 Version Format
+
+We follow [Semantic Versioning](https://semver.org/):
+
+- **MAJOR** (v1.0.0) - Breaking changes
+- **MINOR** (v1.1.0) - New features
+- **PATCH** (v1.0.1) - Bug fixes
+
+---
+
+## 📋 Release Notes Format
+
+Each release includes:
+
+```
+## [v#.#.#] - YYYY-MM-DD
+
+### ✅ Added
+- New features
+
+### 🔧 Fixed
+- Bugs fixed
+
+### 🚄 Changed
+- Breaking changes
+
+### ⚠️ Deprecated
+- To be removed
+
+### ❌ Removed
+- Removed features
+
+### 🔐 Security
+- Security updates
+```
+
+---
+
+## 🌟 How to Contribute
+
+Want to contribute to the changelog? See [CONTRIBUTING.md](CONTRIBUTING.md)
+
+---
+
+**Last Updated:** 2026-01-08  
+**Current Version:** v2.0.0  
+**Status:** 🔴 Active Development
