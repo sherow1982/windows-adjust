@@ -1,32 +1,64 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
 # IDE
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
+.DS_Store
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+.eslintignore
 
 # OS
-.DS_Store
 Thumbs.db
+.DS_Store
 .env
-
-# Logs
-*.log
-npm-debug.log*
-
-# Dependencies
-node_modules/
-package-lock.json
+.env.local
+.env.*.local
 
 # Build
 dist/
 build/
+out/
+*.min.js
+*.min.css
 
-# Temp
+# Temporary
 *.tmp
-.temp/
+*.temp
+.cache/
+.parcel-cache/
+.next/
+out/
+.vercel/
 
-# Archives
+# Testing
+coverage/
+.nyc_output/
+
+# Logs
+logs/
+*.log
+
+# Archive
 *.zip
 *.rar
 *.7z
+*.gz
+*.tar
+
+# Local
+local.json
+config.local.js
