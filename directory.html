@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قائمة مكتملة - Windows Adjust</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+            color: #f8fafc;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container { max-width: 1000px; margin: 0 auto; }
+        h1 {
+            text-align: center;
+            color: #38bdf8;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #94a3b8;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+        .category {
+            background: linear-gradient(135deg, #1a1f3a 0%, #0f1729 100%);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+        .category h2 {
+            color: #38bdf8;
+            margin-top: 0;
+            border-bottom: 2px solid #38bdf8;
+            padding-bottom: 10px;
+            font-size: 1.5rem;
+        }
+        .topics-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+        }
+        .topic-item {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(51, 65, 85, 0.5);
+            border-radius: 8px;
+            padding: 15px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .topic-item:hover {
+            background: rgba(56, 189, 248, 0.1);
+            border-color: #38bdf8;
+            transform: translateY(-3px);
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
+        }
+        .topic-item a {
+            color: #38bdf8;
+            text-decoration: none;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .topic-item p {
+            color: #94a3b8;
+            margin: 5px 0 0 0;
+            font-size: 0.9rem;
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .stat-box {
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #38bdf8;
+        }
+        .stat-label {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>⚡ Windows Adjust</h1>
+        <p class="subtitle">قائمة مكتملة بـ 28+ موضوع</p>
+
+        <div class="stats">
+            <div class="stat-box">
+                <div class="stat-number">28+</div>
+                <div class="stat-label">موضوع</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">5</div>
+                <div class="stat-label">تصنيفات</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">مفتوح</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">MIT</div>
+                <div class="stat-label">ترخيص</div>
+            </div>
+        </div>
+
+        <!-- System -->
+        <div class="category">
+            <h2>🔧 النظام (13 موضوع)</h2>
+            <div class="topics-list">
+                <div class="topic-item">
+                    <a href="./docs/add-powershell-to-context-menu.md" target="_blank">إضافة PowerShell Admin</a>
+                    <p>أضف PowerShell إلى قائمة الماوس اليمين</p>
+                </div>
+                <div class="topic-item">
+                    <a href="./docs/disable-windows-update.md" target="_blank">تعطيل Windows Update</a>
+                    <p>أوقف التحديثات التلقائية</p>
+                </div>
+                <div class="topic-item">
+                    <a href="./docs/god-mode.md" target="_blank">God Mode</a>
+                    <p>صندوق مراقبة متقدم</p>
+                </div>
+                <div class="topic-item">
+                    <a href="./docs/disable-uac.md" target="_blank">تعطيل UAC</a>
+                    <p>إزالة رسالات التأكيد</p>
+                </div>
+                <div class="topic-item">
+                    <a href="./docs/disable-firewall.md" target="_blank">تعطيل Firewall</a>
+                    <p>إيقاف جدار الحماية</p>
+                </div>
+                <div class="topic-item">
+                    <a href="./docs/enable-rdp.md" target="_blank">تفعيل RDP</a>
+                    <p>الوصول عن بعد</p>
+                </div>
+                <div class="topic-item">
+                    <a href="./docs/disable-password.md" target="_blank">تعطيل كلمة المرور</a>
+                    <p>الدخول بدون كلمة سر</p>
+                </div>
+                <div class="topic-item">
+                    <a href="./docs/long-file-paths.md" target="_blank">تفعيل Long Path</a>
+                    <p>مسارات أطول من 260</p>
+                </div>
+                <div class="topic-item">
+                    <a href="./docs/show-hidden-files.md" target="_blank">إظهار ملفات مخفية</a>
+                    <p>عرض الامتدادات</p>
+                </div>
+                <div class="topic-item">
+                    <a href="./docs/enable-compat-mode.md" target="_blank">وضع التوافق</a>
+                    <p>البرامج القديمة</p>
+                </div>
+                <div class="topic-item">
+                    <a href="./docs/disable-cortana.md" target="_blank">تعطيل Cortana</a>
+                    <p>إيقاف المساعد</p>
+                </div>
+                <div class="topic-item">
+                    <a href="./docs/windows-sandbox.md" target="_blank">تفعيل Sandbox</a>
+                    <p>بيئة معزولة</p>
+                </div>
+                <div class="topic-item">
+                    <a href="./docs/pin-this-pc-to-taskbar.md" target="_blank">ثبيت This PC</a>
+                    <p>على Taskbar</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Privacy -->
+        <div class="category">
+            <h2>🔒 الأمان (3 مواضيع)</h2>
+            <div class="topics-list">
+                <div class="topic-item">
+                    <a href="./docs/windows-privacy-debloat.md" target="_blank">تعطيل Telemetry</a>
+                    <p>منع جمع البيانات</p>
+                </div>
+                <div class="topic-item">
+                    <a href="./docs/disable-defender.md" target="_blank">تعطيل Defender</a>
+                    <p>إيقاف الحماية</p>
+                </div>
+                <div class="topic-item">
+                    <a href="./docs/disable-location.md" target="_blank">تعطيل Location</a>
+                    <p>إيقاف تتبع الموقع</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Performance -->
+        <div class="category">
+            <h2>⚡ الأداء (2 موضوع)</h2>
+            <div class="topics-list">
+                <div class="topic-item">
+                    <a href="./docs/windows-performance-optimization.md" target="_blank">تحسين الأداء</a>
+                    <p>تسريع الويندوز</p>
+                </div>
+                <div class="topic-item">
+                    <a href="./docs/fast-boot.md" target="_blank">Fast Boot</a>
+                    <p>تسريع الإقلاع</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cleanup -->
+        <div class="category">
+            <h2>🧹 التنظيف (6 مواضيع)</h2>
+            <div class="topics-list">
+                <div class="topic-item">
+                    <a href="./docs/remove-microsoft-onenote.md" target="_blank">حذف OneNote</a>
+                    <p>إزالة نهائية</p>
+                </div>
+                <div class="topic-item">
+                    <a href="./docs/force-remove-onenote.md" target="_blank">قسرية OneNote</a>
+                    <p>حذف قوي</p>
+                </div>
+                <div class="topic-item">
+                    <a href="./docs/remove-office-bloat.md" target="_blank">حذف Office</a>
+                    <p>ملحقات غير مشروعة</p>
+                </div>
+                <div class="topic-item">
+                    <a href="./docs/clean-context-menu.md" target="_blank">تنظيف Context Menu</a>
+                    <p>إزالة عناصر زائدة</p>
+                </div>
+                <div class="topic-item">
+                    <a href="./docs/clean-temp.md" target="_blank">تنظيف Temp</a>
+                    <p>حذف فالملفات المؤقتة</p>
+                </div>
+                <div class="topic-item">
+                    <a href="./docs/remove-powershell-context-menu.md" target="_blank">إزالة PowerShell</a>
+                    <p>من Context Menu</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fixes -->
+        <div class="category">
+            <h2>🔧 الإصلاح (3 مواضيع)</h2>
+            <div class="topics-list">
+                <div class="topic-item">
+                    <a href="./docs/fix-alt-shift-language-switch.md" target="_blank">إصلاح Alt+Shift</a>
+                    <p>لغة البيانوس</p>
+                </div>
+                <div class="topic-item">
+                    <a href="./docs/network-reset.md" target="_blank">Network Reset</a>
+                    <p>إعادة الشبكة</p>
+                </div>
+                <div class="topic-item">
+                    <a href="./docs/chkdsk-sfc.md" target="_blank">CHKDSK + SFC</a>
+                    <p>فحص وإصلاح</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- References -->
+        <div class="category">
+            <h2>📚 مراجع</h2>
+            <div class="topics-list">
+                <div class="topic-item">
+                    <a href="./docs/API.md" target="_blank">API Documentation</a>
+                    <p>معلومات تقنية</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
