@@ -1,64 +1,49 @@
-# Node
+# Dependencies
 node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-package-lock.json
-yarn.lock
+pnpm-debug.log*
+lerna-debug.log*
 
-# IDE
+# Production build
+dist/
+build/
+out/
+.next/
+.nuxt/
+.cache/
+.vuepress/dist/
+.serverless/
+.fusebox/
+.dynamodb/
+.tern-port/
+
+# OS
+.DS_Store
+Thumbs.db
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
-.DS_Store
-.project
-.classpath
-.c9/
-*.launch
-.settings/
-*.sublime-workspace
-.eslintignore
 
-# OS
-Thumbs.db
-.DS_Store
+# Environment
 .env
 .env.local
 .env.*.local
+.env.production
 
-# Build
-dist/
-build/
-out/
-*.min.js
-*.min.css
-
-# Temporary
-*.tmp
-*.temp
-.cache/
-.parcel-cache/
-.next/
-out/
-.vercel/
-
-# Testing
-coverage/
-.nyc_output/
+# IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
 
 # Logs
-logs/
+logs
 *.log
 
-# Archive
-*.zip
-*.rar
-*.7z
-*.gz
-*.tar
-
-# Local
-local.json
-config.local.js
+# Git
+.git/
+.gitmodules
